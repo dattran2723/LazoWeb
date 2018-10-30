@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <title>@ViewBag.Title</title>
+    @*link css bootstrap*@
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    @*css slide*@
+    <link href="~/Content/css/slide.css" rel="stylesheet" />
+    @*css informationsLazo*@
+    <link href="~/Content/css/informationsLazo.css" rel="stylesheet" />
+    @*css typicalkhachhang*@
+    <link href="~/Content/css/typicalkhachhang.css" rel="stylesheet" />
+    @*css customers feedback and download app*@
+    <link href="~/Content/css/StyleFeedback.css" rel="stylesheet" />
+    @*css footer*@
+    <link href="~/Content/css/footer.css" rel="stylesheet" />
+    <link href="~/Content/css/menu.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div>
+        @Html.Partial("_MenuHeader")
+        @RenderBody()
+    </div>
+    @Html.Partial("/Views/Shared/_FooterPartial.cshtml")
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/feedback.js"></script>
+    @*js croll to id*@
+    <script src="~/Scripts/js/crolltoid.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
