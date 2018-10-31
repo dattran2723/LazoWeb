@@ -18,6 +18,7 @@ namespace LazoWeb.Models
         }
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()

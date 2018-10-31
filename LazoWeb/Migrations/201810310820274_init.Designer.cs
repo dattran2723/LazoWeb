@@ -13,7 +13,7 @@ namespace LazoWeb.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201810310447156_init"; }
+            get { return "201810310820274_init"; }
         }
         
         string IMigrationMetadata.Source

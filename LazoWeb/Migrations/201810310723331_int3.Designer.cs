@@ -7,13 +7,13 @@ namespace LazoWeb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class init2 : IMigrationMetadata
+    public sealed partial class int3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(int3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201810310450244_init2"; }
+            get { return "201810310723331_int3"; }
         }
         
         string IMigrationMetadata.Source
