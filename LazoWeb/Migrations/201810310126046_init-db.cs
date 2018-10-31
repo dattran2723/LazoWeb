@@ -3,7 +3,7 @@ namespace LazoWeb.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initdb : DbMigration
     {
         public override void Up()
         {
@@ -74,11 +74,24 @@ namespace LazoWeb.Migrations
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
-            
         }
         
         public override void Down()
         {
+            CreateTable(
+                "dbo.Customers",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 50),
+                        Company = c.String(nullable: false),
+                        NumberEmployee = c.Int(nullable: false),
+                        Address = c.String(maxLength: 100),
+                        Email = c.String(),
+                        Status = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
