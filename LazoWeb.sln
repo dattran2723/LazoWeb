@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazoWeb", "LazoWeb\LazoWeb.csproj", "{98FF1744-EB7A-44AA-893D-7FC2E622FA33}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "lazowebDb", "lazowebDb\lazowebDb.sqlproj", "{0819DF54-DF68-4AE8-B525-45317AF47206}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{98FF1744-EB7A-44AA-893D-7FC2E622FA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FF1744-EB7A-44AA-893D-7FC2E622FA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FF1744-EB7A-44AA-893D-7FC2E622FA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819DF54-DF68-4AE8-B525-45317AF47206}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
