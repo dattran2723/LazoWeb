@@ -29,5 +29,6 @@ namespace LazoWeb.Models
         {
             return new ApplicationDbContext();
         }
+        
     }
 }
