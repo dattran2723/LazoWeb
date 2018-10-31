@@ -199,7 +199,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AspNetUsersController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
@@ -209,38 +208,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810310447156_init.cs" />
+    <Compile Include="Migrations\201810310447156_init.Designer.cs">
+      <DependentUpon>201810310447156_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810310450244_init2.cs" />
+    <Compile Include="Migrations\201810310450244_init2.Designer.cs">
+      <DependentUpon>201810310450244_init2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LazoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LazoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LazoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LazoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LazoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LazoModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -6822,16 +6801,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\LazoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LazoModel.edmx</DependentUpon>
-      <LastGenOutput>LazoModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\LazoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LazoModel.edmx</DependentUpon>
-      <LastGenOutput>LazoModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -7464,18 +7433,6 @@
     <Content Include="Content\Admin\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Areas\Admin\Views\Shared\_LauoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
-    <EntityDeploy Include="Models\LazoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LazoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\LazoModel.edmx.diagram">
-      <DependentUpon>LazoModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\Admin\Views\AspNetUsers\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\AspNetUsers\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\AspNetUsers\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\AspNetUsers\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\AspNetUsers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
@@ -7560,6 +7517,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810310447156_init.resx">
+      <DependentUpon>201810310447156_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810310450244_init2.resx">
+      <DependentUpon>201810310450244_init2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
