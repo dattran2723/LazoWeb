@@ -1,0 +1,63 @@
+﻿@model LazoWeb.Models.Customer
+@using BotDetect.Web.Mvc
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+      rel="stylesheet" type="text/css" />
+<link href="~/Content/css/Register.css" rel="stylesheet" />
+@{ var registerCaptcha = new MvcCaptcha("registerCaptcha")
+    { UserInputID = "CaptchaCode" }; }
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" id="signup-page">
+    <div class="col-md-3">
+        @*<h3>Đây là hình ảnh</h3>*@
+    </div>
+    <div class="col-md-6 text-center form">
+        @using (Html.BeginForm())
+        {
+            <br>
+            <h2>ĐĂNG KÝ</h2> <br />
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="row input-zone">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ và tên" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên công ty" } })
+                    @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NumberEmployee, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số lượng nhân viên" } })
+                    @Html.ValidationMessageFor(model => model.NumberEmployee, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ liên hệ" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10 captcha">
+                    @Html.Captcha(registerCaptcha)
+                    @Html.TextBox("CaptchaCode")
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10 text-center">
+                    <input type="submit" value="Gửi yêu cầu" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-3">
+        @*<h3>Đây là hình ảnh</h3>*@
+    </div>
+</div>
+
