@@ -32,5 +32,6 @@ namespace LazoWeb.Models
         }
 
         public System.Data.Entity.DbSet<LazoWeb.Models.Customer> Customers { get; set; }
+        
     }
 }
