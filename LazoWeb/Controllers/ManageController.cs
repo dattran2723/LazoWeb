@@ -238,7 +238,7 @@ namespace LazoWeb.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
+                return RedirectToAction("Index", "HomeAdmin", new { Message = ManageMessageId.ChangePasswordSuccess, area = "Admin" });
             }
             AddErrors(result);
             return View(model);
