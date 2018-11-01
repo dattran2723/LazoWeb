@@ -114,7 +114,18 @@ namespace LazoWeb.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var customer = db.Customers.Find(id);
+            customer.Status = !customer.Status;
+            db.SaveChanges();
+            var kq = customer.Status;
+            return Json(new
+            {
+                status = kq
+            });
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

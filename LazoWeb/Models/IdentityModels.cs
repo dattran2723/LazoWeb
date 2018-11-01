@@ -18,6 +18,7 @@ namespace LazoWeb.Models
         }
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -31,5 +32,6 @@ namespace LazoWeb.Models
         }
 
         public System.Data.Entity.DbSet<LazoWeb.Models.Customer> Customers { get; set; }
+        
     }
 }
