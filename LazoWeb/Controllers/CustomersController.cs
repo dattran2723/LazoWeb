@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BotDetect.Web.Mvc;
+using LazoWeb.Models;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using BotDetect.Web.Mvc;
-using LazoWeb.Models;
 
 namespace LazoWeb.Controllers
 {
