@@ -23,14 +23,17 @@ namespace LazoWeb.Models
         public string Company { get; set; }
 
         [DisplayName("Số lượng nhân viên")]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng nhân viên")]
         [Range(0, int.MaxValue, ErrorMessage = "Vui lòng nhập số")]
         public int NumberEmployee { get; set; }
 
         [DisplayName("Địa chỉ liên hệ")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ liên hệ")]
         [StringLength(100)]
         public string Address { get; set; }
 
         [DisplayName("Địa chỉ Email")]
+        [Required(ErrorMessage ="Vui lòng nhập Email")]
         [EmailAddress]
         public string Email { get; set; }
 

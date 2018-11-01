@@ -65,9 +65,9 @@ namespace LazoWeb.Controllers
                         smtp.Port = 587;
                         smtp.EnableSsl = true;
                         smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "khatvong");
-                        var notification = "Bạn đã đăng ký dịch vụ Lazo";
+                        var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên lạc với bạn ngay khi có thể";
                         smtp.Send("dattran2723@gmail.com", customer.Email, "Thông báo", notification);
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index","Home");
                     }
                     else
                     {
