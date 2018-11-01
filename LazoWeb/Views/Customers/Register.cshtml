@@ -11,10 +11,10 @@
 }
 
 <div class="row" id="signup-page">
-    <div class="col-md-3">
+    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
         @*<h3>Đây là hình ảnh</h3>*@
     </div>
-    <div class="col-md-6 text-center form">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center form">
         @using (Html.BeginForm())
         {
             <br>
@@ -39,19 +39,19 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10 captcha">
+                <div class="col-md-12 captcha">
                     @Html.Captcha(registerCaptcha)
                     @Html.TextBox("CaptchaCode")
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10 text-center">
+                <div class="col-md-112 text-center">
                     <input type="submit" value="Gửi yêu cầu" class="btn btn-primary" />
                 </div>
             </div>
         }
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3">
         @*<h3>Đây là hình ảnh</h3>*@
     </div>
 </div>
