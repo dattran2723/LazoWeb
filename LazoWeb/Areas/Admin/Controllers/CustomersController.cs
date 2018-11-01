@@ -10,7 +10,7 @@ using LazoWeb.Models;
 
 namespace LazoWeb.Areas.Admin.Controllers
 {
-    public class CustomersController : Controller
+    public class CustomersController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

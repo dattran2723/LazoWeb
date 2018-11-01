@@ -79,8 +79,8 @@
                     </a>
                 </div>
                 <!-- /.social-auth-links -->
-                <a href="#">I forgot my password</a><br>
-                @*<a href="" class="text-center">Register a new membership</a>*@
+                @Html.ActionLink("I forgot my password","ForgotPassword","Account", new { area = "", @class = "text-center" })
+                <br />
                 @Html.ActionLink("Register a new membership","Register","Account", new { area = "", @class = "text-center" })
             </div>
             <!-- /.login-box-body -->

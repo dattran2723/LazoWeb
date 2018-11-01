@@ -9,9 +9,7 @@
 @section jsStatus {
     <script src="~/Scripts/js/jsStatus.js"></script>
 }
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<a href="/Customers/Register">Create New</a>
 <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
     <thead>
         <tr>
@@ -56,7 +54,7 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a class="btn-active" data-id="@item.ID" href="#">@(item.Status ? "Đã được liên hệ" : "Chưa liên hệ")</a>
+                    <button class="btn-active btn btn-primary" data-id="@item.ID">@(item.Status ? "Đã được liên hệ" : "Chưa liên hệ")</button>
                     @*@Html.DisplayFor(modelItem => item.Status)*@
                 </td>
                 <td>

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace LazoWeb.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/User

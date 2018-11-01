@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using LazoWeb.Models;
+using System.Net.Mail;
+using System.Net;
 
 namespace LazoWeb
 {
@@ -18,6 +20,22 @@ namespace LazoWeb
     {
         public Task SendAsync(IdentityMessage message)
         {
+            SmtpClient client = new SmtpClient();
+            client.Port = 587;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("long205888126@gmail.com", "pailaanh126");
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+
+
+            MailMessage mail = new MailMessage("long205888126@gamil.com", message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+            mail.IsBodyHtml = true;
+
+
+            client.Send(mail);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
