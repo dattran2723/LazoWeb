@@ -24,23 +24,18 @@
             <div class="row input-zone">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ và tên" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên công ty" } })
-                    @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.NumberEmployee, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số lượng nhân viên" } })
-                    @Html.ValidationMessageFor(model => model.NumberEmployee, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ liên hệ" } })
-                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ Email" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">

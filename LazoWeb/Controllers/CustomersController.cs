@@ -5,6 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BotDetect.Web.Mvc;
@@ -49,7 +51,7 @@ namespace LazoWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [CaptchaValidation("CaptchaCode", "registerCaptcha", "Mã xác nhận không đúng!")]
-        public ActionResult Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public async Task<ActionResult> Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -60,14 +62,8 @@ namespace LazoWeb.Controllers
                     var res = db.SaveChanges();
                     if (res > 0)
                     {
-                        SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.Port = 587;
-                        smtp.EnableSsl = true;
-                        smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "khatvong");
-                        var notification = "Bạn đã đăng ký dịch vụ Lazo";
-                        smtp.Send("dattran2723@gmail.com", customer.Email, "Thông báo", notification);
-                        return RedirectToAction("Index");
+                        await SendMailForCustomer(customer);
+                        return RedirectToAction("Index","Home");
                     }
                     else
                     {
@@ -83,6 +79,11 @@ namespace LazoWeb.Controllers
             }
 
             return View(customer);
+        }
+
+        public ActionResult MailContent()
+        {
+            return View();
         }
 
         // GET: Customers/Edit/5
@@ -164,6 +165,30 @@ namespace LazoWeb.Controllers
             {
                 return true;
             }
+        }
+
+        public Task SendMailForCustomer(Customer customer)
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "khatvong");
+            //var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên hệ với bạn ngay khi có thể";
+            string content = System.IO.File.ReadAllText(Server.MapPath("~/Views/Customers/MailContent.cshtml"));
+            content = content.Replace("{{Name}}", customer.Name);
+            content = content.Replace("{{Company}}", customer.Company);
+            content = content.Replace("{{NumberEmployee}}", customer.NumberEmployee.ToString());
+            content = content.Replace("{{Address}}", customer.Address);
+            content = content.Replace("{{Email}}", customer.Email);
+
+            MailMessage mailMessage = new MailMessage("dattran2723@gmail.com", customer.Email, "Thông báo", content);
+            mailMessage.IsBodyHtml = true;
+            mailMessage.BodyEncoding = UTF8Encoding.UTF8;
+
+            smtp.Send(mailMessage);
+            // Plug in your email service here to send an email.
+            return Task.FromResult(0);
         }
     }
 }
