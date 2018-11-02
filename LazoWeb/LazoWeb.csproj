@@ -7138,6 +7138,8 @@
     <Content Include="Content\img\page-1_0030_iphone_cutout.png" />
     <Content Include="Content\img\page-1_0031_logo-trang.png" />
     <Content Include="Content\img\page-1_0032_The-Third-Eye-Of-Manager.png" />
+    <Content Include="Content\img\Untitled-1_0000_glasses.png" />
+    <Content Include="Content\img\Untitled-tree.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
