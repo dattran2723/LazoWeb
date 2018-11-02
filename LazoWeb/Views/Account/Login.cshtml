@@ -36,6 +36,7 @@
     @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
+        
         <div class="login-box">
             <div class="login-logo">
                 <a href="/Content/Admin/index2.html"><b>Admin</b>LTE</a>
@@ -43,6 +44,7 @@
             <!-- /.login-logo -->
             <div class="login-box-body">
                 <p class="login-box-msg">Sign in to start your session</p>
+                @Html.ValidationSummary("",new { @class="text-danger"})
                 <form action="/Content/Admin/index2.html" method="post">
                     <div class="form-group has-feedback">
                         @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
@@ -79,9 +81,9 @@
                     </a>
                 </div>
                 <!-- /.social-auth-links -->
-                @Html.ActionLink("I forgot my password","ForgotPassword","Account", new { area = "", @class = "text-center" })
+                @Html.ActionLink("I forgot my password", "ForgotPassword", "Account", new { area = "", @class = "text-center" })
                 <br />
-                @Html.ActionLink("Register a new membership","Register","Account", new { area = "", @class = "text-center" })
+                @Html.ActionLink("Register a new membership", "Register", "Account", new { area = "", @class = "text-center" })
             </div>
             <!-- /.login-box-body -->
         </div>
@@ -101,5 +103,10 @@
                 increaseArea: '20%' /* optional */
             });
         });</script>
+    @*<script>
+        if (@ViewBag.ThongBao != null) {
+            alert("@ViewBag.ThongBao")
+        }
+    </script>*@
 </body>
 </html>
