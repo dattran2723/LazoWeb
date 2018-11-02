@@ -59,6 +59,7 @@ namespace LazoWeb.Controllers
                     if (res > 0)
                     {
                         await SendMailForCustomer(customer);
+                        Session["signup"] = "success";
                         return RedirectToAction("Index","Home");
                     }
                     else

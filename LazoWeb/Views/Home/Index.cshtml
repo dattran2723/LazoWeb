@@ -13,3 +13,14 @@
 @RenderPage("FreeExperiencing.cshtml")
 @RenderPage("DownloadApp.cshtml")
 
+@if (Session["signup"] != null)
+{
+    if (Session["signup"] == "success")
+    {
+        <script>
+           alert("Đăng ký thành công!");
+        </script>
+    }
+    Session["signup"] = null;
+}
+
