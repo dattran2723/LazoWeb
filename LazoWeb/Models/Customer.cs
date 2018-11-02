@@ -24,7 +24,7 @@ namespace LazoWeb.Models
 
         [DisplayName("Số lượng nhân viên")]
         [Required(ErrorMessage = "Vui lòng nhập số lượng nhân viên")]
-        [Range(0, int.MaxValue, ErrorMessage = "Vui lòng nhập số")]
+        [Range(1, int.MaxValue, ErrorMessage = "Vui lòng nhập số lớn hơn 0")]
         public int NumberEmployee { get; set; }
 
         [DisplayName("Địa chỉ liên hệ")]

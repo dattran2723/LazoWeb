@@ -18,7 +18,7 @@
         @using (Html.BeginForm())
         {
             <br>
-            <h2>ĐĂNG KÝ</h2> <br />
+            <h2>ĐĂNG KÝ</h2>
             @Html.AntiForgeryToken()
             @Html.ValidationSummary("", new { @class = "text-danger" })
             <div class="row input-zone">
