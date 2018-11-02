@@ -76,12 +76,7 @@ namespace LazoWeb.Controllers
 
             return View(customer);
         }
-
-        public ActionResult MailContent()
-        {
-            return View();
-        }
-
+        
         // GET: Customers/Edit/5
         //public ActionResult Edit(int? id)
         //{
@@ -178,11 +173,18 @@ namespace LazoWeb.Controllers
             content = content.Replace("{{Address}}", customer.Address);
             content = content.Replace("{{Email}}", customer.Email);
 
-            MailMessage mailMessage = new MailMessage("dattran2723@gmail.com", customer.Email, "Thông báo", content);
-            mailMessage.IsBodyHtml = true;
-            mailMessage.BodyEncoding = UTF8Encoding.UTF8;
+            var fromEmail = new MailAddress("dattran2723@gmail.com", "Lazo");
+            var toEmail = new MailAddress(customer.Email);
+            var mail = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = "Thông báo",
+                Body = content,
+                IsBodyHtml = true,
+                BodyEncoding = UTF8Encoding.UTF8
+                
+            };
 
-            smtp.Send(mailMessage);
+            smtp.Send(mail);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
