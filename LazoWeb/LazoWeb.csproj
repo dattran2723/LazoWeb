@@ -7839,6 +7839,8 @@
     <Content Include="Views\Home\FreeExperiencing.cshtml" />
     <Content Include="Views\Customers\Register.cshtml" />
     <Content Include="Views\Customers\MailContent.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

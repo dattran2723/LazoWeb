@@ -20,20 +20,25 @@ namespace LazoWeb
     {
         public Task SendAsync(IdentityMessage message)
         {
-            SmtpClient client = new SmtpClient();
-            client.Port = 587;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential("long205888126@gmail.com", "pailaanh126");
-            client.Host = "smtp.gmail.com";
-            client.EnableSsl = true;
+            var client = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                UseDefaultCredentials = false,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential("long205888126@gmail.com", "pailaanh126"),
+                EnableSsl = true,
+            };
 
+            var from = new MailAddress("long205888126@gmail.com", "Lazo Admin");
+            var to = new MailAddress(message.Destination);
 
-            MailMessage mail = new MailMessage("long205888126@gamil.com", message.Destination);
-            mail.Subject = message.Subject;
-            mail.Body = message.Body;
-            mail.IsBodyHtml = true;
-
+            var mail = new MailMessage(from, to)
+            {
+                Subject = message.Subject,
+                Body = message.Body,
+                IsBodyHtml = true,
+            };
 
             client.Send(mail);
             // Plug in your email service here to send an email.
