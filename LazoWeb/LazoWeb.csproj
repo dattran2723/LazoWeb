@@ -7797,6 +7797,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\crolltoid.js" />
     <Content Include="Scripts\js\feedback.js" />
+    <Content Include="Scripts\js\formRequired.js" />
     <Content Include="Scripts\js\jsStatus.js" />
     <Content Include="Scripts\js\quocjs.js" />
     <Content Include="Scripts\js\reponsivetable.js" />
