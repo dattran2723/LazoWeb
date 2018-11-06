@@ -53,7 +53,7 @@ namespace LazoWeb.Controllers
             if (ModelState.IsValid)
             {
                 const string verifyUrl = "https://google.com/recaptcha/api/siteverify";
-                const string secret = "6LfnvngUAAAAAKiFQDfweRg2ICzvIcEek-YtLnHk";
+                const string secret = "6LdR9HgUAAAAANlaZZIhYcticR3FzC9NblxNE1UL";
                 var response = Request["g-recaptcha-response"];
                 var remoteIp = Request.ServerVariables["REMOTE-ADDR"];
 
