@@ -1,7 +1,9 @@
 ﻿using LazoWeb.Models;
-using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace LazoWeb.Areas.Admin.Controllers
@@ -9,6 +11,19 @@ namespace LazoWeb.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
         // GET: Admin/User
         public ActionResult GetAllUser()
         {
@@ -47,15 +62,19 @@ namespace LazoWeb.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ApplicationUser user)
+        public ActionResult Edit(ApplicationUser model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                var user = UserManager.FindById(model.Id);
+                user.LastName = model.LastName;
+                user.FirstName = model.FirstName;
+                UserManager.Update(user);
+                //db.Entry(user).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("GetAllUser");
             }
-            return View(user);
+            return View(model);
         }
 
         // GET: Admin/Customers/Delete/5
