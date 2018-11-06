@@ -1,9 +1,11 @@
-﻿using BotDetect.Web.Mvc;
-using LazoWeb.Models;
+﻿using LazoWeb.Models;
+using System;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -46,38 +48,59 @@ namespace LazoWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CaptchaValidation("CaptchaCode", "registerCaptcha", "Mã xác nhận không đúng!")]
         public async Task<ActionResult> Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                bool result = CheckExistingEmail(customer.Email);
-                if (result)
+                const string verifyUrl = "https://google.com/recaptcha/api/siteverify";
+                const string secret = "6LfnvngUAAAAAKiFQDfweRg2ICzvIcEek-YtLnHk";
+                var response = Request["g-recaptcha-response"];
+                var remoteIp = Request.ServerVariables["REMOTE-ADDR"];
+
+                var myParameter = String.Format("secret={0}&response={1}&remoteIp={2}", secret, response, remoteIp);
+                using (var wc = new WebClient())
                 {
-                    db.Customers.Add(customer);
-                    var res = db.SaveChanges();
-                    if (res > 0)
+                    wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+                    var json = wc.UploadString(verifyUrl, myParameter);
+                    var js = new DataContractJsonSerializer(typeof(RecaptchaResult));
+                    var ms = new MemoryStream(Encoding.ASCII.GetBytes(json));
+                    var result = js.ReadObject(ms) as RecaptchaResult;
+                    if (result != null && result.Success)
                     {
-                        await SendMailForCustomer(customer);
-                        Session["signup"] = "success";
-                        return RedirectToAction("Index","Home");
+                        bool isEmail = CheckExistingEmail(customer.Email);
+                        if (isEmail)
+                        {
+                            db.Customers.Add(customer);
+                            var res = db.SaveChanges();
+                            if (res > 0)
+                            {
+                                await SendMailForCustomer(customer);
+                                Session["signup"] = "success";
+                                return RedirectToAction("Index", "Home");
+                            }
+                            else
+                            {
+                                ModelState.AddModelError("", "Đăng ký không thành công!");
+                                return View(customer);
+                            }
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Email đã tồn tại");
+                            return View(customer);
+                        }
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Đăng ký không thành công!");
+                        ModelState.AddModelError("","Thực hiện mã Captcha không chính xác!");
                         return View(customer);
                     }
-                }
-                else
-                {
-                    ModelState.AddModelError("","Email đã tồn tại");
-                    return View(customer);
-                }
+                }                
             }
 
             return View(customer);
         }
-        
+
         // GET: Customers/Edit/5
         //public ActionResult Edit(int? id)
         //{
@@ -150,7 +173,7 @@ namespace LazoWeb.Controllers
 
             if (result > 0)
             {
-                
+
                 return false;
             }
             else
@@ -182,12 +205,13 @@ namespace LazoWeb.Controllers
                 Body = content,
                 IsBodyHtml = true,
                 BodyEncoding = UTF8Encoding.UTF8
-                
+
             };
 
             smtp.Send(mail);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
+
     }
 }
