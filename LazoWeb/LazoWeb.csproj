@@ -7082,6 +7082,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\informationsLazo.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\Register.css" />
     <Content Include="Content\css\slide.css" />
