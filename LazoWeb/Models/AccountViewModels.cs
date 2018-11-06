@@ -48,37 +48,45 @@ namespace LazoWeb.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [Display(Name = "Email")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Ghi nhớ?")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
+        [EmailAddress(ErrorMessage ="Email không hợp lệ")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
+        [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
         public string ConfirmPassword { get; set; }
+        [Display(Name = "Họ")]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
+        [StringLength(30)]
+        public string LastName { get; set; }
+        [Display(Name = "Tên")]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
+        [StringLength(30, ErrorMessage = "Tên nhập vào không được dài quá {2} kí tự.")]
+        public string FirstName { get; set; }
     }
 
     public class ResetPasswordViewModel

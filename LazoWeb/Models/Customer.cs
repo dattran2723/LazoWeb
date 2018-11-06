@@ -38,6 +38,7 @@ namespace LazoWeb.Models
         public string Email { get; set; }
 
         [DefaultValue(false)]
+        [DisplayName("Trạng thái")]
         public bool Status { get; set; }
     }
 }

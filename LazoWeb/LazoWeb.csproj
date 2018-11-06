@@ -552,9 +552,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811020644041_init-db.cs" />
-    <Compile Include="Migrations\201811020644041_init-db.Designer.cs">
-      <DependentUpon>201811020644041_init-db.cs</DependentUpon>
+    <Compile Include="Migrations\201811020957330_init.cs" />
+    <Compile Include="Migrations\201811020957330_init.Designer.cs">
+      <DependentUpon>201811020957330_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811050404234_addfield.cs" />
+    <Compile Include="Migrations\201811050404234_addfield.Designer.cs">
+      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7776,7 +7780,6 @@
     <Content Include="Content\Admin\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Areas\Admin\Views\Shared\_LauoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
@@ -7795,11 +7798,15 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\changerequidfrom.js" />
+    <Content Include="Scripts\js\change_requid_form_changepass.js" />
     <Content Include="Scripts\js\crolltoid.js" />
     <Content Include="Scripts\js\feedback.js" />
+    <Content Include="Scripts\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\js\jsStatus.js" />
     <Content Include="Scripts\js\quocjs.js" />
     <Content Include="Scripts\js\reponsivetable.js" />
+    <Content Include="Scripts\js\tooltip.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -7840,11 +7847,11 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_MenuHeader.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\FreeExperiencing.cshtml" />
     <Content Include="Views\Customers\Register.cshtml" />
     <Content Include="Views\Customers\MailContent.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -7869,8 +7876,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811020644041_init-db.resx">
-      <DependentUpon>201811020644041_init-db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811020957330_init.resx">
+      <DependentUpon>201811020957330_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811050404234_addfield.resx">
+      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

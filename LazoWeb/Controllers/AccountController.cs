@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -69,31 +70,24 @@ namespace LazoWeb.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
-            if (user != null)
-            {
-                if (!await UserManager.IsEmailConfirmedAsync(user.Id))
-                {
-                    //ViewBag.errorMessage = "Bạn phải xác nhận tài khoản bằng Email trước khi đăng nhập";
-                    ModelState.AddModelError("","Bạn phải xác nhận tài khoản bằng Email trước khi đăng nhập");
-                    return View(model);
-                }
-            }
-
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    var query = db.Users.Where(m => m.Email == model.Email).Select(m => new { m.FirstName, m.LastName }).FirstOrDefault();
+                    Session["login"] = query.LastName + " " + query.FirstName;
                     return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
+                    ModelState.AddModelError("", "Tài khoản của bạn đã bị khóa");
+                    return View(model);
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Đăng nhập không đúng");
                     return View(model);
             }
         }
@@ -158,7 +152,7 @@ namespace LazoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -166,16 +160,15 @@ namespace LazoWeb.Controllers
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    ViewBag.msg = "Bạn đã đăng kí thành công.Vui lòng xác nhận Email để đăng nhập";
+                    //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    //await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng kí tài khoản", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    ViewBag.msg = "Bạn thêm tài khoản thành công";
                     return View(model);
-                    //return RedirectToAction("Login", "Account", new { area = "" });
+                    //return RedirectToAction("GetAllUser", "Users", new { area = "" });
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }

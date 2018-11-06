@@ -1,68 +1,67 @@
 ﻿@model IEnumerable<LazoWeb.Models.Customer>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
-
-<h2>Danh sách đăng kí dịch vụ</h2>
-@section jsStatus {
-    <script src="~/Scripts/js/jsStatus.js"></script>
-}
-<a href="/Customers/Register">Create New</a>
-<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Company)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberEmployee)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="box box-default getdanhsach">
+    <h2>Danh sách đăng kí dịch vụ</h2>
+    @section jsStatus {
+        <script src="~/Scripts/js/jsStatus.js"></script>
+    }
+    <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Company)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberEmployee)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    <button class="btn-active btn btn-primary" data-id="@item.ID">@(item.Status ? "Đã được liên hệ" : "Chưa liên hệ")</button>
-                    @*@Html.DisplayFor(modelItem => item.Status)*@
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Company)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberEmployee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Company)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberEmployee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <button class="btn-active btn btn-primary" data-id="@item.ID">@(item.Status ? "Đã được liên hệ" : "Chưa liên hệ")</button>
+                    </td>
+                    <td>
+                        <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.ID })"><i class="fas fa-edit"></i></a> |
+                        <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.ID })"><i class="fas fa-info-circle"></i></a> |
+                        <a data-toggle="tooltip" title="Xóa" href="@Url.Action("Delete",new { id = item.ID })"><i class="fas fa-trash-alt text-danger"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

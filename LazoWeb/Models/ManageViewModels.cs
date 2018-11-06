@@ -41,20 +41,21 @@ namespace LazoWeb.Models
 
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Mật khẩu cũ")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
+        [StringLength(100, ErrorMessage = "Mật khẩu phải có ít nhất {2} kí tự.", MinimumLength = 1)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Mật khẩu mới")]
         public string NewPassword { get; set; }
 
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Xác nhận lại mật khẩu")]
+        [Compare("NewPassword", ErrorMessage = "Mật khẩu mới và xác nhận lại mật khẩu phải trùng nhau")]
         public string ConfirmPassword { get; set; }
     }
 

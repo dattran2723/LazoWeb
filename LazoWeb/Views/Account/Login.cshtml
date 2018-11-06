@@ -4,7 +4,6 @@
     ViewBag.Title = "Log in";
     Layout = "";
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,15 +35,14 @@
     @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="login-box">
             <div class="login-logo">
-                <a href="/Content/Admin/index2.html"><b>Admin</b>LTE</a>
+                <a href="/Content/Admin/index2.html"><b>LAZO</b></a>
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-                @Html.ValidationSummary("",new { @class="text-danger"})
+                <p class="login-box-msg">Bắt đầu đăng nhập vào hệ thống</p>
                 <form action="/Content/Admin/index2.html" method="post">
                     <div class="form-group has-feedback">
                         @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
@@ -54,7 +52,9 @@
                     <div class="form-group has-feedback">
                         @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
                         @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="row">
                         <div class="col-xs-8">
                             <div class="checkbox icheck">
@@ -69,21 +69,8 @@
                         <!-- /.col -->
                     </div>
                 </form>
-                <div class="social-auth-links text-center">
-                    <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
-                        <i class="fa fa-facebook"></i> Sign in using
-                        Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-social btn-google btn-flat">
-                        <i class="fa fa-google-plus"></i> Sign in using
-                        Google+
-                    </a>
-                </div>
                 <!-- /.social-auth-links -->
-                @Html.ActionLink("I forgot my password", "ForgotPassword", "Account", new { area = "", @class = "text-center" })
-                <br />
-                @Html.ActionLink("Register a new membership", "Register", "Account", new { area = "", @class = "text-center" })
+                @Html.ActionLink("Quên mật khẩu", "ForgotPassword", "Account", new { area = "", @class = "text-center" })
             </div>
             <!-- /.login-box-body -->
         </div>
@@ -104,9 +91,9 @@
             });
         });</script>
     @*<script>
-        if (@ViewBag.ThongBao != null) {
-            alert("@ViewBag.ThongBao")
-        }
-    </script>*@
+            if (@ViewBag.ThongBao != null) {
+                alert("@ViewBag.ThongBao")
+            }
+        </script>*@
 </body>
 </html>

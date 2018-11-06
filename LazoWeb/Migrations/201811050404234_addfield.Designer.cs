@@ -7,13 +7,13 @@ namespace LazoWeb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initdb : IMigrationMetadata
+    public sealed partial class addfield : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initdb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addfield));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811020644041_init-db"; }
+            get { return "201811050404234_addfield"; }
         }
         
         string IMigrationMetadata.Source
