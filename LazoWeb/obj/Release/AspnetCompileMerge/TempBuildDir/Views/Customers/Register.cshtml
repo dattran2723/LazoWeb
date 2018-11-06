@@ -1,0 +1,58 @@
+﻿@model LazoWeb.Models.Customer
+<link href="~/Content/css/Register.css" rel="stylesheet" />
+<script src='https://www.google.com/recaptcha/api.js'></script>
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" id="signup-page">
+    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3" id="tree">
+        <img class="img-responsive" src="~/Content/img/Untitled-tree.png" alt="Alternate Text" />
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 text-center form">
+        @using (Html.BeginForm())
+        {
+            <br>
+            <h2>ĐĂNG KÝ</h2>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="text-center text-danger">@ViewBag.ErrorMsg</div>
+            <div class="row input-zone">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ và tên", @id = "Name" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger text-left", @id = "ValidName" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên công ty", @id = "Company" } })
+                    @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger", @id = "ValidCompany" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NumberEmployee, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số lượng nhân viên", @id = "NumberEmployee" } })
+                    @Html.ValidationMessageFor(model => model.NumberEmployee, "", new { @class = "text-danger", @id = "ValidNumberEmployee" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ liên hệ", @id = "Address" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger", @id = "ValidAddress" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ Email", @id = "Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @id = "ValidEmail" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 captcha">
+                    <div class="g-recaptcha" data-sitekey="6LfnvngUAAAAAPxLHUqasgiF2i1rvxULCs387x3S"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-112 text-center">
+                    <input type="submit" value="Gửi yêu cầu" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3" id="glasses">
+        <img class="img-responsive" src="~/Content/img/Untitled-1_0000_glasses.png" alt="Alternate Text" />
+    </div>
+</div>
+<script src="~/Scripts/js/formRequired.js"></script>

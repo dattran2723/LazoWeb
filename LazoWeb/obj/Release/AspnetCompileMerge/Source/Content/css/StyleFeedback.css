@@ -1,0 +1,378 @@
+﻿body {
+}
+
+@font-face {
+    font-family: 'UTM Avo';
+    src: url('../../fonts/UTM Avo.ttf') format('truetype');
+}
+
+/*css for view customers feedback*/
+
+#customers-feedback {
+    background-image: url('/Content/img/page-1_0004s_0000_testimonial-bg.png');
+    height: 410px;
+    background-size: cover;
+    background-position: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+/*css for title*/ 
+#customers-feedback-title {
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+}
+
+    #customers-feedback-title h2 {
+        font-family: 'UTM Avo';
+        font-size: 35px;
+    }
+/*css for slides*/
+#customers-slide {
+    height: 32%;
+    margin-top: 3%;
+}
+    #customers-slide #carouselExample{
+        height:100%;
+    }
+
+    #customers-slide .items {
+        max-width: 30%;
+    }
+
+    #customers-slide .carousel-control-prev {
+        padding-left: 30%;
+        padding-bottom:3%;
+    }
+
+    #customers-slide .carousel-control-next {
+        padding-right: 30%;
+        padding-bottom: 3%;
+    }
+
+#customers-feedback .carousel-inner .carousel-item {
+    opacity: 0.6;
+}
+
+    #customers-feedback .carousel-inner .carousel-item img {
+        background-color: white;
+        border-radius: 50%;
+        width: 100px;
+    }
+
+#customers-feedback .carousel-inner .active {
+    opacity: 1;
+}
+/*css for content feedback*/
+#feedback-content {
+    margin-bottom: 15%;
+}
+
+    #feedback-content h4 {
+        font-family: 'UTM Avo';
+        color: #b1c1f6;
+        font-size: 22px;
+    }
+
+    #feedback-content p {
+        font-family: 'UTM Avo';
+        color: white;
+        font-size: 20px;
+    }
+
+
+/*css for Download app*/
+#free-experiencing {
+    height: 240px;
+    background-color: #6084fe;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#free-experiencing-text-content {
+    color: white;
+    padding-left: 145px;
+    padding-top: 75px;
+}
+
+    #free-experiencing-text-content h2 {
+        font-family: 'UTM Avo';
+        font-size: 35px;
+    }
+
+    #free-experiencing-text-content p {
+        font-size: 18px;
+        font-family: Arial;
+    }
+
+#free-experiencing-button-singup button {
+    font-size: 15pt;
+    border-radius: 20px;
+    margin-top: 95px;
+    border: none;
+    background-color: white;
+    height: 40px;
+    width: 140px;
+}
+
+    #free-experiencing-button-singup button:hover {
+        background-color: lightgray;
+    }
+
+#download-app {
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.36)),url('/Content/img/page-1_0008_bg.png');
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#download-app-text-content {
+    padding-top: 155px;
+}
+
+    #download-app-text-content h2 {
+        font-family: 'UTM Avo';
+        font-size: 35px;
+        padding-bottom: 10px;
+    }
+
+    #download-app-text-content p {
+        font-size: 18px;
+        font-family: Arial;
+        padding-left: 310px;
+        padding-right: 310px;
+    }
+
+#download-app-buttons {
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #download-app-buttons #btn-left {
+        text-align: right;
+    }
+
+    #download-app-buttons #btn-center {
+        text-align: center;
+    }
+
+    #download-app-buttons #btn-right {
+        text-align: left;
+    }
+
+    #download-app-buttons a {
+        background-color: #5f84fd;
+        width: 185px;
+        height: 45px;
+        border-radius: 20px;
+        border-color: white;
+    }
+
+        #download-app-buttons a:hover {
+            background-color: #2a47d0;
+        }
+
+
+@media only screen and (max-width: 1094px) {
+    #download-app-text-content p {
+        padding-left: 210px;
+        padding-right: 210px;
+    }
+
+    #customers-slide .items {
+        max-width: 35%;
+    }
+}
+@media only screen and (max-width: 919px) {
+    #free-experiencing-text-content h2 {
+        font-size: 30px;
+    }
+
+    #free-experiencing-text-content p {
+        font-size: 13px;
+    }
+
+    #free-experiencing-button-singup button {
+        font-size: 12pt;
+        border-radius: 20px;
+        height: 35px;
+        width: 130px;
+    }
+
+    #download-app-text-content p {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #customers-feedback-title h2 {
+        font-size: 30px;
+    }
+
+    #customers-slide {
+        height: 30%;
+    }
+    #customers-slide .items {
+        max-width: 40%;
+    }
+
+
+    #feedback-content h4 {
+        font-size: 20px;
+    }
+
+    #feedback-content p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width:844px){
+
+}
+@media (min-width: 768px) {
+    /* show 3 items */
+    #customers-feedback .carousel-inner .active, #customers-feedback .carousel-inner .active + .carousel-item, #customers-feedback .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    #customers-feedback .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    #customers-feedback .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    #customers-feedback .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    #customers-feedback .carousel-inner .carousel-item-next,
+    #customers-feedback .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    #customers-feedback .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    #customers-feedback .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    #customers-feedback .carousel-item-next.carousel-item-left + .carousel-item,
+    #customers-feedback .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    #customers-feedback .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    #customers-feedback .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    #customers-feedback .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    #customers-feedback .carousel-item-prev.carousel-item-right + .carousel-item,
+    #customers-feedback .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    #customers-feedback .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #free-experiencing-text-content {
+        text-align: center;
+        padding-left: 0;
+        padding-top: 50px;
+    }
+
+    #free-experiencing-button-singup {
+        text-align: center;
+        margin-top: -45px;
+    }
+
+        #free-experiencing-button-singup button {
+            margin: 0;
+        }
+
+    #download-app-text-content {
+        padding-top: 100px;
+    }
+
+    #download-app-buttons #btn-left {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #download-app-buttons #btn-center {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #download-app-buttons #btn-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #download-app-text-content h2 {
+        font-size: 30px;
+    }
+
+    #download-app-text-content p {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    #free-experiencing-text-content h2 {
+        font-size: 25px;
+    }
+
+    #free-experiencing-text-content p {
+        font-size: 14px;
+    }
+
+    #download-app-text-content p {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 14px;
+    }
+
+    #customers-feedback-title h2 {
+        font-size: 25px;
+    }
+
+    #feedback-content h4 {
+        font-size: 18px;
+    }
+
+    #feedback-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+/*
+
+CC 2.0 License Iatek LLC 2018
+Attribution required
+
+*/
+

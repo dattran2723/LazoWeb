@@ -1,0 +1,42 @@
+﻿@model LazoWeb.Models.ApplicationUser
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+}
+<div class="box box-default getdanhsach">
+    <h2>Chi tiết tài khoản</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+        </dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Quay lại", "GetAllUser") |
+    @*<button class="btn btn-primary" formaction=@Url.Action("GetAllUser","User")>Quay lại</button>*@
+    @Html.ActionLink("Xóa", "Edit", new { id = Model.Id })
+</p>

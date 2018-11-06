@@ -1,0 +1,47 @@
+﻿#signup-page {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #signup-page .form .input-zone {
+        text-align: center;
+    }
+
+        #signup-page .form .input-zone div {
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+            #signup-page .form .input-zone div input {
+                background-color: #e1e1e1;
+            }
+
+    #signup-page .captcha {
+        margin-left: 6%;
+        text-align: left;
+    }
+
+    #signup-page #tree img {
+        width: 100%;
+        margin-left: -10%;
+        margin-top: -60px;
+    }
+
+    #signup-page #glasses img {
+        width: 100%;
+        margin-top: 400px;
+    }
+@media only screen and ( max-width: 1069px) {
+    #signup-page #tree img {
+        margin-top: 0px;
+    }
+
+}
+@media only screen and ( max-width: 767px){
+    #signup-page #tree,#glasses{
+        display: none;
+    }
+    #signup-page .form{
+        margin: auto;
+    }
+}

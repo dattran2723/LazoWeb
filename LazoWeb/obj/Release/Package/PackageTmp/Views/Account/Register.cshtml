@@ -1,0 +1,56 @@
+﻿@model LazoWeb.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+}
+<div class="box box-default getdanhsach row">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <!-- /.login-logo -->
+        <div class="login-box-body col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+            <h3 class="login-box-msg">Thêm mới tài khoản</h3>
+            <form action="/Content/Admin/index2.html" method="post">
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @id = "email" })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger", @id ="validemail" })
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Mật khẩu", @id = "matkhau" })
+                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger", @id = "validpass" })
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", @placeholder = "Nhập lại mật khẩu", @id = "xacnhanmatkhau" })
+                    @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger", @id = "validxacnhanmatkhau" })
+
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @placeholder = "Họ", @id = "ho" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger", @id = "validho" })
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @placeholder = "Tên", @id = "ten" })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger", @id = "validten" })
+                </div>
+                <div class="form-group has-feedback">
+                    <p class="text-success">@Html.Raw(ViewBag.msg)</p>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng kí</button>
+                    </div>
+                    <div class="col-xs-4">
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Quay lại", "GetAllUser", new { area = "admin" })
+</div>
+<script src="~/Scripts/js/changerequidfrom.js"></script>
+

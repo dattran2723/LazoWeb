@@ -1,0 +1,187 @@
+﻿@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#carouselExampleIndicators .carousel-indicators li {
+    border-radius: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+#carouselExampleIndicators .row {
+    height: 936px;
+}
+
+#carouselExampleIndicators .anhnen {
+    position: absolute;
+}
+
+#carouselExampleIndicators .khunganhtren {
+    padding-top: 9%;
+    padding-left: 23%;
+}
+
+#carouselExampleIndicators .anhtren {
+    width: 96%;
+}
+
+#carouselExampleIndicators .anhduoi {
+    width: 90%;
+    padding-top: 18%;
+    position: absolute;
+}
+
+#carouselExampleIndicators .chu {
+    padding-top: 15%;
+    padding-right: 10%;
+    float: right;
+    padding-left: 4.6%;
+}
+
+#carouselExampleIndicators h1 {
+    font-size: 36px;
+    color: white;
+    font-family: 'utm avo';
+}
+
+#carouselExampleIndicators h3 {
+    padding-top: 17px;
+    font-size: 18px;
+    color: white;
+    font-family: 'utm avo';
+    text-align: center;
+    padding-right: 50px;
+}
+
+    #carouselExampleIndicators h3 .h3tren {
+        padding-top: 13px;
+    }
+
+    #carouselExampleIndicators h3 .h3duoi {
+        padding-top: 17px;
+    }
+
+#carouselExampleIndicators ol {
+    bottom: 56%;
+    left: 80%;
+}
+
+#carouselExampleIndicators .carousel-indicators {
+    display: block;
+}
+
+    #carouselExampleIndicators .carousel-indicators li {
+        display: block;
+        margin-top: 5px;
+    }
+
+#carouselExampleIndicators .carousel-control-prev {
+    visibility: hidden;
+}
+
+#carouselExampleIndicators .carousel-control-next {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 1300px) {
+    #carouselExampleIndicators h3 {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #carouselExampleIndicators .row {
+        height: 900px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    #carouselExampleIndicators .row {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #carouselExampleIndicators .row {
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #carouselExampleIndicators .row {
+        height: 650px;
+    }
+
+    #carouselExampleIndicators h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #carouselExampleIndicators .row {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #carouselExampleIndicators .row {
+        height: 510px;
+    }
+
+    .carousel-indicators {
+        visibility: hidden;
+    }
+
+    #carouselExampleIndicators .carousel-control-prev {
+        visibility: visible;
+        height: 87%;
+    }
+
+    #carouselExampleIndicators .carousel-control-next {
+        visibility: visible;
+        height: 87%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #carouselExampleIndicators .row {
+        height: 487px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #carouselExampleIndicators .row {
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #carouselExampleIndicators .khunganhtren {
+        width: 50%;
+    }
+
+    #carouselExampleIndicators .chu {
+        width: 50%;
+    }
+
+    #carouselExampleIndicators h1 {
+        font-size: 1.5em;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #carouselExampleIndicators h1 {
+        font-size: 1em;
+    }
+
+    #carouselExampleIndicators .chu {
+        width: 46%;
+    }
+}
+@media only screen and (max-width: 430px) {
+    #carouselExampleIndicators .row {
+        height: 256px;
+    }
+}

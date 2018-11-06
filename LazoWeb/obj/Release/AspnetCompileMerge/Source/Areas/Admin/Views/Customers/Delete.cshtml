@@ -1,0 +1,56 @@
+﻿@model LazoWeb.Models.Customer
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+}
+<h2>Xóa người dùng đăng kí dịch vụ</h2>
+<h3>Bạn có thật sự muốn xóa người dùng đăng kí dịch vụ này không?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberEmployee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberEmployee)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.ActionLink("Quay lại", "Index") |
+        <input type="submit" value="Xóa" class="btn btn-danger" />
+    </div>
+    }
+</div>
