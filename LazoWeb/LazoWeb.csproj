@@ -546,13 +546,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811020957330_init.cs" />
-    <Compile Include="Migrations\201811020957330_init.Designer.cs">
-      <DependentUpon>201811020957330_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811050404234_addfield.cs" />
-    <Compile Include="Migrations\201811050404234_addfield.Designer.cs">
-      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
+    <Compile Include="Migrations\201811060200578_init-db.cs" />
+    <Compile Include="Migrations\201811060200578_init-db.Designer.cs">
+      <DependentUpon>201811060200578_init-db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7086,6 +7082,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\informationsLazo.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\Register.css" />
     <Content Include="Content\css\slide.css" />
@@ -7101,6 +7098,7 @@
     <Content Include="Content\img\imglogo\Untitled-1_0003_logo-cty-01.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0004_Marry-1.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0005_download.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\page-1_0000s_0000_Rounded-Rectangle-4-copy-3.png" />
     <Content Include="Content\img\page-1_0000_google-store.png" />
     <Content Include="Content\img\page-1_0001s_0000_Rounded-Rectangle-3.png" />
@@ -7872,11 +7870,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811020957330_init.resx">
-      <DependentUpon>201811020957330_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811050404234_addfield.resx">
-      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811060200578_init-db.resx">
+      <DependentUpon>201811060200578_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
