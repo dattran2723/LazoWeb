@@ -73,24 +73,33 @@ namespace LazoWeb.Controllers
             }
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            try
             {
-                case SignInStatus.Success:
-                    ApplicationDbContext db = new ApplicationDbContext();
-                    var query = db.Users.Where(m => m.Email == model.Email).Select(m => new { m.FirstName, m.LastName }).FirstOrDefault();
-                    Session["login"] = query.LastName + " " + query.FirstName;
-                    return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
-                case SignInStatus.LockedOut:
-                    ModelState.AddModelError("", "Tài khoản của bạn đã bị khóa");
-                    return View(model);
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Đăng nhập không đúng");
-                    return View(model);
+                var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+                switch (result)
+                {
+                    case SignInStatus.Success:
+                        ApplicationDbContext db = new ApplicationDbContext();
+                        var query = db.Users.Where(m => m.Email == model.Email).Select(m => new { m.FirstName, m.LastName }).FirstOrDefault();
+                        Session["login"] = query.LastName + " " + query.FirstName;
+                        return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
+                    case SignInStatus.LockedOut:
+                        ModelState.AddModelError("", "Tài khoản của bạn đã bị khóa");
+                        return View(model);
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    case SignInStatus.Failure:
+                    default:
+                        ModelState.AddModelError("", "Đăng nhập không đúng");
+                        return View(model);
+                }
             }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         //
@@ -399,6 +408,7 @@ namespace LazoWeb.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session["login"] = null;
             return RedirectToAction("Login", "Account", new { area = "" });
         }
 
