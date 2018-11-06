@@ -1,4 +1,5 @@
-﻿using LazoWeb.Models;
+﻿using LazoWeb.Areas.Admin.Controllers;
+using LazoWeb.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -138,9 +139,15 @@ namespace LazoWeb.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+        //[Authorize]
         public ActionResult Register()
         {
-            return View();
+            if(Session["login"] != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login");
+            
         }
 
         //
