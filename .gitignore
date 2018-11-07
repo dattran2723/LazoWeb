@@ -9,4 +9,7 @@
 /lazowebDb/obj/Debug
 /LazoWeb/obj/Release/AspnetCompileMerge/Source/bin
 /LazoWeb/obj/Release
-/LazoWeb/Migrations
+/Database/obj/Debug
+/LazoDb/obj/Debug
+/LazoDb/LazoDb.dbmdl
+/LazoDb/LazoDb.jfm
