@@ -10,7 +10,7 @@
             var id = btn.data('id');
             console.log(id);
             $.ajax({
-                url: "ChangeStatus",
+                url: "/Admin/Customers/ChangeStatus",
                 data: { id: id },
                 dataType: "json",
                 type: "POST",

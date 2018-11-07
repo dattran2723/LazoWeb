@@ -357,9 +357,7 @@ D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\bin\Microsoft.AI.WindowsS
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\bin\Microsoft.AI.Web.xml
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csprojResolveAssemblyReference.cache
-D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csproj.GenerateResource.cache
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csproj.CoreCompileInputs.cache
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csproj.CopyComplete
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.dll
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.pdb
-D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.Migrations.initdb.resources
