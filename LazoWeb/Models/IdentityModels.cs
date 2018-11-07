@@ -13,11 +13,11 @@ namespace LazoWeb.Models
     {
         [Display(Name = "Tên")]
         [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
-        [RegularExpression(@"^([a-zA-Z\d ]+[\w\d]*|)[a-zA-Z]+[\w\d.]*$", ErrorMessage = "Tên không chứa số và kí tự đặc biệt")]
+        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [StringLength(30, ErrorMessage = "Tên nhập vào không được dài quá {2} kí tự.")]
         public string FirstName { get; set; }
         [Display(Name = "Họ")]
-        [RegularExpression(@"^([a-zA-Z\d ]+[\w\d]*|)[a-zA-Z]+[\w\d.]*$", ErrorMessage = "Tên không chứa số và kí tự đặc biệt")]
+        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [StringLength(30)]
         public string LastName { get; set; }

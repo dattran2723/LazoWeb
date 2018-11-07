@@ -110,18 +110,18 @@ namespace LazoWeb.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("GetAllUser");
         }
-        [HttpPost]
-        public JsonResult ChangeStatus(string id)
-        {
-            var user = db.Users.Find(id);
-            user.EmailConfirmed = !user.EmailConfirmed;
-            db.SaveChanges();
-            var kq = user.EmailConfirmed;
-            return Json(new
-            {
-                status = kq
-            });
-        }
+        //[HttpPost]
+        //public JsonResult ChangeStatus(string id)
+        //{
+        //    var user = db.Users.Find(id);
+        //    user.EmailConfirmed = !user.EmailConfirmed;
+        //    db.SaveChanges();
+        //    var kq = user.EmailConfirmed;
+        //    return Json(new
+        //    {
+        //        status = kq
+        //    });
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)
