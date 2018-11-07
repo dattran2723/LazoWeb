@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace LazoWeb.Controllers
 {
@@ -67,6 +68,15 @@ namespace LazoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            bool isAdmin = FormsAuthentication.Authenticate(model.Email.ToString(),model.Password.ToString());
+            if (isAdmin)
+            {
+                ApplicationDbContext db = new ApplicationDbContext();
+                ApplicationUser userLogin = new ApplicationUser();
+                userLogin.FirstName = model.Email;
+                Session["login"] = userLogin;
+                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
+            }
             if (!ModelState.IsValid)
             {
                 return View(model);
