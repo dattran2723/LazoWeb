@@ -68,8 +68,7 @@ namespace LazoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            bool isAdmin = FormsAuthentication.Authenticate(model.Email.ToString(),model.Password.ToString());
-            if (isAdmin)
+            if (FormsAuthentication.Authenticate(model.Email, model.Password))
             {
                 ApplicationDbContext db = new ApplicationDbContext();
                 ApplicationUser userLogin = new ApplicationUser();
