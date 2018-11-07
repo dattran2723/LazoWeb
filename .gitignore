@@ -11,3 +11,5 @@
 /LazoWeb/obj/Release
 /Database/obj/Debug
 /LazoDb/obj/Debug
+/LazoDb/LazoDb.dbmdl
+/LazoDb/LazoDb.jfm
