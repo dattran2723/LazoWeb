@@ -240,19 +240,24 @@ namespace LazoWeb.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                if (user == null)
                 {
                     ViewBag.ThongBao = "Tài khoản này chưa tồn tại";
+                    // || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                     // Don't reveal that the user does not exist or is not confirmed
                     return View(model);
                 }
-
+                if (!(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                {
+                    ViewBag.ThongBao = "Bạn chưa xác thực tài khoản nên không thể thực hiện chức năng này được";
+                    return View(model);
+                }
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account",
                     new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, 
+                await UserManager.SendEmailAsync(user.Id,
                     "LazoWeb", "Vui lòng lick vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật mật khẩu mới của bạn");
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
