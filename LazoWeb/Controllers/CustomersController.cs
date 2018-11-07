@@ -195,7 +195,7 @@ namespace LazoWeb.Controllers
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "khatvong");
+            smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "ltigyvnwvdxhpwmo");
             //var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên hệ với bạn ngay khi có thể";
             string content = System.IO.File.ReadAllText(Server.MapPath("~/Views/Customers/MailContent.cshtml"));
             content = content.Replace("{{Name}}", customer.Name);

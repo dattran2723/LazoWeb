@@ -270,3 +270,15 @@ __pycache__/
 /IOTLink/images/Recruitment
 /IOTLink/images/_thumbs/Images
 
+/.vs
+/LazoWeb/bin
+/LazoWeb/obj/Debug
+/packages
+/lazowebDb/obj/Debug
+/LazoWeb/obj/Release/AspnetCompileMerge/Source/bin
+/LazoWeb/obj/Release
+/Database/obj/Debug
+/LazoDb/obj/Debug
+/LazoDb/LazoDb.dbmdl
+/LazoDb/LazoDb.jfm
+/LazoWeb/Migrations
