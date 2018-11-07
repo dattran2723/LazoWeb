@@ -52,50 +52,57 @@ namespace LazoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                const string verifyUrl = "https://google.com/recaptcha/api/siteverify";
-                const string secret = "6LdR9HgUAAAAANlaZZIhYcticR3FzC9NblxNE1UL";
-                var response = Request["g-recaptcha-response"];
-                var remoteIp = Request.ServerVariables["REMOTE-ADDR"];
-
-                var myParameter = String.Format("secret={0}&response={1}&remoteIp={2}", secret, response, remoteIp);
-                using (var wc = new WebClient())
+                try
                 {
-                    wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
-                    var json = wc.UploadString(verifyUrl, myParameter);
-                    var js = new DataContractJsonSerializer(typeof(RecaptchaResult));
-                    var ms = new MemoryStream(Encoding.ASCII.GetBytes(json));
-                    var result = js.ReadObject(ms) as RecaptchaResult;
-                    if (result != null && result.Success)
+                    const string verifyUrl = "https://google.com/recaptcha/api/siteverify";
+                    const string secret = "6Lfj_HgUAAAAAF_k01v-UXqf4hs1EeZpCkTV29Sb";
+                    var response = Request["g-recaptcha-response"];
+                    var remoteIp = Request.ServerVariables["REMOTE-ADDR"];
+
+                    var myParameter = String.Format("secret={0}&response={1}&remoteIp={2}", secret, response, remoteIp);
+                    using (var wc = new WebClient())
                     {
-                        bool isEmail = CheckExistingEmail(customer.Email);
-                        if (isEmail)
+                        wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+                        var json = wc.UploadString(verifyUrl, myParameter);
+                        var js = new DataContractJsonSerializer(typeof(RecaptchaResult));
+                        var ms = new MemoryStream(Encoding.ASCII.GetBytes(json));
+                        var result = js.ReadObject(ms) as RecaptchaResult;
+                        if (result != null && result.Success)
                         {
-                            db.Customers.Add(customer);
-                            var res = db.SaveChanges();
-                            if (res > 0)
+                            bool isEmail = CheckExistingEmail(customer.Email);
+                            if (isEmail)
                             {
-                                await SendMailForCustomer(customer);
-                                Session["signup"] = "success";
-                                return RedirectToAction("Index", "Home");
+                                db.Customers.Add(customer);
+                                var res = db.SaveChanges();
+                                if (res > 0)
+                                {
+                                    await SendMailForCustomer(customer);
+                                    Session["signup"] = "success";
+                                    return RedirectToAction("Index", "Home");
+                                }
+                                else
+                                {
+                                    ModelState.AddModelError("", "Đăng ký không thành công!");
+                                    return View(customer);
+                                }
                             }
                             else
                             {
-                                ModelState.AddModelError("", "Đăng ký không thành công!");
+                                ModelState.AddModelError("", "Email đã tồn tại");
                                 return View(customer);
                             }
                         }
                         else
                         {
-                            ModelState.AddModelError("", "Email đã tồn tại");
+                            ModelState.AddModelError("", "Thực hiện mã Captcha không chính xác!");
                             return View(customer);
                         }
                     }
-                    else
-                    {
-                        ModelState.AddModelError("","Thực hiện mã Captcha không chính xác!");
-                        return View(customer);
-                    }
-                }                
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
 
             return View(customer);
@@ -188,7 +195,7 @@ namespace LazoWeb.Controllers
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "khatvong");
+            smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "ltigyvnwvdxhpwmo");
             //var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên hệ với bạn ngay khi có thể";
             string content = System.IO.File.ReadAllText(Server.MapPath("~/Views/Customers/MailContent.cshtml"));
             content = content.Replace("{{Name}}", customer.Name);
