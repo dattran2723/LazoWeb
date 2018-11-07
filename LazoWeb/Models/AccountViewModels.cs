@@ -115,7 +115,7 @@ namespace LazoWeb.Models
 
     public class ForgotPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
