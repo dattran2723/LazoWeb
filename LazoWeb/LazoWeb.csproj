@@ -546,13 +546,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811020957330_init.cs" />
-    <Compile Include="Migrations\201811020957330_init.Designer.cs">
-      <DependentUpon>201811020957330_init.cs</DependentUpon>
+    <Compile Include="Migrations\201811070202255_init.cs" />
+    <Compile Include="Migrations\201811070202255_init.Designer.cs">
+      <DependentUpon>201811070202255_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811050404234_addfield.cs" />
-    <Compile Include="Migrations\201811050404234_addfield.Designer.cs">
-      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
+    <Compile Include="Migrations\201811070220170_init3.cs" />
+    <Compile Include="Migrations\201811070220170_init3.Designer.cs">
+      <DependentUpon>201811070220170_init3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7872,11 +7872,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811020957330_init.resx">
-      <DependentUpon>201811020957330_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811070202255_init.resx">
+      <DependentUpon>201811070202255_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811050404234_addfield.resx">
-      <DependentUpon>201811050404234_addfield.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811070220170_init3.resx">
+      <DependentUpon>201811070220170_init3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

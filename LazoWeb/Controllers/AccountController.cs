@@ -71,6 +71,17 @@ namespace LazoWeb.Controllers
             {
                 return View(model);
             }
+            var user = await UserManager.FindByNameAsync(model.Email);
+            if (user != null)
+            {
+                if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+                {
+                    //ViewBag.errorMessage = "Chúng tôi vừa gửi lại Email xác nhận cho bạn.Vui lòng xác nhận tài khoản trước khi đăng nhập";
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Xác nhận tài khoản");
+                    ModelState.AddModelError("", "Tài khoản bạn chưa được xác nhận.Vui lòng truy cập Email để xác nhận");
+                    return View(model);
+                }
+            }
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             try
@@ -80,8 +91,10 @@ namespace LazoWeb.Controllers
                 {
                     case SignInStatus.Success:
                         ApplicationDbContext db = new ApplicationDbContext();
-                        var query = db.Users.Where(m => m.Email == model.Email).Select(m => new { m.FirstName, m.LastName }).FirstOrDefault();
-                        Session["login"] = query.LastName + " " + query.FirstName;
+                        //.Select(m => new { m.FirstName, m.LastName, m.Email }) .LastName + " " + query.FirstName
+                        ApplicationUser query = db.Users.Where(m => m.Email == model.Email).FirstOrDefault();
+                        Session["login"] = query;
+                        //Session["ssemail"] = query.Email;
                         return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
                     case SignInStatus.LockedOut:
                         ModelState.AddModelError("", "Tài khoản của bạn đã bị khóa");
@@ -99,7 +112,7 @@ namespace LazoWeb.Controllers
 
                 throw ex;
             }
-            
+
         }
 
         //
@@ -151,12 +164,12 @@ namespace LazoWeb.Controllers
         //[Authorize]
         public ActionResult Register()
         {
-            if(Session["login"] != null)
+            if (Session["login"] != null)
             {
                 return View();
             }
             return RedirectToAction("Login");
-            
+
         }
 
         //
@@ -168,6 +181,13 @@ namespace LazoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                ApplicationDbContext db = new ApplicationDbContext();
+                var email = db.Users.Where(x => x.Email == model.Email).Count();
+                if (email > 0)
+                {
+                    ModelState.AddModelError("", "Email đã tồn tại");
+                    return View(model);
+                }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -176,9 +196,9 @@ namespace LazoWeb.Controllers
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    //string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    //await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng kí tài khoản", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng kí tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
                     ViewBag.msg = "Bạn thêm tài khoản thành công";
                     return View(model);
                     //return RedirectToAction("GetAllUser", "Users", new { area = "" });
@@ -230,9 +250,11 @@ namespace LazoWeb.Controllers
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "LazoWeb", "Vui lòng lick vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật mật khẩu mới của bạn");
-                ViewBag.ThongBao = "Bạn vui lòng kiểm tra Email để xác nhận";
+                var callbackUrl = Url.Action("ResetPassword", "Account",
+                    new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, 
+                    "LazoWeb", "Vui lòng lick vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật mật khẩu mới của bạn");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -275,7 +297,10 @@ namespace LazoWeb.Controllers
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                //ViewBag.abc = "thanhcong";
+                //return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("Login", "Account");
+                //return View(model);
             }
             AddErrors(result);
             return View();
@@ -439,7 +464,16 @@ namespace LazoWeb.Controllers
 
             base.Dispose(disposing);
         }
+        private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account",
+               new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            await UserManager.SendEmailAsync(userID, subject,
+               "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây </a>đây để xác nhận");
 
+            return callbackUrl;
+        }
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
