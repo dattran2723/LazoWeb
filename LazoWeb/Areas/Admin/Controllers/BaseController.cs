@@ -11,7 +11,12 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/Base
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if(Session["login"] == null)
+            //if((Session["amdin"] == null && Session["login"] != null) || (Session["amdin"] != null && Session["login"] == null))
+            //{
+            //    filterContext.Result = RedirectToAction("Login", "Account", new { area = "" });
+            //}
+
+            if (Session["login"] == null)
             {
                 filterContext.Result = RedirectToAction("Login", "Account", new { area = "" });
             }

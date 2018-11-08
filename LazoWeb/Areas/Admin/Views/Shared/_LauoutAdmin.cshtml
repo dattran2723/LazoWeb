@@ -2,6 +2,7 @@
 @{
     ApplicationUser login = (ApplicationUser)Session["login"];
     //var first = login.FirstName;
+    var admin = Session["admin"];
 }
 <!DOCTYPE html>
 <html>
@@ -101,6 +102,8 @@
                                                 <p>Why not buy a new awesome theme?</p>
                                             </a>
                                         </li>
+
+
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
@@ -312,7 +315,6 @@
                         </a>
                         <ul class="treeview-menu">
                             <li class="active"><a href="/Admin/User/GetAllUser"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
-                            <li><a href="/Account/Register"><i class="fa fa-circle-o"></i> Thêm tài khoản</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -324,7 +326,6 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="/Admin/Customers/Index"><i class="fa fa-circle-o"></i> Danh sách đăng kí dịch vụ</a></li>
-                            @*<li><a href="/Admin/Customers/Create"><i class="fa fa-circle-o"></i> Thêm đăng kí dịch vụ</a></li>*@
                         </ul>
                     </li>
                 </ul>

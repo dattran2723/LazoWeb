@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace LazoWeb.Models
@@ -80,16 +81,22 @@ namespace LazoWeb.Models
         [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
         [Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
         public string ConfirmPassword { get; set; }
+
         [Display(Name = "Họ")]
         [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [StringLength(30)]
         public string LastName { get; set; }
+
         [Display(Name = "Tên")]
         [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
         [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [StringLength(30, ErrorMessage = "Tên nhập vào không được dài quá {2} kí tự.")]
         public string FirstName { get; set; }
+
+        [Display(Name = "Ngày tạo")]
+        public DateTime NgayTao { get; set; }
+        public long STT { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -546,9 +546,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811070721328_init-db.cs" />
-    <Compile Include="Migrations\201811070721328_init-db.Designer.cs">
-      <DependentUpon>201811070721328_init-db.cs</DependentUpon>
+    <Compile Include="Migrations\201811070839493_init.cs" />
+    <Compile Include="Migrations\201811070839493_init.Designer.cs">
+      <DependentUpon>201811070839493_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811080257440_add_colum_ngaytao.cs" />
+    <Compile Include="Migrations\201811080257440_add_colum_ngaytao.Designer.cs">
+      <DependentUpon>201811080257440_add_colum_ngaytao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811080314013_add_colum_STT.cs" />
+    <Compile Include="Migrations\201811080314013_add_colum_STT.Designer.cs">
+      <DependentUpon>201811080314013_add_colum_STT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811080714225_delete_stt.cs" />
+    <Compile Include="Migrations\201811080714225_delete_stt.Designer.cs">
+      <DependentUpon>201811080714225_delete_stt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7870,8 +7882,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811070721328_init-db.resx">
-      <DependentUpon>201811070721328_init-db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811070839493_init.resx">
+      <DependentUpon>201811070839493_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811080257440_add_colum_ngaytao.resx">
+      <DependentUpon>201811080257440_add_colum_ngaytao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811080314013_add_colum_STT.resx">
+      <DependentUpon>201811080314013_add_colum_STT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811080714225_delete_stt.resx">
+      <DependentUpon>201811080714225_delete_stt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

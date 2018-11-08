@@ -13,8 +13,11 @@
     [UserName]             NVARCHAR (256) NOT NULL,
     [FirstName]            NVARCHAR (MAX) NULL,
     [LastName]             NVARCHAR (MAX) NULL,
+    [NgayTao]              DATETIME       DEFAULT ('1900-01-01T00:00:00.000') NOT NULL,
     CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
 
 
 GO
