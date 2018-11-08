@@ -21,22 +21,31 @@
                 @Html.DisplayFor(model => model.UserName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.LastName)
+                Họ và tên
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.LastName)
+                @Html.DisplayFor(model => model.LastName) @Html.DisplayFor(model => model.FirstName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.FirstName)
+                Trạng thái tài khoản
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.FirstName)
+                @if (Model.EmailConfirmed == true)
+                {
+                    @Html.Raw("Đã xác nhận");
+                }
+                @if (Model.EmailConfirmed == false)
+                {
+                    @Html.Raw("Chưa xác nhận");
+                }
             </dd>
         </dl>
     </div>
 </div>
 <p>
-    @Html.ActionLink("Quay lại", "GetAllUser") |
+    <a class="btn btn-default" href="/admin/user/GetAllUser">Quay lại</a> |
     @*<button class="btn btn-primary" formaction=@Url.Action("GetAllUser","User")>Quay lại</button>*@
-    @Html.ActionLink("Xóa", "Edit", new { id = Model.Id })
+    @*<a href="#">Xóa</a>*@
+    <a class="btn btn-primary" href="/admin/user/Edit?id=@Model.Id">Sửa</a> |
+    <a class="btn btn-danger" href="/admin/user/Delete?id=@Model.Id">Xóa</a>
 </p>
