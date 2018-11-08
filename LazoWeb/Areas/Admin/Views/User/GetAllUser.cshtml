@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "danh sách tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+    int stt = 0;
 }
 <div class="box box-default getdanhsach">
     <h2>Danh sách tài khoản</h2>
@@ -38,14 +39,13 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.STT)
+                        @{stt++;} @stt
                     </td>
                     <td>
-                        <a style="text-decoration: none;" href="/Admin/User/Edit?id=@item.Id">@Html.DisplayFor(modelItem => item.Email)</a>
-                        @*@Html.DisplayFor(modelItem => item.Email)*@
+                        <a style="text-decoration: none;" href="/Admin/User/Details?id=@item.Id">@Html.DisplayFor(modelItem => item.Email)</a>
                     </td>
                     <td>
-                        <a style="text-decoration: none;" href="/Admin/User/Edit?id=@item.Id">@Html.DisplayFor(modelItem => item.UserName)</a>
+                        <a style="text-decoration: none;" href="/Admin/User/Details?id=@item.Id">@Html.DisplayFor(modelItem => item.UserName)</a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.LastName) @Html.DisplayFor(modelItem => item.FirstName)

@@ -558,6 +558,10 @@
     <Compile Include="Migrations\201811080314013_add_colum_STT.Designer.cs">
       <DependentUpon>201811080314013_add_colum_STT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811080714225_delete_stt.cs" />
+    <Compile Include="Migrations\201811080714225_delete_stt.Designer.cs">
+      <DependentUpon>201811080714225_delete_stt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -7886,6 +7890,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811080314013_add_colum_STT.resx">
       <DependentUpon>201811080314013_add_colum_STT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811080714225_delete_stt.resx">
+      <DependentUpon>201811080714225_delete_stt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
