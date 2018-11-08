@@ -57,11 +57,12 @@
             @(Model.Status ? "Đã liên hệ" : "Chưa liên hệ")
         </dd>
     </dl>
+    <hr />
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
     <div class="form-actions no-color">
-        <a href="@Url.Action("Index")" class="btn btn-primary">Quay lại</a>
+        <a href="@Url.Action("Index")" class="btn btn-default">Quay lại</a>
         <input type="submit" value="Xóa" class="btn btn-danger" />
     </div>
     }

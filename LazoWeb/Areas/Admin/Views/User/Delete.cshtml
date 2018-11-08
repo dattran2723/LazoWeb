@@ -29,16 +29,15 @@
                 @Html.DisplayFor(model => model.LastName) @Html.DisplayFor(model => model.FirstName)
             </dd>
         </dl>
+        <hr />
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <div class="form-actions no-color">
+                <a class="btn btn-default" href="/admin/user/GetAllUser">Quay lại</a>
                 <input type="submit" value="Xóa" class="btn btn-danger" />
             </div>
         }
     </div>
 </div>
-<p>
-    <a class="btn btn-default" href="/admin/user/GetAllUser">Quay lại</a>
-</p>
 
