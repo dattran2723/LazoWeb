@@ -361,3 +361,5 @@ D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.cspro
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csproj.CopyComplete
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.dll
 D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.pdb
+D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.Migrations.updb.resources
+D:\NgonNguyen\Projects\LazoIntroductionWebsite\LazoWeb\obj\Release\LazoWeb.csproj.GenerateResource.cache
