@@ -70,17 +70,12 @@ namespace LazoWeb.Controllers
         {
             if (FormsAuthentication.Authenticate(model.Email, model.Password))
             {
-                FormsAuthentication.RedirectFromLoginPage(model.Email, false);
-                ApplicationUser ssadmin = new ApplicationUser();
-                ssadmin.FirstName = ssadmin.Email;
-                Session["login"] = ssadmin;
+                ApplicationDbContext db = new ApplicationDbContext();
+                ApplicationUser userLogin = new ApplicationUser();
+                userLogin.FirstName = model.Email;
+                Session["login"] = userLogin;
                 return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
             }
-            else
-            {
-                ModelState.AddModelError("", "Đăng nhập không đúng");
-            }
-
             if (!ModelState.IsValid)
             {
                 return View(model);
