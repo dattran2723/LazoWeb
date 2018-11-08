@@ -1,6 +1,7 @@
 ﻿using LazoWeb.Models;
 using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -55,7 +56,7 @@ namespace LazoWeb.Controllers
                 try
                 {
                     const string verifyUrl = "https://google.com/recaptcha/api/siteverify";
-                    const string secret = "6Lfj_HgUAAAAAF_k01v-UXqf4hs1EeZpCkTV29Sb";
+                    const string secret = "6LfnvngUAAAAAKiFQDfweRg2ICzvIcEek-YtLnHk";
                     var response = Request["g-recaptcha-response"];
                     var remoteIp = Request.ServerVariables["REMOTE-ADDR"];
 
@@ -72,6 +73,7 @@ namespace LazoWeb.Controllers
                             bool isEmail = CheckExistingEmail(customer.Email);
                             if (isEmail)
                             {
+                                customer.RegisterDate = DateTime.Now;
                                 db.Customers.Add(customer);
                                 var res = db.SaveChanges();
                                 if (res > 0)
