@@ -69,7 +69,7 @@
                         @Html.DisplayFor(modelItem => item.RegisterDate)
                     </td>
                     <td>
-                        @(item.Status ? "Đã được liên hệ" : "Chưa liên hệ")
+                        @(item.Status ? "Đã liên hệ" : "Chưa liên hệ")
                     </td>
                     <td>
                         <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.ID })"><i class="fas fa-edit"></i></a> |
