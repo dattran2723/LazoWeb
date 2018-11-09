@@ -275,8 +275,10 @@ __pycache__/
 /LazoWeb/obj/Debug
 /packages
 /lazowebDb/obj/Debug
+/LazoWeb/obj/Release/AspnetCompileMerge/Source
 /LazoWeb/obj/Release/AspnetCompileMerge/Source/bin
 /LazoWeb/obj/Release
+/LazoWeb/obj/Release/
 /Database/obj/Debug
 /LazoDb/obj/Debug
 /LazoDb/LazoDb.dbmdl
