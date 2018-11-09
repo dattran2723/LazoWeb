@@ -95,7 +95,7 @@ namespace LazoWeb.Models
         public string FirstName { get; set; }
 
         [Display(Name = "Ngày tạo")]
-        public DateTime NgayTao { get; set; }
+        public DateTime CreatedDate { get; set; }
         public long STT { get; set; }
     }
 

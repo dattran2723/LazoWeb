@@ -27,7 +27,7 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/User
         public ActionResult GetAllUser()
         {
-            return View(db.Users.OrderByDescending(x => x.NgayTao).ToList());
+            return View(db.Users.OrderByDescending(x => x.CreatedDate).ToList());
             //return View(db.Users.ToList());
         }
         public ActionResult Details(string id)

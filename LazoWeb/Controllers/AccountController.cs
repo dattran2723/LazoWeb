@@ -203,8 +203,8 @@ namespace LazoWeb.Controllers
                     return View(model);
                 }
                 model.STT = tt + 1;
-                model.NgayTao = DateTime.Now;
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName, NgayTao = model.NgayTao };
+                model.CreatedDate = DateTime.Now;
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName, CreatedDate = model.CreatedDate };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
