@@ -276,13 +276,22 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        @*@Html.RenderAction("ResetPassword","Account", new { area = "", @class= ""})*@
-                                        <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
-                                    </div>
+                                    @if (login.Email != "admin@gmail.com")
+                                    {
+                                        <div class="pull-left">
+                                            @*@Html.RenderAction("ResetPassword","Account", new { area = "", @class= ""})*@
+                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center">
+                                            <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
+                                        </div>
+                                    }
                                 </li>
                             </ul>
                         </li>
