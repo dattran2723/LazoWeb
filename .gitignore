@@ -9,3 +9,6 @@
 /lazowebDb/obj/Debug
 /LazoWeb/obj/Release/AspnetCompileMerge/Source/bin
 /LazoWeb/obj/Release
+/LazoDb/bin/Debug
+/LazoDb/obj/Debug
+/LazoWeb/Migrations
