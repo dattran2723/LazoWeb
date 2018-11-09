@@ -192,7 +192,6 @@ namespace LazoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            var tt = 0;
             if (ModelState.IsValid)
             {
                 ApplicationDbContext db = new ApplicationDbContext();
@@ -202,7 +201,6 @@ namespace LazoWeb.Controllers
                     ModelState.AddModelError("", "Email đã tồn tại");
                     return View(model);
                 }
-                model.STT = tt + 1;
                 model.CreatedDate = DateTime.Now;
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName, CreatedDate = model.CreatedDate };
                 var result = await UserManager.CreateAsync(user, model.Password);

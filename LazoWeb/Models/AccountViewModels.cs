@@ -96,7 +96,6 @@ namespace LazoWeb.Models
 
         [Display(Name = "Ngày tạo")]
         public DateTime CreatedDate { get; set; }
-        public long STT { get; set; }
     }
 
     public class ResetPasswordViewModel
