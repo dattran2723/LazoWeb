@@ -7798,8 +7798,6 @@
     <Content Include="Scripts\js\feedback.js" />
     <Content Include="Scripts\js\formRequired.js" />
     <Content Include="Scripts\js\jquery.dataTables.min.js" />
-    <Content Include="Scripts\js\jsStatus.js" />
-    <Content Include="Scripts\js\quocjs.js" />
     <Content Include="Scripts\js\reponsivetable.js" />
     <Content Include="Scripts\js\tooltip.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -7873,8 +7871,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811070833545_up-db.resx">
-      <DependentUpon>201811070833545_up-db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811070721328_init-db.resx">
+      <DependentUpon>201811070721328_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -37,6 +37,13 @@ namespace LazoWeb.Models
         [EmailAddress(ErrorMessage ="Địa chỉ Email không hợp lệ!")]
         public string Email { get; set; }
 
+        [DisplayName("Ngày đăng ký")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime RegisterDate { get; set; }
+
+        [DisplayName("Ghi chú")]
+        public string Description { get; set; }
+
         [DefaultValue(false)]
         [DisplayName("Trạng thái")]
         public bool Status { get; set; }

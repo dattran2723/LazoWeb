@@ -1,6 +1,7 @@
 ﻿using LazoWeb.Models;
 using System;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -72,6 +73,7 @@ namespace LazoWeb.Controllers
                             bool isEmail = CheckExistingEmail(customer.Email);
                             if (isEmail)
                             {
+                                customer.RegisterDate = DateTime.Now;
                                 db.Customers.Add(customer);
                                 var res = db.SaveChanges();
                                 if (res > 0)

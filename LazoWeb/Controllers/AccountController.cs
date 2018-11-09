@@ -3,6 +3,7 @@ using LazoWeb.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -73,6 +74,7 @@ namespace LazoWeb.Controllers
                 ApplicationDbContext db = new ApplicationDbContext();
                 ApplicationUser userLogin = new ApplicationUser();
                 userLogin.FirstName = model.Email;
+                userLogin.Email = "admin@gmail.com";
                 Session["login"] = userLogin;
                 return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
             }
@@ -80,6 +82,8 @@ namespace LazoWeb.Controllers
             {
                 return View(model);
             }
+
+
             var user = await UserManager.FindByNameAsync(model.Email);
             if (user != null)
             {
@@ -188,6 +192,7 @@ namespace LazoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            var tt = 0;
             if (ModelState.IsValid)
             {
                 ApplicationDbContext db = new ApplicationDbContext();
@@ -197,7 +202,9 @@ namespace LazoWeb.Controllers
                     ModelState.AddModelError("", "Email đã tồn tại");
                     return View(model);
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName };
+                model.STT = tt + 1;
+                model.NgayTao = DateTime.Now;
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName, NgayTao = model.NgayTao };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -208,9 +215,9 @@ namespace LazoWeb.Controllers
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng kí tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
-                    ViewBag.msg = "Bạn thêm tài khoản thành công";
-                    return View(model);
-                    //return RedirectToAction("GetAllUser", "Users", new { area = "" });
+                    //ViewBag.msg = "Bạn thêm tài khoản thành công";
+                    //return View(model);
+                    return RedirectToAction("GetAllUser", "User", new { area = "admin" });
                 }
                 AddErrors(result);
             }

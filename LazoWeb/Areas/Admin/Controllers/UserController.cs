@@ -27,7 +27,8 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/User
         public ActionResult GetAllUser()
         {
-            return View(db.Users.ToList());
+            return View(db.Users.OrderByDescending(x => x.NgayTao).ToList());
+            //return View(db.Users.ToList());
         }
         public ActionResult Details(string id)
         {
@@ -71,6 +72,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                 var user = UserManager.FindById(model.Id);
                 user.LastName = model.LastName;
                 user.FirstName = model.FirstName;
+                user.EmailConfirmed = model.EmailConfirmed;
                 UserManager.Update(user);
                 ApplicationUser userlogin = (ApplicationUser)Session["login"];
                 if (userlogin.Email.Equals(user.Email))
@@ -110,18 +112,6 @@ namespace LazoWeb.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("GetAllUser");
         }
-        //[HttpPost]
-        //public JsonResult ChangeStatus(string id)
-        //{
-        //    var user = db.Users.Find(id);
-        //    user.EmailConfirmed = !user.EmailConfirmed;
-        //    db.SaveChanges();
-        //    var kq = user.EmailConfirmed;
-        //    return Json(new
-        //    {
-        //        status = kq
-        //    });
-        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)
