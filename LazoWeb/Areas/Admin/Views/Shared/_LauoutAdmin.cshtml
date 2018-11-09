@@ -315,7 +315,7 @@
                 </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="treeview">
+                    <li class="treeview"  id="manage-accounts">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Quản lí tài khoản</span>
                             <span class="pull-right-container">
@@ -323,10 +323,10 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/Admin/User/GetAllUser"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
+                            <li id="list-accounts"><a href="/Admin/User/GetAllUser"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview" id="manage-customers">
                         <a href="#">
                             <i class="fa fa-table"></i> <span>Quản lí đăng kí dịch vụ</span>
                             <span class="pull-right-container">
@@ -334,7 +334,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/Admin/Customers/Index"><i class="fa fa-circle-o"></i> Danh sách đăng kí dịch vụ</a></li>
+                            <li id="list-customers"><a href="/Admin/Customers/Index"><i class="fa fa-circle-o"></i> Danh sách đăng kí dịch vụ</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -539,6 +539,6 @@
     <script src="~/Scripts/js/reponsivetable.js"></script>
     @*js tooltip*@
     <script src="~/Scripts/js/tooltip.js"></script>
-    @RenderSection("JsStatus", required: false)
+    @RenderSection("script", required: false)
 </body>
 </html>
