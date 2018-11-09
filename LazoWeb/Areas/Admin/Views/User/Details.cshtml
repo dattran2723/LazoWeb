@@ -15,7 +15,7 @@
                 @Html.DisplayFor(model => model.Email)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.UserName)
+                Tên đăng nhập
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.UserName)
@@ -38,6 +38,12 @@
                 {
                     @Html.Raw("Chưa xác nhận");
                 }
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
             </dd>
         </dl>
     </div>

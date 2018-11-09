@@ -25,7 +25,7 @@ namespace LazoWeb.Models
         [Display(Name = "Ngày tạo tài khoản")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime NgayTao { get; set; }
+        public DateTime CreatedDate { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
