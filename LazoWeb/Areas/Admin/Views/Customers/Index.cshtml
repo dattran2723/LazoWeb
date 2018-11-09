@@ -6,9 +6,6 @@
 }
 <div class="getdanhsach">
     <h2>Danh sách đăng kí dịch vụ</h2>
-    @section jsStatus {
-        <script src="~/Scripts/js/jsStatus.js"></script>
-    }
 
     <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
         <thead>
@@ -81,3 +78,11 @@
         </tbody>
     </table>
 </div>
+@section script {
+    <script>
+        $(document).ready(function () {
+            $("#manage-customers").addClass("active");
+            $("#manage-customers #list-customers").addClass("active");
+        });
+    </script>
+}
