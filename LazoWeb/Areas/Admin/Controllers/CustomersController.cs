@@ -42,7 +42,7 @@ namespace LazoWeb.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public ActionResult Create(Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -74,12 +74,26 @@ namespace LazoWeb.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public ActionResult Edit(Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    Customer cus = db.Customers.Find(customer.ID);
+                    cus.Name = customer.Name;
+                    cus.Company = customer.Company;
+                    cus.NumberEmployee = customer.NumberEmployee;
+                    cus.Address = customer.Address;
+                    cus.Description = customer.Description;
+                    cus.Status = customer.Status;
+                    db.SaveChanges();
+                }
+                catch (System.Exception ex)
+                {
+                    throw ex;
+                }
+
                 return RedirectToAction("Index");
             }
             return View(customer);

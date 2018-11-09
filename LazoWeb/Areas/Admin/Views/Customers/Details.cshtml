@@ -3,7 +3,7 @@
     ViewBag.Title = "Chi tiết";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
-<div class="box box-default getdanhsach">
+<div class="getdanhsach">
     <h2>Chi tiết người dùng đăng kí dịch vụ</h2>
     <div>
         <hr />
@@ -39,15 +39,29 @@
                 @Html.DisplayFor(model => model.Email)
             </dd>
             <dt>
+                @Html.DisplayNameFor(model => model.RegisterDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RegisterDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
                 @Html.DisplayNameFor(model => model.Status)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Status)
+                @(Model.Status?"Đã liên hệ":"Chưa liên hệ")
             </dd>
         </dl>
     </div>
 </div>
-<p>
-    @Html.ActionLink("Quay lại", "Index") | 
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID})
-</p>
+<hr />
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-default">Quay lại</a>
+    <a href="@Url.Action("Edit",new { id = Model.ID })" class="btn btn-primary">Thay đổi</a>
+    <a href="@Url.Action("Delete", new { id = Model.ID})" class="btn btn-danger">Xóa</a>
+</div>

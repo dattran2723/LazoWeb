@@ -4,7 +4,7 @@
     ViewBag.Title = "Xóa tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
-<div class="box box-default getdanhsach">
+<div class="getdanhsach">
     <h2>Xóa tài khoản</h2>
     <h3>Bạn có thực sự muốn xóa tài khoản này không?</h3>
     <div>
@@ -17,34 +17,33 @@
                 @Html.DisplayFor(model => model.Email)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.UserName)
+                Tên đăng nhập
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.UserName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.LastName)
+                Họ và tên
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.LastName)
+                @Html.DisplayFor(model => model.LastName) @Html.DisplayFor(model => model.FirstName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.CreatedDate)
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.FirstName)
+                @Html.DisplayFor(model => model.CreatedDate)
             </dd>
         </dl>
+        <hr />
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
             <div class="form-actions no-color">
+                <a class="btn btn-default" href="/admin/user/GetAllUser">Quay lại</a>
                 <input type="submit" value="Xóa" class="btn btn-danger" />
             </div>
         }
     </div>
 </div>
-<p>
-    @Html.ActionLink("Quay lại", "GetAllUser")
-</p>
 

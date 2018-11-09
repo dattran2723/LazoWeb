@@ -1,7 +1,7 @@
 ﻿@using LazoWeb.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Đăng nhập";
+    //ViewBag.Title = "Đăng nhập";
     Layout = "";
 }
 <!DOCTYPE html>
@@ -31,6 +31,7 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link href="~/Content/css/login.css" rel="stylesheet" />
 </head>
 <body class="hold-transition login-page">
     @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -39,7 +40,7 @@
 
         <div class="login-box">
             <div class="login-logo">
-                <a href="/Content/Admin/index2.html"><b>LAZO</b></a>
+                <img src="~/Content/img/page-1_0031_logo-trang.png" alt="Alternate Text" />
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">

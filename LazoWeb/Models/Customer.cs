@@ -15,9 +15,9 @@ namespace LazoWeb.Models
 
         [DisplayName("Họ và tên")]
         [Required(ErrorMessage = "Vui lòng nhập họ và tên!")]
+        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [StringLength(50)]
         public string Name { get; set; }
-
         [DisplayName("Tên công ty")]
         [Required(ErrorMessage = "Vui lòng nhập tên công ty!")]
         public string Company { get; set; }
@@ -36,6 +36,13 @@ namespace LazoWeb.Models
         [Required(ErrorMessage ="Vui lòng nhập Email!")]
         [EmailAddress(ErrorMessage ="Địa chỉ Email không hợp lệ!")]
         public string Email { get; set; }
+
+        [DisplayName("Ngày đăng ký")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime RegisterDate { get; set; }
+
+        [DisplayName("Ghi chú")]
+        public string Description { get; set; }
 
         [DefaultValue(false)]
         [DisplayName("Trạng thái")]

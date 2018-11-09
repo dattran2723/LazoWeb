@@ -1,6 +1,8 @@
-﻿@{
-    var login = Session["login"];
+﻿@using LazoWeb.Models
+@{
+    ApplicationUser login = (ApplicationUser)Session["login"];
     //var first = login.FirstName;
+    var admin = Session["admin"];
 }
 <!DOCTYPE html>
 <html>
@@ -37,11 +39,11 @@
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="@Url.Action("Index","HomeAdmin")" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>Admin</b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -100,6 +102,8 @@
                                                 <p>Why not buy a new awesome theme?</p>
                                             </a>
                                         </li>
+
+
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
@@ -258,7 +262,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="/Content/Admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs">
-                                    @login
+                                    @login.LastName @login.FirstName
 
                                 </span>
                             </a>
@@ -267,18 +271,27 @@
                                 <li class="user-header">
                                     <img src="/Content/Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        @login
+                                        @login.LastName @login.FirstName
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        @*@Html.RenderAction("ResetPassword","Account", new { area = "", @class= ""})*@
-                                        <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
-                                    </div>
+                                    @if (login.Email != "admin@gmail.com")
+                                    {
+                                        <div class="pull-left">
+                                            @*@Html.RenderAction("ResetPassword","Account", new { area = "", @class= ""})*@
+                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-center">
+                                            <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
+                                        </div>
+                                    }
                                 </li>
                             </ul>
                         </li>
@@ -296,26 +309,13 @@
                         <img src="/Content/Admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        @login
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        @login.LastName @login.FirstName <br />
+                        <a href="#"><i class="fa fa-circle text-success"></i> Đang hoạt động</a>
                     </div>
                 </div>
-                <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Quản lí tài khoản</span>
                             <span class="pull-right-container">
@@ -323,8 +323,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active"><a href="/Admin/User/GetAllUser"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
-                            <li><a href="/Account/Register"><i class="fa fa-circle-o"></i> Thêm tài khoản</a></li>
+                            <li><a href="/Admin/User/GetAllUser"><i class="fa fa-circle-o"></i> Danh sách tài khoản</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -336,7 +335,6 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="/Admin/Customers/Index"><i class="fa fa-circle-o"></i> Danh sách đăng kí dịch vụ</a></li>
-                            @*<li><a href="/Admin/Customers/Create"><i class="fa fa-circle-o"></i> Thêm đăng kí dịch vụ</a></li>*@
                         </ul>
                     </li>
                 </ul>

@@ -27,7 +27,8 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/User
         public ActionResult GetAllUser()
         {
-            return View(db.Users.ToList());
+            return View(db.Users.OrderByDescending(x => x.CreatedDate).ToList());
+            //return View(db.Users.ToList());
         }
         public ActionResult Details(string id)
         {
@@ -42,7 +43,7 @@ namespace LazoWeb.Areas.Admin.Controllers
             }
             return View(model);
         }
-        
+
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -64,12 +65,21 @@ namespace LazoWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ApplicationUser model)
         {
+            //var query = db.Users.Where(m => m.Email == model.Email).Select(m => new { m.FirstName, m.LastName, m.Email }).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
                 var user = UserManager.FindById(model.Id);
                 user.LastName = model.LastName;
                 user.FirstName = model.FirstName;
+                user.EmailConfirmed = model.EmailConfirmed;
                 UserManager.Update(user);
+                ApplicationUser userlogin = (ApplicationUser)Session["login"];
+                if (userlogin.Email.Equals(user.Email))
+                {
+                    ApplicationUser query = db.Users.Where(m => m.Email == model.Email).FirstOrDefault();
+                    Session["login"] = query;
+                }
                 //db.Entry(user).State = EntityState.Modified;
                 //db.SaveChanges();
                 return RedirectToAction("GetAllUser");
@@ -101,18 +111,6 @@ namespace LazoWeb.Areas.Admin.Controllers
             db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("GetAllUser");
-        }
-        [HttpPost]
-        public JsonResult ChangeStatus(string id)
-        {
-            var user = db.Users.Find(id);
-            user.EmailConfirmed = !user.EmailConfirmed;
-            db.SaveChanges();
-            var kq = user.EmailConfirmed;
-            return Json(new
-            {
-                status = kq
-            });
         }
         protected override void Dispose(bool disposing)
         {

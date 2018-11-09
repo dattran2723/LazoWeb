@@ -26,7 +26,7 @@ namespace LazoWeb
                 Port = 587,
                 UseDefaultCredentials = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential("long205888126@gmail.com", "pailaanh126"),
+                Credentials = new NetworkCredential("long205888126@gmail.com", "tpikpxjguzvlkncq"),
                 EnableSsl = true,
             };
 
@@ -63,7 +63,7 @@ namespace LazoWeb
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
 
@@ -107,7 +107,7 @@ namespace LazoWeb
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
