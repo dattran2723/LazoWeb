@@ -6860,6 +6860,9 @@
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-select2.min.css" />
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-without-plugins.css" />
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\Admin\dist\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\Admin\dist\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\Admin\dist\css\responsive.bootstrap.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black-light.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black-light.min.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black.css" />
@@ -6914,9 +6917,12 @@
     <Content Include="Content\Admin\dist\img\user8-128x128.jpg" />
     <Content Include="Content\Admin\dist\js\adminlte.js" />
     <Content Include="Content\Admin\dist\js\adminlte.min.js" />
+    <Content Include="Content\Admin\dist\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\Admin\dist\js\dataTables.responsive.min.js" />
     <Content Include="Content\Admin\dist\js\demo.js" />
     <Content Include="Content\Admin\dist\js\pages\dashboard.js" />
     <Content Include="Content\Admin\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\Admin\dist\js\responsive.bootstrap.min.js" />
     <Content Include="Content\Admin\documentation\build\include\adminlte-options.html" />
     <Content Include="Content\Admin\documentation\build\include\advice.html" />
     <Content Include="Content\Admin\documentation\build\include\browsers.html" />
