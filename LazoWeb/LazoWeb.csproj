@@ -6860,6 +6860,9 @@
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-select2.min.css" />
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-without-plugins.css" />
     <Content Include="Content\Admin\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\Admin\dist\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\Admin\dist\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\Admin\dist\css\responsive.bootstrap.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black-light.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black-light.min.css" />
     <Content Include="Content\Admin\dist\css\skins\skin-black.css" />
@@ -6914,9 +6917,12 @@
     <Content Include="Content\Admin\dist\img\user8-128x128.jpg" />
     <Content Include="Content\Admin\dist\js\adminlte.js" />
     <Content Include="Content\Admin\dist\js\adminlte.min.js" />
+    <Content Include="Content\Admin\dist\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\Admin\dist\js\dataTables.responsive.min.js" />
     <Content Include="Content\Admin\dist\js\demo.js" />
     <Content Include="Content\Admin\dist\js\pages\dashboard.js" />
     <Content Include="Content\Admin\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\Admin\dist\js\responsive.bootstrap.min.js" />
     <Content Include="Content\Admin\documentation\build\include\adminlte-options.html" />
     <Content Include="Content\Admin\documentation\build\include\advice.html" />
     <Content Include="Content\Admin\documentation\build\include\browsers.html" />
@@ -7076,10 +7082,16 @@
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\informationsLazo.css" />
     <Content Include="Content\css\login.css" />
@@ -7088,6 +7100,23 @@
     <Content Include="Content\css\slide.css" />
     <Content Include="Content\css\StyleFeedback.css" />
     <Content Include="Content\css\typicalkhachhang.css" />
+    <Content Include="Content\font\css\all.css" />
+    <Content Include="Content\font\css\all.min.css" />
+    <Content Include="Content\font\css\brands.css" />
+    <Content Include="Content\font\css\brands.min.css" />
+    <Content Include="Content\font\css\fontawesome.css" />
+    <Content Include="Content\font\css\fontawesome.min.css" />
+    <Content Include="Content\font\css\regular.css" />
+    <Content Include="Content\font\css\regular.min.css" />
+    <Content Include="Content\font\css\solid.css" />
+    <Content Include="Content\font\css\solid.min.css" />
+    <Content Include="Content\font\css\svg-with-js.css" />
+    <Content Include="Content\font\css\svg-with-js.min.css" />
+    <Content Include="Content\font\css\v4-shims.css" />
+    <Content Include="Content\font\css\v4-shims.min.css" />
+    <Content Include="Content\font\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\font\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\font\webfonts\fa-solid-900.svg" />
     <Content Include="Content\img\Customer1.png" />
     <Content Include="Content\img\Customer2.png" />
     <Content Include="Content\img\Customer3.png" />
@@ -7140,9 +7169,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -7781,6 +7807,64 @@
     <Content Include="Areas\Admin\Views\User\Details.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\font\less\brands.less" />
+    <Content Include="Content\font\less\fontawesome.less" />
+    <Content Include="Content\font\less\regular.less" />
+    <Content Include="Content\font\less\solid.less" />
+    <Content Include="Content\font\less\v4-shims.less" />
+    <Content Include="Content\font\less\_animated.less" />
+    <Content Include="Content\font\less\_bordered-pulled.less" />
+    <Content Include="Content\font\less\_core.less" />
+    <Content Include="Content\font\less\_fixed-width.less" />
+    <Content Include="Content\font\less\_icons.less" />
+    <Content Include="Content\font\less\_larger.less" />
+    <Content Include="Content\font\less\_list.less" />
+    <Content Include="Content\font\less\_mixins.less" />
+    <Content Include="Content\font\less\_rotated-flipped.less" />
+    <Content Include="Content\font\less\_screen-reader.less" />
+    <Content Include="Content\font\less\_shims.less" />
+    <Content Include="Content\font\less\_stacked.less" />
+    <Content Include="Content\font\less\_variables.less" />
+    <Content Include="Content\font\scss\brands.scss" />
+    <Content Include="Content\font\scss\fontawesome.scss" />
+    <Content Include="Content\font\scss\regular.scss" />
+    <Content Include="Content\font\scss\solid.scss" />
+    <Content Include="Content\font\scss\v4-shims.scss" />
+    <Content Include="Content\font\scss\_animated.scss" />
+    <Content Include="Content\font\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font\scss\_core.scss" />
+    <Content Include="Content\font\scss\_fixed-width.scss" />
+    <Content Include="Content\font\scss\_icons.scss" />
+    <Content Include="Content\font\scss\_larger.scss" />
+    <Content Include="Content\font\scss\_list.scss" />
+    <Content Include="Content\font\scss\_mixins.scss" />
+    <Content Include="Content\font\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font\scss\_screen-reader.scss" />
+    <Content Include="Content\font\scss\_shims.scss" />
+    <Content Include="Content\font\scss\_stacked.scss" />
+    <Content Include="Content\font\scss\_variables.scss" />
+    <Content Include="Content\font\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\font\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\font\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\font\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\font\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\font\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\font\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\font\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\font\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\font\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\font\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\font\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -7858,10 +7942,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
@@ -7870,8 +7950,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811150206491_init.resx">
-      <DependentUpon>201811150206491_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811090713080_int.resx">
+      <DependentUpon>201811090713080_int.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
