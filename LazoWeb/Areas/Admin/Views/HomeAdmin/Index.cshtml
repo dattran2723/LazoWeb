@@ -1,6 +1,10 @@
-﻿@{
+﻿@using LazoWeb.Models
+@{
     ViewBag.Title = "Quản trị Lazo";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+    ApplicationUser login = (ApplicationUser)Session["login"];
 }
+<h2 class="text-center"><small>Xin chào</small> @login.LastName @login.FirstName </h2>
+<img src="~/Content/img/home-background.png" class="img-responsive" />
 
 
