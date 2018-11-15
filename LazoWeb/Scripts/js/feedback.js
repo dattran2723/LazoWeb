@@ -28,16 +28,16 @@
 $(document).ready(function () {
     var arrComment = [
         {
-           ID: 0 , Name: "STEPHEN ROBERTS", Company: "GOOGLE", Avatar: "~/Content/img/Customer1.png", Comment: "Comment 1 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+           ID: 0 , Name: "STEPHEN ROBERTS", Company: "GOOGLE", Avatar: "~/Content/img/Customer1.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
         },
         {
-            ID: 1, Name: "ELIZABETH", Company: "GOOGLE", Avatar: "~/Content/img/Customer2.png", Comment: "Comment 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+            ID: 1, Name: "ELIZABETH", Company: "GOOGLE", Avatar: "~/Content/img/Customer2.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         },
         {
-            ID: 2, Name: "YAREAK", Company: "GOOGLE", Avatar: "~/Content/img/Customer3.png", Comment: "Comment 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+            ID: 2, Name: "YAREAK", Company: "GOOGLE", Avatar: "~/Content/img/Customer3.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
         },
         {
-            ID: 3, Name: "WAYNNE", Company: "GOOGLE", Avatar: "~/Content/img/Customer4.png", Comment: "Comment 4 Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+            ID: 3, Name: "WAYNNE", Company: "GOOGLE", Avatar: "~/Content/img/Customer4.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         }
     ];
 
