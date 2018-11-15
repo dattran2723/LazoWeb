@@ -25,9 +25,9 @@ namespace LazoWeb
                 Host = "smtp.gmail.com",
                 Port = 587,
                 UseDefaultCredentials = false,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
                 Credentials = new NetworkCredential("long205888126@gmail.com", "tpikpxjguzvlkncq"),
                 EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
             };
 
             var from = new MailAddress("long205888126@gmail.com", "Lazo Admin");

@@ -86,25 +86,6 @@ namespace LazoWeb.Areas.Admin.Controllers
             }
             return View(model);
         }
-
-        // GET: Admin/Customers/Delete/5
-        public ActionResult Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ApplicationUser user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        // POST: Admin/Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
             ApplicationUser user = db.Users.Find(id);

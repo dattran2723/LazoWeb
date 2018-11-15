@@ -105,7 +105,8 @@
         font-family: Arial;
     }
 
-#free-experiencing-button-singup button {
+#free-experiencing-button-singup a {
+    color:black;
     font-size: 15pt;
     border-radius: 20px;
     margin-top: 95px;
@@ -115,7 +116,7 @@
     width: 140px;
 }
 
-    #free-experiencing-button-singup button:hover {
+    #free-experiencing-button-singup a:hover {
         background-color: lightgray;
     }
 
@@ -197,7 +198,7 @@
         font-size: 13px;
     }
 
-    #free-experiencing-button-singup button {
+    #free-experiencing-button-singup a {
         font-size: 12pt;
         border-radius: 20px;
         height: 35px;
@@ -304,7 +305,7 @@
         margin-top: -45px;
     }
 
-        #free-experiencing-button-singup button {
+        #free-experiencing-button-singup a {
             margin: 0;
         }
 

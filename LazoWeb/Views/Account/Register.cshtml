@@ -12,7 +12,7 @@
             <h3 class="login-box-msg">Thêm mới tài khoản</h3>
             <form action="/Content/Admin/index2.html" method="post">
                 <div class="form-group has-feedback">
-                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @id = "email" })
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @id = "email", autofocus = "autofocus" })
                     @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger", @id = "validemail" })
                 </div>
                 <div class="form-group has-feedback">
@@ -36,13 +36,10 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <p class="text-success">@Html.Raw(ViewBag.msg)</p>
                 </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                    </div>
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng kí</button>
-                    </div>
-                    <div class="col-xs-4">
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        <a href="/Admin/User/GetAllUser" class="btn btn-default">Quay lại</a>
+                        <input type="submit" value="Thêm mới" class="btn btn-primary btn-flat" />
                     </div>
                 </div>
             </form>
@@ -51,8 +48,5 @@
     <br />
 </div>
 <br />
-<div>
-    <a href="/Admin/User/GetAllUser" class="btn btn-default">Quay lại</a>
-</div>
 <script src="~/Scripts/js/changerequidfrom.js"></script>
 
