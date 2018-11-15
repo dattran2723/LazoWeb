@@ -6983,6 +6983,7 @@
     <Content Include="Content\Admin\plugins\iCheck\futurico\futurico.png" />
     <Content Include="Content\Admin\plugins\iCheck\icheck.js" />
     <Content Include="Content\Admin\plugins\iCheck\icheck.min.js" />
+    <Content Include="Content\Admin\plugins\iCheck\InputIcheck.js" />
     <Content Include="Content\Admin\plugins\iCheck\line\aero.css" />
     <Content Include="Content\Admin\plugins\iCheck\line\blue.css" />
     <Content Include="Content\Admin\plugins\iCheck\line\green.css" />
@@ -7082,6 +7083,14 @@
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\Admin\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
@@ -7114,6 +7123,7 @@
     <Content Include="Content\font\css\svg-with-js.min.css" />
     <Content Include="Content\font\css\v4-shims.css" />
     <Content Include="Content\font\css\v4-shims.min.css" />
+    <Content Include="Content\font\font-family.css" />
     <Content Include="Content\font\webfonts\fa-brands-400.svg" />
     <Content Include="Content\font\webfonts\fa-regular-400.svg" />
     <Content Include="Content\font\webfonts\fa-solid-900.svg" />
@@ -7806,7 +7816,6 @@
     <Content Include="Areas\Admin\Views\User\GetAllUser.cshtml" />
     <Content Include="Areas\Admin\Views\User\Details.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
     <Content Include="Content\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="Content\bootstrap\css\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap\css\bootstrap-reboot.css.map" />
@@ -7865,6 +7874,14 @@
     <Content Include="Content\font\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\font\webfonts\fa-solid-900.woff" />
     <Content Include="Content\font\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -7875,6 +7892,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\btnXoa.js" />
     <Content Include="Scripts\js\changerequidfrom.js" />
     <Content Include="Scripts\js\change_requid_form_changepass.js" />
     <Content Include="Scripts\js\crolltoid.js" />

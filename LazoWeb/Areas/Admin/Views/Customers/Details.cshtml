@@ -54,7 +54,7 @@
                 @Html.DisplayNameFor(model => model.Status)
             </dt>
             <dd>
-                @(Model.Status?"Đã liên hệ":"Chưa liên hệ")
+                @(Model.Status ? "Đã liên hệ" : "Chưa liên hệ")
             </dd>
         </dl>
     </div>
@@ -62,6 +62,4 @@
 <hr />
 <div>
     <a href="@Url.Action("Index")" class="btn btn-default">Quay lại</a>
-    <a href="@Url.Action("Edit",new { id = Model.ID })" class="btn btn-primary">Thay đổi</a>
-    <a href="@Url.Action("Delete", new { id = Model.ID})" class="btn btn-danger">Xóa</a>
 </div>

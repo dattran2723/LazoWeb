@@ -4,7 +4,6 @@
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
 <h2>Xóa người dùng đăng kí dịch vụ</h2>
-<h3>Bạn có thật sự muốn xóa người dùng đăng kí dịch vụ này không?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -58,12 +57,33 @@
         </dd>
     </dl>
     <hr />
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
     <div class="form-actions no-color">
         <a href="@Url.Action("Index")" class="btn btn-default">Quay lại</a>
-        <input type="submit" value="Xóa" class="btn btn-danger" />
+        <button type="button" class="btn btn-danger" id="myBtn">Xóa</button>
     </div>
-    }
 </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Xóa đăng ký dịch vụ</h4>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có muốn xóa đăng ký dịch vụ này không ?</p>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <input type="submit" value="Xóa" class="btn btn-danger" />
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/js/btnXoa.js"></script>
