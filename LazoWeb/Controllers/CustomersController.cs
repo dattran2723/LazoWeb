@@ -48,7 +48,7 @@ namespace LazoWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [CaptchaValidation("CaptchaCode", "registerCaptcha", "Nhập mã Captcha không đúng!")]
-        public async Task<ActionResult> Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public async Task<ActionResult> Register(Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -173,7 +173,7 @@ namespace LazoWeb.Controllers
             content = content.Replace("{{Name}}", customer.Name);
             content = content.Replace("{{Company}}", customer.Company);
             content = content.Replace("{{NumberEmployee}}", customer.NumberEmployee.ToString());
-            content = content.Replace("{{Address}}", customer.Address);
+            content = content.Replace("{{Phone}}", customer.Phone);
             content = content.Replace("{{Email}}", customer.Email);
 
             var fromEmail = new MailAddress("dattran2723@gmail.com", "Lazo");

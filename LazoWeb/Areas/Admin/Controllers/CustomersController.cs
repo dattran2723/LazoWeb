@@ -84,7 +84,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                     cus.Name = customer.Name;
                     cus.Company = customer.Company;
                     cus.NumberEmployee = customer.NumberEmployee;
-                    cus.Address = customer.Address;
+                    cus.Phone = customer.Phone;
                     cus.Description = customer.Description;
                     cus.Status = customer.Status;
                     db.SaveChanges();
