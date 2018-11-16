@@ -555,9 +555,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811150929097_init.cs" />
-    <Compile Include="Migrations\201811150929097_init.Designer.cs">
-      <DependentUpon>201811150929097_init.cs</DependentUpon>
+    <Compile Include="Migrations\201811160135107_init-db.cs" />
+    <Compile Include="Migrations\201811160135107_init-db.Designer.cs">
+      <DependentUpon>201811160135107_init-db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7131,7 +7131,6 @@
     <Content Include="Content\font\css\svg-with-js.min.css" />
     <Content Include="Content\font\css\v4-shims.css" />
     <Content Include="Content\font\css\v4-shims.min.css" />
-    <Content Include="Content\font\font-family.css" />
     <Content Include="Content\font\js\all.js" />
     <Content Include="Content\font\js\all.min.js" />
     <Content Include="Content\font\js\brands.js" />
@@ -9410,8 +9409,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811150929097_init.resx">
-      <DependentUpon>201811150929097_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811160135107_init-db.resx">
+      <DependentUpon>201811160135107_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
