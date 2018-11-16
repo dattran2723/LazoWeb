@@ -53,7 +53,8 @@ namespace LazoWeb.Controllers
             if (ModelState.IsValid)
             {
                 bool isEmail = CheckExistingEmail(customer.Email);
-                if (isEmail)
+                bool isPhone = CheckExistingPhone(customer.Phone);
+                if (isEmail && isPhone)
                 {
                     customer.RegisterDate = DateTime.Now;
                     db.Customers.Add(customer);
@@ -72,7 +73,7 @@ namespace LazoWeb.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Email đã tồn tại");
+                    ModelState.AddModelError("", "Số điện thoại hoặc Email đã tồn tại");
                     return View(customer);
                 }
             }
@@ -149,6 +150,21 @@ namespace LazoWeb.Controllers
         public bool CheckExistingEmail(string email)
         {
             var result = db.Customers.Where(s => s.Email == email).Count();
+
+            if (result > 0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CheckExistingPhone(string phone)
+        {
+            var result = db.Customers.Where(s => s.Phone == phone).Count();
 
             if (result > 0)
             {

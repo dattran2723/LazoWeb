@@ -88,23 +88,22 @@ namespace LazoWeb.Areas.Admin.Controllers
                     cus.Description = customer.Description;
                     cus.Status = customer.Status;
                     db.SaveChanges();
+                    ViewData["Status"] = true;
                 }
                 catch (System.Exception ex)
                 {
                     throw ex;
                 }
-
-                return RedirectToAction("Index");
             }
             return View(customer);
         }
 
-        public ActionResult DeleteConfirmed(int id)
+        public int DeleteConfirmed(int id)
         {
             Customer customer = db.Customers.Find(id);
             db.Customers.Remove(customer);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var result = db.SaveChanges();
+            return result;
         }
         [HttpPost]
         public JsonResult ChangeStatus(long id)

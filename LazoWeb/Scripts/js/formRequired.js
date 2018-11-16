@@ -32,8 +32,7 @@
             var firstNumber = phone.substring(0, 2);
             if ((firstNumber == '09' || firstNumber == '08' || firstNumber == '03') && phone.length == 10) {
                 if (phone.match(/^[0-9]+$/)) {
-                    $("#ValidPhone").html("");
-                    $("#btn-submit").attr("disabled", false);
+                    CheckPhone(phone);               
                 } else {
                     $("#ValidPhone").html("Số địện thoại không đúng định dạng");
                     $("#btn-submit").attr("disabled", true);
@@ -42,8 +41,7 @@
             else {
                 if (firstNumber == '01' && phone.length == 11) {
                     if (phone.match(/^[0-9]+$/)) {
-                        $("#ValidPhone").html("");
-                        $("#btn-submit").attr("disabled", false);
+                        CheckPhone(phone);
                     } else {
                         $("#ValidPhone").html("Số địện thoại không đúng định dạng");
                         $("#btn-submit").attr("disabled", true);
@@ -53,20 +51,52 @@
                     $("#btn-submit").attr("disabled", true);
                 }
             }
-
         }
     });
+    function CheckPhone(phone) {
+        $.ajax({
+            url: "CheckExistingPhone?phone=" + phone, 
+            type: "get",
+            dateType: "Boolean", 
+            
+            success: function (result) {
+                if (result == "True") {
+                    $("#ValidPhone").html("");
+                    $("#btn-submit").attr("disabled", false);
+                } else {
+                    $("#ValidPhone").html("Số địện thoại đã tồn tại");
+                    $("#btn-submit").attr("disabled", true);
+                }
+            }
+        });
+    }
     $("#Email").change(function () {
-        var value = $(this).val();
+        var email = $(this).val();
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (value != "") {
-            if (!filter.test(value)) {
-                $("#ValidEmail").html("Hãy nhập địa chỉ Email hợp lệ.\nExample@gmail.com");
-                $("#Email").focus;
+        if (email != "") {
+            if (!filter.test(email)) {
+                $("#ValidEmail").html("Hãy nhập địa chỉ Email hợp lệ!.\nExample@gmail.com");
             }
             else {
-                $("#ValidEmail").html("");
+                CheckEmail(email);
             }
         }
     });
+    function CheckEmail(email) {
+        $.ajax({
+            url: "CheckExistingEmail?email=" + email,
+            type: "get",
+            dateType: "Boolean",
+
+            success: function (result) {
+                if (result == "True") {
+                    $("#ValidEmail").html("");
+                    $("#btn-submit").attr("disabled", false);
+                } else {
+                    $("#ValidEmail").html("Email đã tồn tại");
+                    $("#btn-submit").attr("disabled", true);
+                }
+            }
+        });
+    }
 });
