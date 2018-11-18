@@ -1,5 +1,4 @@
-﻿using BotDetect.Web.Mvc;
-using LazoWeb.Models;
+﻿using LazoWeb.Models;
 using System;
 using System.Data;
 using System.Linq;
@@ -47,7 +46,6 @@ namespace LazoWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CaptchaValidation("CaptchaCode", "registerCaptcha", "Nhập mã Captcha không đúng!")]
         public async Task<ActionResult> Register(Customer customer)
         {
             if (ModelState.IsValid)
