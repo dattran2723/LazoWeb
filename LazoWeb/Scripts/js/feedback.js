@@ -32,7 +32,7 @@ $(document).ready(function () {
             Name: "ĐẶNG VĂN LINH",
             Company: "", //"GOOGLE",
             Avatar: "~/Content/img/Customer1.png",
-            Comment: "Tôi rất hài hài lòng về quy trình làm việc của công ty. Hệ thống quản lý nhân viên thì rất hữu dụng và nhiều tính năng. Tôi thực sự đánh giá cao về Lazo."
+            Comment: "Tôi rất hài hài lòng về quy trình làm việc của công ty. Hệ thống Lazo rất hữu dụng và nhiều tính năng. Tôi thực sự đánh giá cao về ứng dụng này."
         },
         {
             ID: 1,
@@ -53,7 +53,7 @@ $(document).ready(function () {
             Name: "TRẦN NGUYỄN ANH THƯ",
             Company: "", // "GOOGLE",
             Avatar: "~/Content/img/Customer4.png",
-            Comment: "Tôi thấy hệ thống quản lý nhân viên của Lazo rất chuyên nghiệp, nổi bật bởi nền tảng công nghệ bản đồ 3D."
+            Comment: "Hệ thống quản lý nhân viên của Lazo rất chuyên nghiệp, đặc biệt nổi bật bởi nền tảng công nghệ bản đồ 3D."
         }
     ];
     $('#feedback-content h4').html(arrComment[0].Name + arrComment[0].Company);
