@@ -30,15 +30,15 @@
         phone = phone.replace(/ /g, '');
         if (phone != "") {
             var firstNumber = phone.substring(0, 1);
-            if (firstNumber=='0' && phone.length == 10) {
+            if ((firstNumber == '0' && phone.length == 10) || (firstNumber == '0' && phone.length == 11)) {
                 if (phone.match(/^[0-9]+$/)) {
                     CheckPhone(phone);               
                 } else {
-                    $("#ValidPhone").html("Số địện thoại không đúng định dạng");
+                    $("#ValidPhone").html("Số điên thoại gồm 10-11 ký tự số!");
                 }
             }
             else {
-                $("#ValidPhone").html("Số địện thoại không đúng định dạng");
+                $("#ValidPhone").html("Số điên thoại gồm 10-11 ký tự số!");
             }
         }
     });
@@ -52,7 +52,7 @@
                 if (result == "True") {
                     $("#ValidPhone").html("");
                 } else {
-                    $("#ValidPhone").html("Số địện thoại đã tồn tại");
+                    $("#ValidPhone").html("Số địện thoại đã tồn tại!");
                 }
             }
         });
