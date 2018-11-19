@@ -53,26 +53,27 @@ namespace LazoWeb.Controllers
             {
                 bool isEmail = CheckExistingEmail(customer.Email);
                 bool isPhone = CheckExistingPhone(customer.Phone);
-                if (isEmail && isPhone)
+                if (isEmail)
                 {
-                    customer.RegisterDate = DateTime.Now;
-                    db.Customers.Add(customer);
-                    var res = db.SaveChanges();
-                    if (res > 0)
+                    if (isPhone)
                     {
+                        customer.RegisterDate = DateTime.Now;
+                        db.Customers.Add(customer);
+                        var res = db.SaveChanges();
                         await SendMailForCustomer(customer);
                         ViewData["register"] = true;
                         return View();
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Đăng ký không thành công!");
+                        ModelState.AddModelError("Phone", "Số điện thoại đã tồn tại");
                         return View(customer);
                     }
+
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Số điện thoại hoặc Email đã tồn tại");
+                    ModelState.AddModelError("Email", "Email đã tồn tại");
                     return View(customer);
                 }
             }
@@ -183,7 +184,8 @@ namespace LazoWeb.Controllers
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "ltigyvnwvdxhpwmo");
-            //var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên hệ với bạn ngay khi có thể";
+
+            //Nội dung mail
             string content = System.IO.File.ReadAllText(Server.MapPath("~/Views/Customers/MailContent.cshtml"));
             content = content.Replace("{{Name}}", customer.Name);
             content = content.Replace("{{Company}}", customer.Company);
@@ -203,6 +205,7 @@ namespace LazoWeb.Controllers
             };
 
             smtp.Send(mail);
+
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
