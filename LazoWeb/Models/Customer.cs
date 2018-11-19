@@ -27,10 +27,10 @@ namespace LazoWeb.Models
         [Range(1, int.MaxValue, ErrorMessage = "Vui lòng nhập số lượng nhân viên lớn hơn 0!")]
         public int NumberEmployee { get; set; }
 
-        [DisplayName("Địa chỉ liên hệ")]
-        [Required(ErrorMessage = "Vui lòng nhập địa chỉ liên hệ!")]
-        [StringLength(100)]
-        public string Address { get; set; }
+        [DisplayName("Số điện thoại")]
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại liên hệ!")]
+        [StringLength(11,ErrorMessage ="Số điện thoại không quá 11 ký tự")]
+        public string Phone { get; set; }
 
         [DisplayName("Địa chỉ Email")]
         [Required(ErrorMessage ="Vui lòng nhập Email!")]

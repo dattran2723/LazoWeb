@@ -48,12 +48,13 @@ namespace LazoWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [CaptchaValidation("CaptchaCode", "registerCaptcha", "Nhập mã Captcha không đúng!")]
-        public async Task<ActionResult> Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public async Task<ActionResult> Register(Customer customer)
         {
             if (ModelState.IsValid)
             {
                 bool isEmail = CheckExistingEmail(customer.Email);
-                if (isEmail)
+                bool isPhone = CheckExistingPhone(customer.Phone);
+                if (isEmail && isPhone)
                 {
                     customer.RegisterDate = DateTime.Now;
                     db.Customers.Add(customer);
@@ -72,7 +73,7 @@ namespace LazoWeb.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Email đã tồn tại");
+                    ModelState.AddModelError("", "Số điện thoại hoặc Email đã tồn tại");
                     return View(customer);
                 }
             }
@@ -161,6 +162,21 @@ namespace LazoWeb.Controllers
             }
         }
 
+        public bool CheckExistingPhone(string phone)
+        {
+            var result = db.Customers.Where(s => s.Phone == phone).Count();
+
+            if (result > 0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public Task SendMailForCustomer(Customer customer)
         {
             SmtpClient smtp = new SmtpClient();
@@ -173,7 +189,7 @@ namespace LazoWeb.Controllers
             content = content.Replace("{{Name}}", customer.Name);
             content = content.Replace("{{Company}}", customer.Company);
             content = content.Replace("{{NumberEmployee}}", customer.NumberEmployee.ToString());
-            content = content.Replace("{{Address}}", customer.Address);
+            content = content.Replace("{{Phone}}", customer.Phone);
             content = content.Replace("{{Email}}", customer.Email);
 
             var fromEmail = new MailAddress("dattran2723@gmail.com", "Lazo");

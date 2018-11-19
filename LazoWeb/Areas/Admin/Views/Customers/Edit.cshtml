@@ -1,10 +1,10 @@
 ﻿@model LazoWeb.Models.Customer
 @{
-    ViewBag.Title = "Thay đổi thông tin";
+    ViewBag.Title = "Thay đổi thông tin khách hàng";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
 <div class="getdanhsach">
-    <h2>Thay đổi thông tin người dùng đăng ký dịch vụ</h2>
+    <h2>Thay đổi thông tin khách hàng</h2>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -73,3 +73,34 @@
     }
 </div>
 <hr />
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-default">Quay lại</a>
+</div>
+<div class="modal fade" id="myNotifySuccess" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+                <p>Cập nhật thành công</p>
+            </div>
+            <div class="modal-footer">
+                <a href="@Url.Action("Index")" class="btn btn-success">Đóng</a>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    if (ViewData["Status"] != null)
+    {
+        var status = (bool)ViewData["Status"];
+        if (status)
+        {
+            <script>
+                $(document).ready(function () {
+                    $("#myNotifySuccess").modal();
+                });
+            </script>
+        }
+    }
+}
