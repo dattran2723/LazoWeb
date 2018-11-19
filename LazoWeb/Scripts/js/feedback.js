@@ -28,16 +28,32 @@
 $(document).ready(function () {
     var arrComment = [
         {
-           ID: 0 , Name: "STEPHEN ROBERTS", Company: "GOOGLE", Avatar: "~/Content/img/Customer1.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+            ID: 0 , 
+            Name: "ĐẶNG VĂN LINH",
+            Company: "", //"GOOGLE",
+            Avatar: "~/Content/img/Customer1.png",
+            Comment: "Tôi rất hài hài lòng về quy trình làm việc của công ty. Hệ thống quản lý nhân viên thì rất hữu dụng và nhiều tính năng. Tôi thực sự đánh giá cao về Lazo."
         },
         {
-            ID: 1, Name: "ELIZABETH", Company: "GOOGLE", Avatar: "~/Content/img/Customer2.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            ID: 1,
+            Name: "TRẦN BẢO CHÂU",
+            Company: "", //"GOOGLE",
+            Avatar: "~/Content/img/Customer2.png",
+            Comment: "Giải pháp quản lý nhân viên của hệ thống Lazo rất dễ sử dụng. Đặc biệt tôi ấn tượng với công nghệ bản đồ 3D theo thời gian thực của IOTlink."
         },
         {
-            ID: 2, Name: "YAREAK", Company: "GOOGLE", Avatar: "~/Content/img/Customer3.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever."
+            ID: 2,
+            Name: "ĐINH VĂN THÀNH",
+            Company: "", //"GOOGLE",
+            Avatar: "~/Content/img/Customer3.png",
+            Comment: "Tôi rất tin tưởng vào những giải pháp mà IOTLink cung cấp cho chúng tôi. Hi vọng chúng tôi sẽ được hợp tác nhiều hơn với công ty ở những dự án khác trong thời gian tới."
         },
         {
-            ID: 3, Name: "WAYNNE", Company: "GOOGLE", Avatar: "~/Content/img/Customer4.png", Comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            ID: 3,
+            Name: "TRẦN NGUYỄN ANH THƯ",
+            Company: "", // "GOOGLE",
+            Avatar: "~/Content/img/Customer4.png",
+            Comment: "Tôi thấy hệ thống quản lý nhân viên của Lazo rất chuyên nghiệp, nổi bật bởi nền tảng công nghệ bản đồ 3D."
         }
     ];
 
