@@ -30,7 +30,7 @@
         phone = phone.replace(/ /g, '');
         if (phone != "") {
             var firstNumber = phone.substring(0, 1);
-            if ((firstNumber == '0' && phone.length == 10) || (firstNumber == '0' && phone.length == 11)) {
+            if (firstNumber == '0' && ( phone.length == 10 || phone.length == 11)) {
                 if (phone.match(/^[0-9]+$/)) {
                     CheckPhone(phone);               
                 } else {
