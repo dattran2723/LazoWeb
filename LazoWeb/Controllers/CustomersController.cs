@@ -1,4 +1,5 @@
-﻿using LazoWeb.Models;
+﻿using CaptchaMvc.HtmlHelpers;
+using LazoWeb.Models;
 using System;
 using System.Data;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace LazoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(Customer customer)
         {
-            if (ModelState.IsValid)
+            if (this.IsCaptchaValid("Mã xác nhận không đúng!") && ModelState.IsValid)
             {
                 bool isEmail = CheckExistingEmail(customer.Email);
                 bool isPhone = CheckExistingPhone(customer.Phone);
@@ -60,8 +61,8 @@ namespace LazoWeb.Controllers
                     if (res > 0)
                     {
                         await SendMailForCustomer(customer);
-                        Session["signup"] = "success";
-                        return RedirectToAction("Index", "Home");
+                        ViewData["register"] = true;
+                        return View();
                     }
                     else
                     {

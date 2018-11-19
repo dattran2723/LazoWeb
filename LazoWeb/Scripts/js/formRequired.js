@@ -29,27 +29,16 @@
         phone = phone.replace('0084', '0');
         phone = phone.replace(/ /g, '');
         if (phone != "") {
-            var firstNumber = phone.substring(0, 2);
-            if ((firstNumber == '09' || firstNumber == '08' || firstNumber == '03') && phone.length == 10) {
+            var firstNumber = phone.substring(0, 1);
+            if (firstNumber=='0' && phone.length == 10) {
                 if (phone.match(/^[0-9]+$/)) {
                     CheckPhone(phone);               
                 } else {
                     $("#ValidPhone").html("Số địện thoại không đúng định dạng");
-                    $("#btn-submit").attr("disabled", true);
                 }
             }
             else {
-                if (firstNumber == '01' && phone.length == 11) {
-                    if (phone.match(/^[0-9]+$/)) {
-                        CheckPhone(phone);
-                    } else {
-                        $("#ValidPhone").html("Số địện thoại không đúng định dạng");
-                        $("#btn-submit").attr("disabled", true);
-                    }
-                } else {
-                    $("#ValidPhone").html("Số địện thoại không đúng định dạng");
-                    $("#btn-submit").attr("disabled", true);
-                }
+                $("#ValidPhone").html("Số địện thoại không đúng định dạng");
             }
         }
     });
@@ -62,10 +51,8 @@
             success: function (result) {
                 if (result == "True") {
                     $("#ValidPhone").html("");
-                    $("#btn-submit").attr("disabled", false);
                 } else {
                     $("#ValidPhone").html("Số địện thoại đã tồn tại");
-                    $("#btn-submit").attr("disabled", true);
                 }
             }
         });
@@ -91,12 +78,12 @@
             success: function (result) {
                 if (result == "True") {
                     $("#ValidEmail").html("");
-                    $("#btn-submit").attr("disabled", false);
                 } else {
                     $("#ValidEmail").html("Email đã tồn tại");
-                    $("#btn-submit").attr("disabled", true);
                 }
             }
         });
     }
+    $(".captcha a").html('<h4 style="float:left;"><i class="fas fa-sync-alt"></i></h4>');
+    $("#CaptchaInputText").attr("placeholder", "Nhập mã...");
 });
