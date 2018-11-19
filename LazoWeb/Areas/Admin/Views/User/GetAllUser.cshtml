@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<LazoWeb.Models.ApplicationUser>
+@using LazoWeb.Models;
 
 @{
     ViewBag.Title = "danh sách tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
+    ApplicationUser login = (ApplicationUser)Session["login"];
     int stt = 0;
 }
 <div class="getdanhsach">
@@ -58,9 +60,15 @@
                         }
                     </td>
                     <td>
-                        <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.Id })"><i class="fas fa-edit"></i></a> |
-                        <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.Id })"><i class="fas fa-info-circle"></i></a> |
-                        <a data-toggle="tooltip" class="myBtnUser" title="Xóa" href="javascript:;" data-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
+                        <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.Id })"><i class="fas fa-edit"></i></a>
+                        <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.Id })"><i class="fas fa-info-circle"></i></a>
+                        @if (login.Id == item.Id)
+                        {
+                        }
+                        else
+                        {
+                            <a data - toggle="tooltip" class="myBtnUser" title="Xóa" href="javascript:;" data-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
+                        }
                     </td>
                 </tr>
             }
@@ -72,19 +80,42 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Xóa tài khoản</h4>
+                    <h4 class="modal-title text-center"><b>Xóa tài khoản</b></h4>
                 </div>
                 <div class="modal-body">
-                    <p>Bạn có muốn xóa tài khoản này không ?</p>
+                    <p class="text-center">Bạn có muốn xóa tài khoản này không ?</p>
                 </div>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="modal-footer" id="myModel-href">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                        <a class="btn btn-danger">Xóa</a>
-                    </div>
-                }
+                <div class="modal-footer" id="myModel-href">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <a class="btn btn-danger" id="ConfirmDelete">Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModalSuccess" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+                    <p class="text-center">Đã xóa tài khoản thành công</p>
+                </div>
+                <div class="modal-footer" id="myModel-href1">
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="myModalFail" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h1 class="text-danger"><i class="fas fa-exclamation"></i></h1>
+                    <p class="text-center">Xóa tài khoản bị lỗi ! </p>
+                </div>
+                <div class="modal-footer" id="myModel-href1">
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
+                </div>
             </div>
 
         </div>

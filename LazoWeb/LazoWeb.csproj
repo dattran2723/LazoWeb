@@ -552,6 +552,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811190428004_init-db.cs" />
+    <Compile Include="Migrations\201811190428004_init-db.Designer.cs">
+      <DependentUpon>201811190428004_init-db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -9986,12 +9991,12 @@
     <Content Include="Content\img\Customer3.png" />
     <Content Include="Content\img\Customer4.png" />
     <Content Include="Content\img\home-background.png" />
-    <Content Include="Content\img\imglogo\Untitled-1_0000_logo-cocobay-danang-empire-group.png" />
-    <Content Include="Content\img\imglogo\Untitled-1_0001_dn.lis.png" />
-    <Content Include="Content\img\imglogo\Untitled-1_0002_1-03.png" />
+    <Content Include="Content\img\imglogo\Untitled-1_0000_1-03.png" />
+    <Content Include="Content\img\imglogo\Untitled-1_0001_Marry-1.png" />
+    <Content Include="Content\img\imglogo\Untitled-1_0002_dn.lis.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0003_logo-cty-01.png" />
-    <Content Include="Content\img\imglogo\Untitled-1_0004_Marry-1.png" />
-    <Content Include="Content\img\imglogo\Untitled-1_0005_download.png" />
+    <Content Include="Content\img\imglogo\Untitled-1_0004_download.png" />
+    <Content Include="Content\img\imglogo\Untitled-1_0005_logo-cocobay-danang-empire-group.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\page-1_0000s_0000_Rounded-Rectangle-4-copy-3.png" />
     <Content Include="Content\img\page-1_0000_google-store.png" />
@@ -10815,7 +10820,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

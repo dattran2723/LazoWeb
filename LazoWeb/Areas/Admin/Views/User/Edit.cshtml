@@ -15,16 +15,14 @@
             @Html.HiddenFor(model => model.Id)
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
+                <div class="col-md-6">
                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-3 text-right" style="padding-top:12px;">
-                    <b>Tên đăng nhập</b>
-                </div>
-                <div class="col-md-9">
+                @Html.Label("Tên đăng nhập", htmlAttributes: new { @class = "control-label col-md-3 txtTenDangNhap" })
+                <div class="col-md-6">
                     <div class="checkbox">
                         @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                         @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
@@ -33,24 +31,21 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
+                <div class="col-md-6">
                     @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
+                <div class="col-md-6">
                     @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                @*@Html.LabelFor("Sua", htmlAttributes: new { @class = "control-label col-md-3" })*@
-                <div class="col-md-3 text-right">
-                    <b>Trạng thái tài khoản</b>
-                </div>
-                <div class="col-md-9">
+                @Html.Label("Trạng thái tài khoản", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-6 txtTrangThai">
                     @if (Model.EmailConfirmed == true)
                     {
                         @Html.Raw("Đã xác nhận");
@@ -64,10 +59,36 @@
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">
                     <a class="btn btn-default" href="/admin/user/GetAllUser">Quay lại</a>
-                    <input type="submit" value="Lưu" class="btn btn-primary" />
+                    <input type="submit" id="btnUpdate" value="Lưu" class="btn btn-primary" />
                 </div>
             </div>
         </div>
     }
+    <div class="modal fade" id="myModalSuccess" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+                    <p>Đã cập nhật tài khoản thành công</p>
+                </div>
+                <div class="modal-footer" id="myModel-href1">
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @{
+        if (ViewData["Edit"] != null)
+        {
+            <script>
+                $(document).ready(function () {
+                    console.log("asccs");
+                    $("#myModalSuccess").modal();
+                });
+            </script>
+        }
+    }
 </div>
 <hr />
+<script src="~/Scripts/js/btnEdit.js"></script>
