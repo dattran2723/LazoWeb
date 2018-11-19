@@ -29,7 +29,7 @@ namespace LazoWeb.Models
 
         [DisplayName("Số điện thoại")]
         [Required(ErrorMessage = "Vui lòng nhập số điện thoại liên hệ!")]
-        [RegularExpression("^[0-9]+$",ErrorMessage ="Vui lòng nhập đúng định dạng!")]
+        [RegularExpression("^0[0-9]+$",ErrorMessage ="Vui lòng nhập đúng định dạng!")]
         [StringLength(11,ErrorMessage ="Số điên thoại gồm 10-11 ký tự số!")]
         [MinLength(10,ErrorMessage = "Số điên thoại gồm 10-11 ký tự số!")]
         public string Phone { get; set; }

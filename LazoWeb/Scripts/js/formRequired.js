@@ -38,7 +38,7 @@
                 }
             }
             else {
-                $("#ValidPhone").html("Số điên thoại gồm 10-11 ký tự số!");
+                $("#ValidPhone").html("Vui lòng nhập đúng định dạng!");
             }
         }
     });
