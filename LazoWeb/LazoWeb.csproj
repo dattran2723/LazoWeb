@@ -552,11 +552,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811190428004_init-db.cs" />
-    <Compile Include="Migrations\201811190428004_init-db.Designer.cs">
-      <DependentUpon>201811190428004_init-db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -8555,7 +8550,6 @@
     <Content Include="Content\font\svgs\solid\x-ray.svg" />
     <Content Include="Content\font\svgs\solid\yen-sign.svg" />
     <Content Include="Content\font\svgs\solid\yin-yang.svg" />
-    <Content Include="Content\font\font-family.css" />
     <Content Include="Content\font\js\all.js" />
     <Content Include="Content\font\js\all.min.js" />
     <Content Include="Content\font\js\brands.js" />
@@ -10820,6 +10814,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
