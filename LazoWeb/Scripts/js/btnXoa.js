@@ -4,7 +4,7 @@
         $("#myModal").modal();
         $("#cus-delete a").click(function () {
             $.ajax({
-                url: "DeleteConfirmed?id=" + idUser,
+                url: "/Admin/Customers/DeleteConfirmed?id=" + idUser,
                 type: "get",
                 success: function (result) {
                     if (result > 0) {
