@@ -1,4 +1,4 @@
-﻿using BotDetect.Web.Mvc;
+﻿using CaptchaMvc.HtmlHelpers;
 using LazoWeb.Models;
 using System;
 using System.Data;
@@ -47,32 +47,33 @@ namespace LazoWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [CaptchaValidation("CaptchaCode", "registerCaptcha", "Nhập mã Captcha không đúng!")]
-        public async Task<ActionResult> Register([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
+        public async Task<ActionResult> Register(Customer customer)
         {
-            if (ModelState.IsValid)
+            if (this.IsCaptchaValid("Mã xác nhận không đúng!") && ModelState.IsValid)
             {
                 bool isEmail = CheckExistingEmail(customer.Email);
+                bool isPhone = CheckExistingPhone(customer.Phone);
                 if (isEmail)
                 {
-                    customer.RegisterDate = DateTime.Now;
-                    db.Customers.Add(customer);
-                    var res = db.SaveChanges();
-                    if (res > 0)
+                    if (isPhone)
                     {
+                        customer.RegisterDate = DateTime.Now;
+                        db.Customers.Add(customer);
+                        var res = db.SaveChanges();
                         await SendMailForCustomer(customer);
-                        Session["signup"] = "success";
-                        return RedirectToAction("Index", "Home");
+                        ViewData["register"] = true;
+                        return View();
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Đăng ký không thành công!");
+                        ModelState.AddModelError("Phone", "Số điện thoại đã tồn tại");
                         return View(customer);
                     }
+
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Email đã tồn tại");
+                    ModelState.AddModelError("Email", "Email đã tồn tại");
                     return View(customer);
                 }
             }
@@ -161,6 +162,21 @@ namespace LazoWeb.Controllers
             }
         }
 
+        public bool CheckExistingPhone(string phone)
+        {
+            var result = db.Customers.Where(s => s.Phone == phone).Count();
+
+            if (result > 0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public Task SendMailForCustomer(Customer customer)
         {
             SmtpClient smtp = new SmtpClient();
@@ -168,12 +184,13 @@ namespace LazoWeb.Controllers
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.Credentials = new NetworkCredential("dattran2723@gmail.com", "ltigyvnwvdxhpwmo");
-            //var notification = "Cảm ơn bạn đã đăng ký sử dụng dịch vụ của Lazo. Chúng tôi sẽ liên hệ với bạn ngay khi có thể";
+
+            //Nội dung mail
             string content = System.IO.File.ReadAllText(Server.MapPath("~/Views/Customers/MailContent.cshtml"));
             content = content.Replace("{{Name}}", customer.Name);
             content = content.Replace("{{Company}}", customer.Company);
             content = content.Replace("{{NumberEmployee}}", customer.NumberEmployee.ToString());
-            content = content.Replace("{{Address}}", customer.Address);
+            content = content.Replace("{{Phone}}", customer.Phone);
             content = content.Replace("{{Email}}", customer.Email);
 
             var fromEmail = new MailAddress("dattran2723@gmail.com", "Lazo");
@@ -188,6 +205,7 @@ namespace LazoWeb.Controllers
             };
 
             smtp.Send(mail);
+
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }

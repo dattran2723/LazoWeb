@@ -1,13 +1,10 @@
 ﻿@model LazoWeb.Models.Customer
-@using BotDetect.Web.Mvc;
-<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
-      rel="stylesheet" type="text/css" />
+@using CaptchaMvc.HtmlHelpers
 <link href="~/Content/css/Register.css" rel="stylesheet" />
-@{ var registerCaptcha = new MvcCaptcha("registerCaptcha")
-    { UserInputID = "CaptchaCode" }; }
 @{
     ViewBag.Title = "Đăng ký - ";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var captcha = Html.Captcha("Chọn lại","",5, "Vui lòng nhập!", true);
 }
 <div class="row" id="signup-page">
     <div class="col-xs-12 col-sm-2 col-md-3 col-lg-3" id="tree">
@@ -21,38 +18,37 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="text-center text-danger">@ViewBag.ErrorMsg</div>
-            <div class="row input-zone">
+            <div class="row input-zone text-left">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Họ và tên", @id = "Name" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger text-left", @id = "ValidName" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger text-left small", @id = "ValidName" })
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-10 text-left">
                     @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control", @placeholder = "Tên công ty", @id = "Company" } })
-                    @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger", @id = "ValidCompany" })
+                    @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger small", @id = "ValidCompany" })
+                </div>
+                <div class="col-md-10 text-left">
+                    @Html.EditorFor(model => model.NumberEmployee, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số lượng nhân viên", @id = "NumberEmployee"} })
+                    @Html.ValidationMessageFor(model => model.NumberEmployee, "", new { @class = "text-danger small", @id = "ValidNumberEmployee" })
                 </div>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.NumberEmployee, new { htmlAttributes = new { @class = "form-control", @placeholder = "Số lượng nhân viên", @id = "NumberEmployee" } })
-                    @Html.ValidationMessageFor(model => model.NumberEmployee, "", new { @class = "text-danger", @id = "ValidNumberEmployee" })
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Điện thoại liên hệ", @id = "Phone" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger small", @id = "ValidPhone" })
                 </div>
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ liên hệ", @id = "Address" } })
-                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger", @id = "ValidAddress" })
-                </div>
-                <div class="col-md-10">
+                <div class="col-md-10 text-left">
                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Địa chỉ Email", @id = "Email" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @id = "ValidEmail" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger small", @id = "ValidEmail" })
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12 captcha">
-                    @Html.Captcha(registerCaptcha)
-                    @Html.TextBox("CaptchaCode")
-                    @Html.ValidationMessage("CaptchaCode", "", new { @class = "text-danger" })
+                    @captcha
+                    @Html.ValidationMessage(captcha.BuildInfo.InputElementId,"",new { @class="text-danger small"})
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-112 text-center">
-                    <input type="submit" value="Gửi yêu cầu" class="btn btn-primary" />
+                    <input type="submit" id="btn-submit" value="Gửi yêu cầu" class="btn btn-primary" />
                 </div>
             </div>
         }
@@ -61,4 +57,29 @@
         <img class="img-responsive" src="~/Content/img/Untitled-1_0000_glasses.png" alt="Alternate Text" />
     </div>
 </div>
+<div class="modal fade" id="myNotifySuccess" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+                <p>Đăng ký thành công</p>
+            </div>
+            <div class="modal-footer">
+                <a href="@Url.Action("Index","Home")" class="btn btn-success">Xong</a>
+            </div>
+        </div>
+    </div>
+</div>
+@{ 
+    var register = ViewData["register"];
+    if(register != null)
+    {
+        <script>
+            $(document).ready(function () {
+                $("#myNotifySuccess").modal();
+            });
+        </script>
+    }
+}
 <script src="~/Scripts/js/formRequired.js"></script>
