@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
-    $(".myBtn").click(function () {
+    $("#example").on('click', '.myBtn', function () {
         var idUser = $(this).attr("data-id");
         $("#myModal").modal();
         $("#cus-delete a").click(function () {
             $.ajax({
-                url: "DeleteConfirmed?id="+idUser,
+                url: "DeleteConfirmed?id=" + idUser,
                 type: "get",
                 success: function (result) {
                     if (result > 0) {
@@ -24,16 +24,13 @@
 
 });
 $(document).ready(function () {
-    $(".myBtnUser").click(function () {
+    $("#example").on('click', '.myBtnUser', function () {
         var id = $(this).attr("data-id");
-        $("#myModel-href a").attr('href', '/Admin/User/DeleteConfirmed?id=' + id);
         $("#myModal").modal();
-    });
-});
         $("#ConfirmDelete").click(function () {
             $.ajax({
                 type: "GET",
-                url: '/Admin/User/DeleteConfirmed?id=' + id,
+                url: '/Admin/User/DeleteConfirmedUser?id=' + id,
                 success: function (result) {
                     if (result > 0) {
                         $("#myModal").hide();

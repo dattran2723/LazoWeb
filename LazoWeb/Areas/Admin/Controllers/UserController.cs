@@ -28,7 +28,6 @@ namespace LazoWeb.Areas.Admin.Controllers
         public ActionResult GetAllUser()
         {
             return View(db.Users.OrderByDescending(x => x.CreatedDate).ToList());
-            //return View(db.Users.ToList());
         }
         public ActionResult Details(string id)
         {
@@ -82,12 +81,19 @@ namespace LazoWeb.Areas.Admin.Controllers
             }
             return View(model);
         }
-        public int DeleteConfirmed(string id)
+        public int DeleteConfirmedUser(string id)
         {
             ApplicationUser user = db.Users.Find(id);
             db.Users.Remove(user);
             var result = db.SaveChanges();
             return result;
+        }
+        public ActionResult delete(string id)
+        {
+            ApplicationUser user = db.Users.Find(id);
+            db.Users.Remove(user);
+            var result = db.SaveChanges();
+            return RedirectToAction("Getalluser", "User", new { area = "admin" });
         }
         protected override void Dispose(bool disposing)
         {

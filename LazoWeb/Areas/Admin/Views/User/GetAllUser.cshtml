@@ -69,7 +69,6 @@
                         {
                             <a data - toggle="tooltip" class="myBtnUser" title="Xóa" href="javascript:;" data-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
                         }
-
                     </td>
                 </tr>
             }
@@ -86,28 +85,22 @@
                 <div class="modal-body">
                     <p class="text-center">Bạn có muốn xóa tài khoản này không ?</p>
                 </div>
-                @*@using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()*@
                 <div class="modal-footer" id="myModel-href">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                     <a class="btn btn-danger" id="ConfirmDelete">Xóa</a>
                 </div>
-                @* } *@
             </div>
         </div>
     </div>
     <div class="modal fade" id="myModalSuccess" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-center"><b>Xóa tài khoản</b></h4>
-                </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
                     <p class="text-center">Đã xóa tài khoản thành công</p>
                 </div>
                 <div class="modal-footer" id="myModel-href1">
-                    <a href="/admin/user/getalluser" class="btn btn-danger">Oke</a>
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
                 </div>
             </div>
 
@@ -116,14 +109,12 @@
     <div class="modal fade" id="myModalFail" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-center"><b>Xóa tài khoản</b></h4>
-                </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
+                    <h1 class="text-danger"><i class="fas fa-exclamation"></i></h1>
                     <p class="text-center">Xóa tài khoản bị lỗi ! </p>
                 </div>
                 <div class="modal-footer" id="myModel-href1">
-                    <a href="/admin/user/getalluser" class="btn btn-danger">Oke</a>
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
                 </div>
             </div>
 
