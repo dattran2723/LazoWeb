@@ -56,6 +56,8 @@ $(document).ready(function () {
             Comment: "Tôi thấy hệ thống quản lý nhân viên của Lazo rất chuyên nghiệp, nổi bật bởi nền tảng công nghệ bản đồ 3D."
         }
     ];
+    $('#feedback-content h4').html(arrComment[0].Name + arrComment[0].Company);
+    $('#feedback-content p').html(arrComment[0].Comment);
 
     $('#customers-feedback a.carousel-control-prev').click(function () {
         var id = $('#carouselExample .carousel-inner .active').attr('data-id');
@@ -83,7 +85,7 @@ $(document).ready(function () {
                 }
             }
         }
-        $('#feedback-content h4').html(Name + " | " + Company);
+        $('#feedback-content h4').html(Name + Company);
         $('#feedback-content p').html(Comment);
     });
     $('#customers-feedback a.carousel-control-next').click(function () {
@@ -110,7 +112,7 @@ $(document).ready(function () {
                 }
             }
         }
-        $('#feedback-content h4').html(Name + " | " + Company);
+        $('#feedback-content h4').html(Name+ Company);
         $('#feedback-content p').html(Comment);
     });
 })
