@@ -185,3 +185,9 @@
         height: 256px;
     }
 }
+@media only screen and (max-width: 320px) {
+    #carouselExampleIndicators h1 {
+        font-size: 0.8em;
+    }
+}
+

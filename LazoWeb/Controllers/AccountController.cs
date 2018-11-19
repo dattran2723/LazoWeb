@@ -212,7 +212,7 @@ namespace LazoWeb.Controllers
                     // Send an email with this link
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng kí tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
+                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng ký tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
                     //ViewBag.msg = "Bạn thêm tài khoản thành công";
                     //return View(model);
                     return RedirectToAction("GetAllUser", "User", new { area = "admin" });
