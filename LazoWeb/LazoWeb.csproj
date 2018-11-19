@@ -47,11 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BotDetect, Version=4.3.3.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Captcha.4.3.3\lib\net46\BotDetect.dll</HintPath>
-    </Reference>
-    <Reference Include="BotDetect.Web.Mvc, Version=4.3.3.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Captcha.4.3.3\lib\net46\BotDetect.Web.Mvc.dll</HintPath>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
@@ -9409,8 +9406,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811161015004_inti.resx">
-      <DependentUpon>201811161015004_inti.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811160422398_init-db.resx">
+      <DependentUpon>201811160422398_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
