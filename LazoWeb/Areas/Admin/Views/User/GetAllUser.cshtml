@@ -86,7 +86,7 @@
                     <p class="text-center">Bạn có muốn xóa tài khoản này không ?</p>
                 </div>
                 <div class="modal-footer" id="myModel-href">
-                    <button type="button" class="btn btn-default" id="btnDong" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Đóng</button>
                     <a class="btn btn-danger" id="ConfirmDelete">Xóa</a>
                 </div>
             </div>
@@ -122,6 +122,7 @@
     </div>
 </div>
 @section script {
+    <script src="~/Scripts/js/btnXoa.js"></script>
     <script>
         $(document).ready(function () {
             $("#manage-accounts").addClass("active");
@@ -129,4 +130,3 @@
         });
     </script>
 }
-<script src="~/Scripts/js/btnXoa.js"></script>

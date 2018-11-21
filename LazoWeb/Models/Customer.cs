@@ -15,7 +15,6 @@ namespace LazoWeb.Models
 
         [DisplayName("Họ và tên")]
         [Required(ErrorMessage = "Vui lòng nhập họ và tên!")]
-        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [StringLength(50)]
         public string Name { get; set; }
         [DisplayName("Tên công ty")]
@@ -29,13 +28,15 @@ namespace LazoWeb.Models
 
         [DisplayName("Số điện thoại")]
         [Required(ErrorMessage = "Vui lòng nhập số điện thoại liên hệ!")]
-        [RegularExpression("^[0-9]+$",ErrorMessage ="Vui lòng nhập đúng định dạng!")]
-        [StringLength(10,ErrorMessage ="Số điện thoại không quá 10 ký tự")]
+        [RegularExpression("^0[0-9]+$",ErrorMessage ="Vui lòng nhập đúng định dạng!")]
+        [StringLength(11,ErrorMessage ="Số điên thoại gồm 10-11 ký tự số!",MinimumLength =10)]
+        [Remote("CheckExistingPhone", "Customers", HttpMethod = "POST", ErrorMessage = "Số điện thoại đã tồn tại")]
         public string Phone { get; set; }
 
         [DisplayName("Địa chỉ Email")]
         [Required(ErrorMessage ="Vui lòng nhập Email!")]
-        [EmailAddress(ErrorMessage ="Địa chỉ Email không hợp lệ!")]
+        [EmailAddress(ErrorMessage ="Email không hợp lệ!")]
+        [Remote("CheckExistingEmail", "Customers", HttpMethod = "POST", ErrorMessage = "Email đã tồn tại")]
         public string Email { get; set; }
 
         [DisplayName("Ngày đăng ký")]

@@ -1,53 +1,59 @@
 ﻿$(document).ready(function () {
+    // Xóa một khách hàng
     $("#example").on('click', '.myBtn', function () {
-        var idUser = $(this).attr("data-id");
         $("#myModal").modal();
-        $("#cus-delete a").click(function () {
-            $.ajax({
-                url: "/Admin/Customers/DeleteConfirmed?id=" + idUser,
-                type: "get",
-                success: function (result) {
-                    if (result > 0) {
-                        $("#myModal").hide();
-                        $("#myNotifySuccess").modal();
-                        $("#btn-close").click(function () {
-                            location.reload();
-                        });
-                    } else {
-                        $("#myModal").hide();
-                        $("#myNotifyFail").modal();
-                    }
+        $("#cus-delete a").attr("data-id", $(this).attr("data-id"));
+    });
+    $("#cus-delete button#close").click(function () {
+        $("#cus-delete a").removeAttr("data-id");
+    });
+    $("#cus-delete a").click(function () {
+        var idCus = $(this).attr("data-id");
+        $("#myModal").modal("hide");
+        $.ajax({
+            url: "/Admin/Customers/DeleteConfirmed?id=" + idCus,
+            type: "get",
+            success: function (result) {
+                if (result > 0) {
+                    $("#myNotifySuccess").modal();
+                    $("#btn-close").click(function () {
+                        location.reload();
+                    });
+                } else {
+                    $("#myNotifyFail").modal();
                 }
-            });
+            }
         });
     });
 
-});
-$(document).ready(function () {
+    // Xóa một người dùng
     $("#example").on('click', '.myBtnUser', function () {
-        var id = $(this).attr("data-id");
         $("#myModal").modal();
-        $("#ConfirmDelete").click(function () {
-            $.ajax({
-                type: "GET",
-                url: '/Admin/User/DeleteConfirmedUser?id=' + id,
-                success: function (result) {
-                    if (result > 0) {
-                        $("#myModal").hide();
-                        $("#myModalSuccess").modal();
-                    }
-                    else {
-                        $("#myModal").hide();
-                        $("#myModalFail").modal();
-                    }
-                },
-                error: function (erro) {
-                    console.debug(erro);
+        $("#ConfirmDelete").attr("data-id", $(this).attr("data-id"));
+    });
+
+    $("#myModel-href button#close").click(function () {
+        $("#ConfirmDelete").removeAttr("data-id");
+    });
+
+    $("#ConfirmDelete").click(function () {
+        var idUser = $(this).attr("data-id");
+        $("#myModal").modal("hide");
+
+        $.ajax({
+            type: "GET",
+            url: '/Admin/User/DeleteConfirmedUser?id=' + idUser,
+            success: function (result) {
+                if (result > 0) {
+                    $("#myModalSuccess").modal();
                 }
-            });
+                else {
+                    $("#myModalFail").modal();
+                }
+            },
+            error: function (erro) {
+                console.debug(erro);
+            }
         });
-        $("#btnDong").click(function () {
-            $(".myBtnUser").removeAttr("data-id")
-        });
-    })
+    });
 });
