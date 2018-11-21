@@ -15,26 +15,6 @@ namespace LazoWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Customers
-        //public ActionResult Index()
-        //{
-        //    return View(db.Customers.ToList());
-        //}
-
-        // GET: Customers/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(customer);
-        //}
 
         // GET: Customers/Create
         public ActionResult Register()
@@ -51,92 +31,19 @@ namespace LazoWeb.Controllers
         {
             if (this.IsCaptchaValid("Mã xác nhận không đúng!") && ModelState.IsValid)
             {
-                bool isEmail = CheckExistingEmail(customer.Email);
-                bool isPhone = CheckExistingPhone(customer.Phone);
-                if (isEmail)
-                {
-                    if (isPhone)
-                    {
-                        customer.RegisterDate = DateTime.Now;
-                        db.Customers.Add(customer);
-                        var res = db.SaveChanges();
-                        await SendMailForCustomer(customer);
-                        ViewData["register"] = true;
-                        return View();
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("Phone", "Số điện thoại đã tồn tại");
-                        return View(customer);
-                    }
+                customer.RegisterDate = DateTime.Now;
+                db.Customers.Add(customer);
+                var res = db.SaveChanges();
+                await SendMailForCustomer(customer);
+                ViewData["register"] = true;
+                return View();
 
-                }
-                else
-                {
-                    ModelState.AddModelError("Email", "Email đã tồn tại");
-                    return View(customer);
-                }
             }
 
             return View(customer);
         }
 
-        // GET: Customers/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(customer);
-        //}
 
-        // POST: Customers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "ID,Name,Company,NumberEmployee,Address,Email,Status")] Customer customer)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(customer).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(customer);
-        //}
-
-        // GET: Customers/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(customer);
-        //}
-
-        // POST: Customers/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Customer customer = db.Customers.Find(id);
-        //    db.Customers.Remove(customer);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
 
         protected override void Dispose(bool disposing)
         {
@@ -147,34 +54,22 @@ namespace LazoWeb.Controllers
             base.Dispose(disposing);
         }
 
-        public bool CheckExistingEmail(string email)
+        [HttpPost]
+        public ActionResult CheckExistingEmail(string Email)
         {
-            var result = db.Customers.Where(s => s.Email == email).Count();
-
+            var result = db.Customers.Where(s => s.Email == Email).Count();
             if (result > 0)
-            {
-
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+                return Json(false);
+            return Json(true);
         }
 
-        public bool CheckExistingPhone(string phone)
+        [HttpPost]
+        public ActionResult CheckExistingPhone(string Phone)
         {
-            var result = db.Customers.Where(s => s.Phone == phone).Count();
-
+            var result = db.Customers.Where(s => s.Phone == Phone).Count();
             if (result > 0)
-            {
-
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+                return Json(false);
+            return Json(true);
         }
 
         public Task SendMailForCustomer(Customer customer)
