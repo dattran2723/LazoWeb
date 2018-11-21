@@ -46,5 +46,8 @@ $(document).ready(function () {
                 }
             });
         });
+        $("#btnDong").click(function () {
+            $(".myBtnUser").removeAttr("data-id")
+        });
     })
 });

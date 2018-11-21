@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace LazoWeb.Models
 {
@@ -51,12 +52,14 @@ namespace LazoWeb.Models
     {
         [Required(ErrorMessage = "Vui lòng nhập Email !")]
         [Display(Name = "Email")]
-        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        //[EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu !")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [Display(Name = "Ghi nhớ?")]
@@ -66,32 +69,32 @@ namespace LazoWeb.Models
     public class RegisterViewModel
     {
         [Required(ErrorMessage = "Vui lòng nhập Email !")]
-        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [EmailAddress(ErrorMessage = "Email không đúng định dạng")]
+        [Remote("UserAlreadyExistsAsync", "Account", ErrorMessage = "Email đã tồn tại!")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu !")]
-        [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập lại mât khẩu !")]
-        [DataType(DataType.Password)]
-        [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
-        [Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự  !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu nhập lại")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Họ")]
-        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ không chứa số và kí tự đặc biệt!")]
         [Required(ErrorMessage = "Vui lòng nhập vào họ !")]
-        [StringLength(30, ErrorMessage = "Họ nhập vào không được dài quá {2} kí tự.")]
         public string LastName { get; set; }
 
         [Display(Name = "Tên")]
         [Required(ErrorMessage = "Vui lòng nhập vào tên !")]
-        [RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Tên không chứa số và kí tự đặc biệt!")]
-        [StringLength(30, ErrorMessage = "Tên nhập vào không được dài quá {2} kí tự.")]
         public string FirstName { get; set; }
 
         [Display(Name = "Ngày tạo")]
@@ -101,19 +104,23 @@ namespace LazoWeb.Models
     public class ResetPasswordViewModel
     {
         [Required(ErrorMessage = "Vui lòng nhập Email !")]
-        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [EmailAddress(ErrorMessage = "Email không đúng định dạng")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu !")]
-        [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng nhập lại mật khẩu !")]
-        [StringLength(100, ErrorMessage = "Mật khẩu phải dài ít nhất {2}.", MinimumLength = 1)]
-        [Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu !")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu nhập lại")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Mật khẩu và mật khẩu nhập lại không trùng nhau.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -122,7 +129,7 @@ namespace LazoWeb.Models
     public class ForgotPasswordViewModel
     {
         [Required(ErrorMessage = "Vui lòng nhập Email !")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email không đúng định dạng")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }

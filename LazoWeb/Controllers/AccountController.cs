@@ -261,11 +261,11 @@ namespace LazoWeb.Controllers
                     // Don't reveal that the user does not exist or is not confirmed
                     return View(model);
                 }
-                if (!(await UserManager.IsEmailConfirmedAsync(user.Id)))
-                {
-                    ViewBag.ThongBao = "Bạn chưa xác thực tài khoản nên không thể thực hiện chức năng này được";
-                    return View(model);
-                }
+                //if (!(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                //{
+                //    ViewBag.ThongBao = "Bạn chưa xác thực tài khoản nên không thể thực hiện chức năng này được";
+                //    return View(model);
+                //}
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
@@ -492,6 +492,15 @@ namespace LazoWeb.Controllers
                "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây </a>đây để xác nhận");
 
             return callbackUrl;
+        }
+
+        [AllowAnonymous]
+        public async Task<JsonResult> UserAlreadyExistsAsync(string email)
+        {
+            var result =
+                await UserManager.FindByNameAsync(email) ??
+                await UserManager.FindByEmailAsync(email);
+            return Json(result == null, JsonRequestBehavior.AllowGet);
         }
         #region Helpers
         // Used for XSRF protection when adding external logins
