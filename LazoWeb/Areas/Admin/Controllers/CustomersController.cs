@@ -105,6 +105,7 @@ namespace LazoWeb.Areas.Admin.Controllers
             var result = db.SaveChanges();
             return result;
         }
+
         [HttpPost]
         public JsonResult ChangeStatus(long id)
         {
