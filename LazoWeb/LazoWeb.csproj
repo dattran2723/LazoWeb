@@ -549,6 +549,9 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PriceListController.cs" />
+    <Compile Include="Controllers\Product_ServiceController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -10814,11 +10817,18 @@
     <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Scripts\js\validator.registerUser.js" />
+    <Content Include="Views\Product_Service\Product_Service.cshtml" />
+    <Content Include="Views\Product_Service\ToChuc&amp;QuanLy.cshtml" />
+    <Content Include="Views\Product_Service\TaoLap&amp;PhanCong.cshtml" />
+    <Content Include="Views\Product_Service\TheoDoi&amp;BaoCao.cshtml" />
+    <Content Include="Views\Product_Service\CamKetDichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Views\PriceList\" />
+    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
