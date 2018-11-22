@@ -1,17 +1,63 @@
 ﻿@{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+<div class="camket">
+    <div class="row tren">
+        <h2 class="col-md-12 text-center">CAM KẾT DỊCH VỤ</h2>
     </div>
-</body>
-</html>
+    <div class="row" id="carousel3d">
+        <carousel-3d :perspective="0" :space="200" :display="7" @*:controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60"*@ :clickable="true" :autoplay="false" :autoplay-timeout="5000">
+            <slide :index="0">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0001_0.1-Cover-app-của-khách-hàng.png" />
+            </slide>
+            <slide :index="1">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0002_Đã-làm-việc@2x.png" />
+            </slide>
+            <slide :index="2">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0000_3.1-Notification.png" />
+            </slide>
+            <slide :index="3">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0005_1.-Danh-sách-cửa-hàng.png" />
+            </slide>
+            <slide :index="4">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0006_Version-3.png" />
+            </slide>
+            <slide :index="5">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0004_Lịch-sắp-tới-1.png" />
+            </slide>
+            <slide :index="6">
+                <img class="img-responsive" src="~/Content/img/imgProduct_Service/page-3_0003_Lịch-sắp-tới@2x.png" />
+
+            </slide>
+        </carousel-3d>
+    </div>
+    <div class="row duoi">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center chu1">
+            <img src="~/Content/img/imgProduct_Service/page-3_0000_Layer-32.png" alt="Alternate Text" />
+            <p>30 ngày sử dụng đầu tiên không thu phí</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center chu2">
+            <img src="~/Content/img/imgProduct_Service/page-3_0001_Layer-33.png" alt="Alternate Text" />
+            <p>Hỗ trợ và chăm sóc khách hàng tại cả 3 miền, hỗ trợ khách hàng xuyên suốt và chuyên nghiệp</p>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center chu3">
+            <img src="~/Content/img/imgProduct_Service/page-3_0002_Layer-34.png" alt="Alternate Text" />
+            <p>Bảo mật thông tin tuyệt đối, không chia sẻ thông tin cho bên thứ ba</p>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/js/vue.js"></script>
+<script src="~/Scripts/js/vue-carousel-3d.js"></script>
+<script>
+    new Vue({
+        el: '#carousel3d',
+        data: {
+            slides: 7
+        },
+        components: {
+            'carousel-3d': Carousel3d.Carousel3d,
+            'slide': Carousel3d.Slide
+        }
+    })
+</script>
+

@@ -1,0 +1,145 @@
+﻿@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.left {
+    padding-left: 8.5%;
+    padding-top: 9%;
+    padding-bottom: 6%;
+}
+
+.tochucquanly {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    .tochucquanly .left .tochuc h2 {
+        font-family: "utm avo";
+        font-size: 42px;
+        font-style: normal;
+        color: #6684f5;
+        padding-right: 10%;
+    }
+
+    .tochucquanly .left .tochuc ul {
+        list-style-position: inside;
+        list-style-type: inherit;
+    }
+
+        .tochucquanly .left .tochuc ul li {
+            font-family: Arial;
+            font-size: 18px;
+            color: #4c4c4c;
+        }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-family: "utm avo";
+        font-size: 42px;
+        font-style: normal;
+        padding-right: 10%;
+        color: #6684f5;
+    }
+
+    .tochucquanly .left .tinhnang ul {
+        list-style-position: inside;
+        list-style-type: inherit;
+    }
+
+        .tochucquanly .left .tinhnang ul li {
+            font-family: Arial;
+            font-size: 18px;
+            padding-right: 27%;
+            color: #4c4c4c;
+        }
+
+
+    .tochucquanly .right .imgToChuc {
+        width: 96%;
+        padding-top: 6%;
+    }
+
+@media only screen and (max-width: 1230px) {
+    .tochucquanly .right .imgToChuc {
+        padding-top: 20%;
+    }
+
+    .tochucquanly .left .tochuc h2 {
+        font-size: 38px;
+    }
+
+    .tochucquanly .left .tochuc ul li {
+        font-size: 16px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 38px;
+    }
+
+    .tochucquanly .left .tinhnang ul li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1134px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 30px;
+    }
+
+    .tochucquanly .left .tochuc ul li {
+        font-size: 14px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 30px;
+    }
+
+    .tochucquanly .left .tinhnang ul li {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 25px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 25px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 32px;
+    }
+
+    .tochucquanly .left .tochuc ul li {
+        font-size: 16px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 32px;
+    }
+
+    .tochucquanly .left .tinhnang ul li {
+        font-size: 16px;
+    }
+
+    .tochucquanly .right .imgToChuc {
+        width: 80%;
+        padding: 5% 0 5% 15%;
+    }
+}
