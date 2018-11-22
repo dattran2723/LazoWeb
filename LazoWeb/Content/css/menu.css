@@ -24,16 +24,21 @@
         color:white;
         font-size:15px;
     }
+    #menu-top a:hover{
+        color:Black;
+        font-size:15px;
+    }
     #menu-top li#btn-english{
-        color: black;
+        color: white;
         margin-left:20px;
     }
         #menu-top li#btn-english a {
             border-radius: 20px;
-            background-color: #ffe164;
+            border: 2px solid white;
+            width:120px;
         }
         #menu-top li#btn-english a:hover {
-            background-color: #fcb41d;
+            /*background-color: #fcb41d;*/
         }
 @media only screen and ( max-width: 1091px){
     #menu-top .character {
