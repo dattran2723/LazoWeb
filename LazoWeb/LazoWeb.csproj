@@ -549,6 +549,9 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PriceListController.cs" />
+    <Compile Include="Controllers\Product_ServiceController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -9996,6 +9999,38 @@
     <Content Include="Content\img\imglogo\Untitled-1_0003_logo-cty-01.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0004_download.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0005_logo-cocobay-danang-empire-group.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0000_0.1-Cover-app-của-khách-hàng.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0001_Đã-làm-việc%402x.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0002_3.1-Notification.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0003_Lịch-sắp-tới%402x.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0004_Lịch-sắp-tới-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0005_1.-Danh-sách-cửa-hàng.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000s_0006_Version-3.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000_Group-4.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0000_Layer-32.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0000_0.1-Cover-app-của-khách-hàng.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0000_Rounded-Rectangle-3.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0001_Đã-làm-việc%402x.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0002_3.1-Notification.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0003_Lịch-sắp-tới%402x.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0004_Lịch-sắp-tới-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0005_1.-Danh-sách-cửa-hàng.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001s_0006_Version-3.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0001_Layer-33.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0002s_0000_Rounded-Rectangle-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0002s_0002s_0000_Rounded-Rectangle-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0002_Layer-33.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0002_Layer-34.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0003s_0000_Rounded-Rectangle-3.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0004s_0000_Rounded-Rectangle-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0004_imac.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0005_Layer-30.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0006_Layer-35.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0009_-copy.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0010_.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0013_Ellipse-1-copy-3.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0015_Ellipse-1.png" />
+    <Content Include="Content\img\imgProduct_Service\page-3_0016_logo-trang.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\page-1_0000s_0000_Rounded-Rectangle-4-copy-3.png" />
     <Content Include="Content\img\page-1_0000_google-store.png" />
@@ -10814,11 +10849,18 @@
     <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Scripts\js\validator.registerUser.js" />
+    <Content Include="Views\Product_Service\Product_Service.cshtml" />
+    <Content Include="Views\Product_Service\ToChuc&amp;QuanLy.cshtml" />
+    <Content Include="Views\Product_Service\TaoLap&amp;PhanCong.cshtml" />
+    <Content Include="Views\Product_Service\TheoDoi&amp;BaoCao.cshtml" />
+    <Content Include="Views\Product_Service\CamKetDichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Views\PriceList\" />
+    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
