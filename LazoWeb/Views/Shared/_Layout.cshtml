@@ -24,10 +24,8 @@
     @RenderSection("css", required: false)
 </head>
 <body>
-    <div>
-        @Html.Partial("_MenuHeader")
-        @RenderBody()
-    </div>
+    @Html.Partial("_MenuHeader")
+    @RenderBody()
     @Html.Partial("/Views/Shared/_FooterPartial.cshtml")
     @*script*@
     <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>

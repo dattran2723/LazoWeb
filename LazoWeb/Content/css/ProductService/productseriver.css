@@ -1,0 +1,130 @@
+﻿
+@font-face {
+    font-family: UTM Avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+/*css cho view Taolap.cshtml*/
+#tao-lap {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #f2f2f3;
+}
+
+    #tao-lap .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #tao-lap img {
+        width: 80%;
+        margin-top: 10%;
+        margin-bottom: -10%;
+    }
+
+.content {
+    margin-top: 15%;
+    margin-left: 5%;
+}
+
+    .content h3 {
+        font-family: 'UTM Avo';
+        color: #4b6ff4;
+        font-size: 42px;
+    }
+
+
+
+    .content ul {
+        margin-top: 5%;
+        margin-left: 3%;
+        width: 100%;
+        list-style-type: inherit;
+    }
+
+        .content ul li {
+            font-family: 'Arial';
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+#tao-lap .content h3 {
+    width: 78%;
+}
+
+#tao-lap .content a {
+    background-color: #5f84fd;
+    width: 150px;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 10%;
+}
+
+    #tao-lap .content a:hover {
+        background-color: #084ee0;
+    }
+
+
+/*css cho view TheoDoi.cshtml*/
+#follow-report, #follow-report .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #follow-report .content {
+        padding-left: 25%;
+    }
+
+    #follow-report img {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 90%;
+        margin-right: -15px;
+    }
+
+
+
+/*responsive*/
+@media only screen and (max-width: 1230px) {
+    .content h3 {
+        font-size: 38px;
+    }
+
+    .content ul li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1134px) {
+    .content h3 {
+        font-size: 30px;
+    }
+
+    .content ul li {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .content h3 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #tao-lap img {
+        width: 100%;
+    }
+    .content {
+        margin-top: 0;
+        margin-left: 7%!important;
+    }
+    #follow-report .content {
+        margin-top: 5%;
+        padding-left: 0;
+    }
+    #follow-report img {
+        margin-top: 0;
+    }
+}

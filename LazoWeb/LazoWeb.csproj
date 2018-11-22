@@ -7115,6 +7115,7 @@
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\ProductService\camket.css" />
     <Content Include="Content\css\ProductService\tochuc.css" />
+    <Content Include="Content\css\ProductService\productseriver.css" />
     <Content Include="Content\css\Register.css" />
     <Content Include="Content\css\slide.css" />
     <Content Include="Content\css\StyleFeedback.css" />
@@ -10851,6 +10852,11 @@
     <Content Include="Views\ProductService\TaoLap.cshtml" />
     <Content Include="Views\ProductService\TheoDoi.cshtml" />
     <Content Include="Views\ProductService\CamKet.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\AskQuestion.cshtml" />
+    <Content Include="Views\Question\StartTogether.cshtml" />
+    <Content Include="Views\PriceList\Index.cshtml" />
+    <Content Include="Views\PriceList\OurPrice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
