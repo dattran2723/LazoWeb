@@ -10854,14 +10854,17 @@
     <Content Include="Views\ProductService\TaoLap.cshtml" />
     <Content Include="Views\ProductService\TheoDoi.cshtml" />
     <Content Include="Views\ProductService\CamKet.cshtml" />
+    <Content Include="Views\PriceList\Index.cshtml" />
+    <Content Include="Views\PriceList\OurPrice.cshtml" />
+    <Content Include="Views\Question\AskQuestion.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\StartTogether.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Content\css\ProductService\" />
-    <Folder Include="Views\PriceList\" />
-    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
