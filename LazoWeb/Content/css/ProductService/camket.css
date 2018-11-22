@@ -1,0 +1,123 @@
+﻿@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.camket {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #4774e4;
+    background-image: linear-gradient(to top, #4774e4, #67baf7);
+    /*border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;*/
+    border-spacing: 10px 20px 50px 100px;
+}
+
+    .camket .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .camket .duoi {
+        padding-bottom: 5%;
+    }
+
+        .camket .duoi p {
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+            /*padding: 0px 20%;*/
+        }
+
+        .camket .duoi .chu1 p {
+            padding: 0px 20%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+        .camket .duoi .chu2 p {
+            padding: 0px 15%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+        .camket .duoi .chu3 p {
+            padding: 0px 18%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+    .camket .tren h2 {
+        font-family: "utm avo";
+        font-size: 42px;
+        font-weight: bold;
+        color: #fff;
+        padding-top: 5%;
+    }
+
+    .camket #carousel3d .carousel-3d-container {
+        margin-top: 3%;
+    }
+
+    .camket #carousel3d .carousel-3d-slide {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff;
+        border-color: silver;
+        transition: all 1s;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+
+@media only screen and (max-width: 1050px) {
+    .camket .tren h2 {
+        font-size: 36px;
+    }
+
+    .camket .duoi .chu1 p {
+        font-size: 14px;
+    }
+
+    .camket .duoi .chu2 p {
+        font-size: 14px;
+    }
+
+    .camket .duoi .chu3 p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .camket .tren h2 {
+        font-size: 28px;
+    }
+
+    .camket .duoi .chu1 p {
+        font-size: 14px;
+        margin-top: 2%;
+    }
+
+    .camket .duoi .chu2 p {
+        font-size: 14px;
+        margin-top: 2%;
+    }
+
+    .camket .duoi .chu3 p {
+        font-size: 14px;
+        margin-top: 2%;
+    }
+}
