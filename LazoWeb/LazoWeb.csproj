@@ -550,7 +550,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PriceListController.cs" />
-    <Compile Include="Controllers\Product_ServiceController.cs" />
+    <Compile Include="Controllers\ProductServiceController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -10849,16 +10849,17 @@
     <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Scripts\js\validator.registerUser.js" />
-    <Content Include="Views\Product_Service\Product_Service.cshtml" />
-    <Content Include="Views\Product_Service\ToChuc&amp;QuanLy.cshtml" />
-    <Content Include="Views\Product_Service\TaoLap&amp;PhanCong.cshtml" />
-    <Content Include="Views\Product_Service\TheoDoi&amp;BaoCao.cshtml" />
-    <Content Include="Views\Product_Service\CamKetDichVu.cshtml" />
+    <Content Include="Views\ProductService\Index.cshtml" />
+    <Content Include="Views\ProductService\ToChucQuanLy.cshtml" />
+    <Content Include="Views\ProductService\TaoLap.cshtml" />
+    <Content Include="Views\ProductService\TheoDoi.cshtml" />
+    <Content Include="Views\ProductService\CamKet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Content\css\ProductService\" />
     <Folder Include="Views\PriceList\" />
     <Folder Include="Views\Question\" />
   </ItemGroup>

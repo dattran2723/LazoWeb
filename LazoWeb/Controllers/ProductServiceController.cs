@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace LazoWeb.Controllers
 {
-    public class Product_ServiceController : Controller
+    public class ProductServiceController : Controller
     {
-        // GET: Product_Service
-        public ActionResult Product_Service()
+        // GET: ProductService
+        public ActionResult Index()
         {
             return View();
         }
