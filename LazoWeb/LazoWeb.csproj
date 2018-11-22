@@ -7113,6 +7113,7 @@
     <Content Include="Content\css\informationsLazo.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\ProductService\ourprice.css" />
     <Content Include="Content\css\ProductService\productseriver.css" />
     <Content Include="Content\css\Register.css" />
     <Content Include="Content\css\slide.css" />
@@ -10865,9 +10866,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Content\css\ProductService\" />
-    <Folder Include="Views\PriceList\" />
-    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

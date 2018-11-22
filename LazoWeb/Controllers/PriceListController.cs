@@ -9,7 +9,7 @@ namespace LazoWeb.Controllers
     public class PriceListController : Controller
     {
         // GET: PriceList
-        public ActionResult PriceList()
+        public ActionResult Index()
         {
             return View();
         }
