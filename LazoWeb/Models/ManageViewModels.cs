@@ -41,21 +41,26 @@ namespace LazoWeb.Models
 
     public class ChangePasswordViewModel
     {
-        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu cũ")]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu !")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu cũ")]
         public string OldPassword { get; set; }
 
-        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
-        [StringLength(100, ErrorMessage = "Mật khẩu phải có ít nhất {2} kí tự.", MinimumLength = 1)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu mới")]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu mới !")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu mới")]
         public string NewPassword { get; set; }
 
-        [Required(ErrorMessage = "Bắt buộc bạn phải nhập vào")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Xác nhận lại mật khẩu")]
-        [Compare("NewPassword", ErrorMessage = "Mật khẩu mới và xác nhận lại mật khẩu phải trùng nhau")]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu nhập lại !")]
+        [StringLength(32, MinimumLength = 6,
+                   ErrorMessage = "Yêu cầu nhập tối thiểu 6 và tối đa 32 kí tự !"),
+                   DataType(DataType.Password),
+                   Display(Name = "Mật khẩu nhập lại")]
+        [Compare("NewPassword", ErrorMessage = "Mật khẩu mới và mật khẩu nhập lại phải trùng nhau")]
         public string ConfirmPassword { get; set; }
     }
 

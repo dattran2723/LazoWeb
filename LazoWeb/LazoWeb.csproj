@@ -10748,6 +10748,7 @@
     <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\additional-methods.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -10758,8 +10759,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\btnXoa.js" />
-    <Content Include="Scripts\js\changerequidfrom.js" />
-    <Content Include="Scripts\js\change_requid_form_changepass.js" />
     <Content Include="Scripts\js\crolltoid.js" />
     <Content Include="Scripts\js\feedback.js" />
     <Content Include="Scripts\js\formRequired.js" />
@@ -10814,6 +10813,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Scripts\js\validator.registerUser.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -10831,11 +10831,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811210818060_init-db.resx">
-      <DependentUpon>201811210818060_init-db.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
