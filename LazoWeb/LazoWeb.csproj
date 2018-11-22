@@ -555,9 +555,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811220419533_init.cs" />
-    <Compile Include="Migrations\201811220419533_init.Designer.cs">
-      <DependentUpon>201811220419533_init.cs</DependentUpon>
+    <Compile Include="Migrations\201811221048004_inti.cs" />
+    <Compile Include="Migrations\201811221048004_inti.Designer.cs">
+      <DependentUpon>201811221048004_inti.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -10863,9 +10863,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Content\css\ProductService\" />
-    <Folder Include="Views\PriceList\" />
-    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -10880,8 +10877,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811220419533_init.resx">
-      <DependentUpon>201811220419533_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811221048004_inti.resx">
+      <DependentUpon>201811221048004_inti.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
