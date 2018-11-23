@@ -13,13 +13,13 @@ namespace LazoWeb.Models
     public class ApplicationUser : IdentityUser
     {
         [Display(Name = "Tên")]
-        [Required(ErrorMessage = "Vui lòng nhập họ !")]
+        [Required(ErrorMessage = "Vui lòng nhập tên !")]
         //[RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
         [StringLength(30, ErrorMessage = "Tên nhập vào không được dài quá {2} kí tự.")]
         public string FirstName { get; set; }
         [Display(Name = "Họ")]
         //[RegularExpression(@"^(\p{L}+\s?)*$", ErrorMessage = "Họ và tên không chứa số và kí tự đặc biệt!")]
-        [Required(ErrorMessage = "Vui lòng nhập Email !")]
+        [Required(ErrorMessage = "Vui lòng nhập họ !")]
         [StringLength(30)]
         public string LastName { get; set; }
         [Display(Name = "Ngày tạo tài khoản")]
