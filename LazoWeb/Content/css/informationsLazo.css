@@ -1,5 +1,6 @@
 ﻿body {
 }
+
 @font-face {
     font-family: utm avo;
     src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
@@ -8,84 +9,127 @@
 }
 /*acb*/
 .infolazo {
+    clear: both;    
     margin: auto;
     padding-left: 4.6%;
     padding-right: 4.6%;
 }
 
-.visao {
-    padding-bottom: 35px;
-}
-
-    .visao h2 {
-        color: deepskyblue;
-        font-size:42px;
-        font-family: 'utm avo';
-        padding-bottom: 21px;
+    .infolazo .visao {
+        padding-bottom: 35px;
     }
 
-    .visao ul li {
+        .infolazo .visao h2 {
+            color: deepskyblue;
+            font-size: 42px;
+            font-family: 'utm avo';
+            padding-bottom: 21px;
+        }
+
+        .infolazo .visao ul li {
+            font-size: 18px;
+            font-family: Arial;
+            padding-bottom: 5px;
+        }
+
+    .infolazo .tinhnang h2 {
+        color: deepskyblue;
+        font-size: 42px;
+        font-family: 'utm avo';
+    }
+
+    .infolazo .tinhnang ul li {
         font-size: 18px;
         font-family: Arial;
         padding-bottom: 5px;
     }
-
-.tinhnang h2 {
-    color: deepskyblue;
-    font-size: 42px;
-    font-family: 'utm avo';
-}
-
-.tinhnang ul li {
-    font-size: 18px;
-    font-family: Arial;
-    padding-bottom: 5px;
-}
-/*css img*/
-.imageinfo {
-    width: 77%;
-}
+    /*css img*/
+    .infolazo .imageinfo {
+        width: 77%;
+    }
 
 @media only screen and (max-width: 1280px) {
     .imageinfo {
         width: 90%;
     }
 }
+
+@media only screen and (max-width: 1230px) {
+    .imageinfo {
+        width: 90%;
+    }
+
+    .infolazo .tinhnang h2 {
+        font-size: 36px;
+    }
+
+    .infolazo .tinhnang ul li {
+        font-size: 16px;
+    }
+
+    .infolazo .visao h2 {
+        font-size: 36px;
+    }
+
+    .infolazo .visao ul li {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1130px) {
+
+    .infolazo .tinhnang h2 {
+        font-size: 30px;
+    }
+
+    .infolazo .tinhnang ul li {
+        font-size: 16px;
+    }
+
+    .infolazo .visao h2 {
+        font-size: 30px;
+    }
+
+    .infolazo .visao ul li {
+        font-size: 16px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
-    .visao {
+    .infolazo .visao {
         padding-bottom: 5px;
     }
-        .visao ul li {
+
+        .infolazo .visao ul li {
             font-size: 14px;
         }
 
-    .tinhnang ul li {
+    .infolazo .tinhnang ul li {
         font-size: 14px;
     }
 }
 
 @media only screen and (max-width: 774px) {
-    .visao ul li {
+    .infolazo .visao ul li {
         font-size: 14px;
     }
-    .tinhnang ul li {
+
+    .infolazo .tinhnang ul li {
         font-size: 14px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .visao {
+    .infolazo .visao {
         text-align: center;
     }
 
-    .tinhnang {
+    .infolazo .tinhnang {
         text-align: center;
         padding-bottom: 15px;
     }
 
-    .imageinfo {
+    .infolazo .imageinfo {
         text-align: center;
         width: 60%;
     }
-    
 }

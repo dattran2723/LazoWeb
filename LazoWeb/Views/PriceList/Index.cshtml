@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+
+    <link href="~/Content/css/ProductService/ourprice.css" rel="stylesheet" />
+    <link href="~/Content/css/ProductService/LetStart.css" rel="stylesheet" />
+}
+
+@RenderPage("OurPrice.cshtml")
+@RenderPage("LetStart.cshtml")
+

@@ -21,12 +21,11 @@
     <link href="~/Content/css/menu.css" rel="stylesheet" />
     @*jquery*@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    @RenderSection("css", required: false)
 </head>
 <body>
-    <div>
-        @Html.Partial("_MenuHeader")
-        @RenderBody()
-    </div>
+    @Html.Partial("_MenuHeader")
+    @RenderBody()
     @Html.Partial("/Views/Shared/_FooterPartial.cshtml")
     @*script*@
     <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>

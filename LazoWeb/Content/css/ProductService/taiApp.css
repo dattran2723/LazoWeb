@@ -1,0 +1,123 @@
+﻿
+@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+#download-app {
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.36)),url('/Content/img/page-32_0000_black-copy-2.png');
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#download-app-text-content {
+    padding-top: 155px;
+}
+
+    #download-app-text-content h2 {
+        font-family: 'utm avo';
+        font-size: 35px;
+        padding-bottom: 10px;
+    }
+
+    #download-app-text-content p {
+        font-size: 18px;
+        font-family: Arial;
+        padding-left: 310px;
+        padding-right: 310px;
+    }
+
+#download-app-buttons {
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #download-app-buttons #btn-left {
+        text-align: right;
+    }
+
+    #download-app-buttons #btn-center {
+        text-align: center;
+    }
+
+    #download-app-buttons #btn-right {
+        text-align: left;
+    }
+
+    #download-app-buttons a {
+        background-color: #5f84fd;
+        width: 185px;
+        height: 45px;
+        border-radius: 20px;
+        border-color: white;
+    }
+
+        #download-app-buttons a:hover {
+            background-color: #2a47d0;
+        }
+
+
+@media only screen and (max-width: 1094px) {
+    #download-app-text-content p {
+        padding-left: 210px;
+        padding-right: 210px;
+    }
+}
+
+@media only screen and (max-width: 919px) {
+    #download-app-text-content p {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    #download-app-text-content {
+        padding-top: 100px;
+    }
+
+    #download-app-buttons #btn-left {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #download-app-buttons #btn-center {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #download-app-buttons #btn-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #download-app-text-content h2 {
+        font-size: 30px;
+    }
+
+    #download-app-text-content p {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+
+    #download-app-text-content p {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 14px;
+    }
+}

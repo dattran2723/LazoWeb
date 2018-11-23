@@ -46,7 +46,7 @@ $(document).ready(function () {
             Name: "ĐINH VĂN THÀNH",
             Company: "", //"GOOGLE",
             Avatar: "~/Content/img/Customer3.png",
-            Comment: "Tôi rất tin tưởng vào những giải pháp mà IOTLink cung cấp cho chúng tôi. Hi vọng chúng tôi sẽ được hợp tác nhiều hơn với công ty ở những dự án khác trong thời gian tới."
+            Comment: "Tôi rất tin tưởng vào những giải pháp mà IOTLink cung cấp cho chúng tôi. Hy vọng chúng tôi sẽ được hợp tác nhiều hơn với công ty ở những dự án khác trong thời gian tới."
         },
         {
             ID: 3,

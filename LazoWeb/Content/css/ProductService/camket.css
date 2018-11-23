@@ -1,0 +1,321 @@
+﻿@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.camket {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #4774e4;
+    background-image: linear-gradient(to top, #4774e4, #67baf7);
+    /*background-image: url("/Content/img/imgProduct_Service/page-3_0005_Layer-30.png");*/
+    border-bottom-left-radius: 50% 9%;
+    border-bottom-right-radius: 50% 9%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -7%;
+    position: relative;
+}
+
+    .camket .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .camket .duoi {
+        padding-bottom: 5%;
+    }
+
+        .camket .duoi p {
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+        .camket .duoi .chu1 p {
+            padding: 0px 20%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+        .camket .duoi .chu2 p {
+            padding: 0px 15%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+        .camket .duoi .chu3 p {
+            padding: 0px 18%;
+            margin-top: 8%;
+            font-size: 18px;
+            font-family: Arial;
+            font-weight: normal;
+            color: white;
+        }
+
+    .camket .tren h2 {
+        font-family: "utm avo";
+        font-size: 42px;
+        font-weight: bold;
+        color: #fff;
+        padding-top: 5%;
+    }
+
+    .camket #carousel3d .carousel-3d-container {
+        margin-top: 3%;
+        /*width: 68%;*/
+    }
+
+    .camket #carousel3d .carousel-3d-slide {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff;
+        border-color: silver;
+        transition: all 1s;
+        box-shadow: -4px 1px 17px -1px #85868b;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-1 {
+        margin-left: -8% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-2 {
+        margin-left: -6% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-3 {
+        margin-left: 24% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-1 {
+        margin-left: 8% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-2 {
+        margin-left: 6% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-3 {
+        margin-left: -24% !important;
+    }
+
+@media only screen and (max-width: 1200px) {
+    .camket {
+        margin-bottom: -9%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .camket .tren h2 {
+        font-size: 36px;
+    }
+
+    .camket .duoi .chu1 p {
+        font-size: 14px;
+    }
+
+    .camket .duoi .chu2 p {
+        font-size: 14px;
+    }
+
+    .camket .duoi .chu3 p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .camket #carousel3d .carousel-3d-container {
+        width: 77%;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .camket #carousel3d .carousel-3d-container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .camket {
+        margin-bottom: -12%;
+        border-bottom-left-radius: 50% 9%;
+        border-bottom-right-radius: 50% 9%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .camket .tren h2 {
+        font-size: 30px;
+    }
+
+    .camket {
+        margin-bottom: -14%;
+    }
+
+        .camket .duoi .chu1 p {
+            font-size: 14px;
+            margin-top: 2%;
+            padding: 0px 28%;
+        }
+
+        .camket .duoi .chu2 p {
+            font-size: 14px;
+            margin-top: 2%;
+            padding: 0px 28%;
+        }
+
+        .camket .duoi .chu3 p {
+            font-size: 14px;
+            margin-top: 2%;
+            padding: 0px 28%;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-1 {
+            margin-left: 20% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-2 {
+            margin-left: -6% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-3 {
+            margin-left: 24% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-1 {
+            margin-left: -20% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-2 {
+            margin-left: 6% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-3 {
+            margin-left: -24% !important;
+        }
+}
+
+@media only screen and (max-width: 661px) {
+
+    .camket {
+        margin-bottom: -17%;
+        border-bottom-left-radius: 50% 6%;
+        border-bottom-right-radius: 50% 6%;
+    }
+
+        .camket #carousel3d .carousel-3d-container {
+            width: 90%;
+            height: 250px !important;
+        }
+
+            .camket #carousel3d .carousel-3d-container .carousel-3d-slider {
+                width: 200px !important;
+                height: 250px !important;
+            }
+
+                .camket #carousel3d .carousel-3d-container .carousel-3d-slider .carousel-3d-slide {
+                    width: 200px !important;
+                    height: 250px !important;
+                }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-2 {
+            margin-left: -25% !important;
+        }
+
+        .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-2 {
+            margin-left: 2% !important;
+        }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .camket .duoi .chu1 p {
+        padding: 0px 9%;
+    }
+
+    .camket .duoi .chu2 p {
+        padding: 0px 9%;
+    }
+
+    .camket .duoi .chu3 p {
+        padding: 0px 9%;
+    }
+
+    .camket .duoi .chu3 img {
+        width: 10%;
+    }
+
+    .camket .duoi .chu2 img {
+        width: 10%;
+    }
+
+    .camket .duoi .chu1 img {
+        width: 10%;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-1 {
+        margin-left: -39% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-1 {
+        margin-left: 39% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-2 {
+        margin-left: -45% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-2 {
+        margin-left: 45% !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-1 {
+        margin-left: -49% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-1 {
+        margin-left: 49% !important;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-2 {
+        display: none;
+    }
+
+    .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.right-2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+
+    .camket #carousel3d .carousel-3d-container {
+        width: 90%;
+        height: 200px !important;
+    }
+
+        .camket #carousel3d .carousel-3d-container .carousel-3d-slider {
+            width: 155px !important;
+            height: 200px !important;
+        }
+
+            .camket #carousel3d .carousel-3d-container .carousel-3d-slider .carousel-3d-slide {
+                width: 155px !important;
+                height: 200px !important;
+            }
+}
