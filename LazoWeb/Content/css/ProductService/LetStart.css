@@ -1,0 +1,79 @@
+﻿@font-face {
+    font-family: utm avo;
+    src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.letstart {
+    margin: 0 auto;
+    background-image: linear-gradient(to top, #4774e4, #67baf7);
+}
+
+    .letstart h2 {
+        padding-top: 29%;
+        padding-left: 29%;
+        font-style: normal;
+        font-family: 'utm avo';
+        font-size: 42px;
+        color: #fff;
+    }
+
+    .letstart .btnDowload {
+        border-bottom-left-radius: 15% 43%;
+        border-bottom-right-radius: 15% 43%;
+        border-top-left-radius: 15% 43%;
+        border-top-right-radius: 15% 43%;
+        border: 1px solid #fff;
+        font-size: 24px;
+        padding: 1% 6%;
+        margin-left: 29%;
+        background-color: #fff;
+    }
+
+        .letstart .btnDowload:hover {
+            color: black;
+            background-color: #efeff0;
+        }
+
+    .letstart .hinhanh {
+        width: 100%;
+        padding-right: 11%;
+    }
+
+@media only screen and (max-width: 1165px) {
+    .letstart h2 {
+        padding-top: 29%;
+        padding-left: 0;
+    }
+
+    .letstart .btnDowload {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .letstart h2 {
+        font-size: 32px;
+    }
+
+    .letstart .btnDowload {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .letstart h2 {
+        padding-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .letstart h2 {
+        font-size: 24px;
+    }
+
+    .letstart .btnDowload {
+        font-size: 16px;
+    }
+}

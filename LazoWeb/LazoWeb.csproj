@@ -7113,6 +7113,7 @@
     <Content Include="Content\css\informationsLazo.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\ProductService\LetStart.css" />
     <Content Include="Content\css\ProductService\ourprice.css" />
     <Content Include="Content\css\ProductService\camket.css" />
     <Content Include="Content\css\ProductService\tochuc.css" />
@@ -10003,6 +10004,7 @@
     <Content Include="Content\img\imglogo\Untitled-1_0003_logo-cty-01.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0004_download.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0005_logo-cocobay-danang-empire-group.png" />
+    <Content Include="Content\img\imgPriceList\page-4_0001_0.1-Cover-app.png" />
     <Content Include="Content\img\imgProduct_Service\12.png" />
     <Content Include="Content\img\imgProduct_Service\page-3_0000_3.1-Notification.png" />
     <Content Include="Content\img\imgProduct_Service\page-3_0000_Group-4.png" />
@@ -10858,6 +10860,7 @@
     <Content Include="Views\Question\StartTogether.cshtml" />
     <Content Include="Views\PriceList\Index.cshtml" />
     <Content Include="Views\PriceList\OurPrice.cshtml" />
+    <Content Include="Views\PriceList\LetStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,6 @@
 ﻿body {
 }
+
 @font-face {
     font-family: utm avo;
     src: url('~/fonts/UTM Avo.ttf') format(‘truetype’);
@@ -8,6 +9,7 @@
 }
 /*acb*/
 .infolazo {
+    clear: both;    
     margin: auto;
     padding-left: 4.6%;
     padding-right: 4.6%;
@@ -41,7 +43,7 @@
         font-family: Arial;
         padding-bottom: 5px;
     }
-/*css img*/
+    /*css img*/
     .infolazo .imageinfo {
         width: 77%;
     }
@@ -51,10 +53,52 @@
         width: 90%;
     }
 }
+
+@media only screen and (max-width: 1230px) {
+    .imageinfo {
+        width: 90%;
+    }
+
+    .infolazo .tinhnang h2 {
+        font-size: 36px;
+    }
+
+    .infolazo .tinhnang ul li {
+        font-size: 16px;
+    }
+
+    .infolazo .visao h2 {
+        font-size: 36px;
+    }
+
+    .infolazo .visao ul li {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1130px) {
+
+    .infolazo .tinhnang h2 {
+        font-size: 30px;
+    }
+
+    .infolazo .tinhnang ul li {
+        font-size: 16px;
+    }
+
+    .infolazo .visao h2 {
+        font-size: 30px;
+    }
+
+    .infolazo .visao ul li {
+        font-size: 16px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .infolazo .visao {
         padding-bottom: 5px;
     }
+
         .infolazo .visao ul li {
             font-size: 14px;
         }
@@ -68,6 +112,7 @@
     .infolazo .visao ul li {
         font-size: 14px;
     }
+
     .infolazo .tinhnang ul li {
         font-size: 14px;
     }
@@ -87,5 +132,4 @@
         text-align: center;
         width: 60%;
     }
-    
 }

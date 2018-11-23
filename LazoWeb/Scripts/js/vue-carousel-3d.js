@@ -47,7 +47,7 @@
         var i = n(3);
         "string" == typeof i && (i = [
             [t.id, i, ""]
-        ]), i.locals && (t.exports = i.locals);
+        ]), i.locals && (t.exports = i.locals); 
         n(5)("e749a8c4", i, !0)
     }, function (t, e, n) {
         e = t.exports = n(4)(), e.push([t.id, ".carousel-3d-container[data-v-c06c963c]{min-height:1px;width:100%;position:relative;z-index:0;overflow:hidden;margin:20px auto;box-sizing:border-box}.carousel-3d-slider[data-v-c06c963c]{position:relative;margin:0 auto;transform-style:preserve-3d;-webkit-perspective:1000px;-moz-perspective:1000px;perspective:1000px}", ""])
@@ -269,15 +269,15 @@
                 },
                 width: {
                     type: [Number, String],
-                    default: 218
+                    default: 268
                 },
                 height: {
                     type: [Number, String],
-                    default: 387
+                    default: 470
                 },
                 border: {
                     type: [Number, String],
-                    default: 1
+                    default: 0
                 },
                 space: {
                     type: [Number, String],
@@ -301,7 +301,7 @@
                 },
                 inverseScaling: {
                     type: [Number, String],
-                    default: 300
+                    default: 100
                 },
                 controlsVisible: {
                     type: Boolean,

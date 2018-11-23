@@ -5,10 +5,17 @@
     font-style: normal;
 }
 
-.left {
+.tochucquanly .left {
     padding-left: 8.5%;
     padding-top: 9%;
     padding-bottom: 6%;
+    max-width: 43%;
+    flex: 43%;
+}
+
+.tochucquanly .right {
+    max-width: 57%;
+    flex: 57%;
 }
 
 .tochucquanly {
@@ -21,7 +28,7 @@
         font-size: 42px;
         font-style: normal;
         color: #6684f5;
-        padding-right: 10%;
+        padding-bottom: 3%;
     }
 
     .tochucquanly .left .tochuc ul {
@@ -33,6 +40,7 @@
             font-family: Arial;
             font-size: 18px;
             color: #4c4c4c;
+            padding-bottom: 2%;
         }
 
     .tochucquanly .left .tinhnang h2 {
@@ -41,6 +49,7 @@
         font-style: normal;
         padding-right: 10%;
         color: #6684f5;
+        padding-bottom: 3%;
     }
 
     .tochucquanly .left .tinhnang ul {
@@ -51,23 +60,41 @@
         .tochucquanly .left .tinhnang ul li {
             font-family: Arial;
             font-size: 18px;
-            padding-right: 27%;
+            padding-right: 16%;
             color: #4c4c4c;
         }
 
 
     .tochucquanly .right .imgToChuc {
         width: 96%;
-        padding-top: 6%;
+        padding-top: 3%;
     }
 
-@media only screen and (max-width: 1230px) {
-    .tochucquanly .right .imgToChuc {
-        padding-top: 20%;
+@media only screen and (max-width: 1312px) {
+    .tochucquanly .left .tinhnang h2 {
+        padding-right: 0;
+        font-size: 40px;
+    }
+
+    .tochucquanly .left .tochuc h2 {
+        padding-right: 0;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 1290px) {
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 38px;
     }
 
     .tochucquanly .left .tochuc h2 {
         font-size: 38px;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 36px;
     }
 
     .tochucquanly .left .tochuc ul li {
@@ -75,11 +102,21 @@
     }
 
     .tochucquanly .left .tinhnang h2 {
-        font-size: 38px;
+        font-size: 36px;
     }
 
     .tochucquanly .left .tinhnang ul li {
         font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1162px) {
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 32px;
+    }
+
+    .tochucquanly .left .tochuc h2 {
+        font-size: 32px;
     }
 }
 
@@ -109,6 +146,10 @@
     .tochucquanly .left .tinhnang h2 {
         font-size: 25px;
     }
+
+    .tochucquanly .right .imgToChuc {
+        padding-top: 10%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -121,9 +162,77 @@
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 840px) {
+    .tochucquanly .left {
+        max-width: 50%;
+        flex: 50%;
+    }
+
+    .tochucquanly .right {
+        max-width: 50%;
+        flex: 50%;
+    }
+
     .tochucquanly .left .tochuc h2 {
-        font-size: 32px;
+        font-size: 24px;
+        padding-right: 0px;
+    }
+
+    .tochucquanly .left .tochuc ul li {
+        font-size: 12px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 24px;
+        padding-right: 0px;
+    }
+
+    .tochucquanly .left .tinhnang ul li {
+        font-size: 12px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .tochucquanly .right .imgToChuc {
+        width: 80%;
+        padding: 5% 0 5% 15%;
+    }
+
+    .tochucquanly .left {
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    .tochucquanly .right {
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    .tochucquanly .left .tochuc h2 {
+        font-size: 25px;
+        padding-right: 0px;
+    }
+
+    .tochucquanly .left .tochuc ul li {
+        font-size: 14px;
+    }
+
+    .tochucquanly .left .tinhnang h2 {
+        font-size: 25px;
+        padding-right: 0px;
+    }
+
+    .tochucquanly .left .tinhnang ul li {
+        font-size: 14px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .tochucquanly .left .tochuc h2 {
+        font-size: 24px;
     }
 
     .tochucquanly .left .tochuc ul li {
@@ -131,15 +240,10 @@
     }
 
     .tochucquanly .left .tinhnang h2 {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .tochucquanly .left .tinhnang ul li {
         font-size: 16px;
-    }
-
-    .tochucquanly .right .imgToChuc {
-        width: 80%;
-        padding: 5% 0 5% 15%;
     }
 }

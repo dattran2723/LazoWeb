@@ -8,11 +8,15 @@
 .camket {
     margin-left: 0;
     margin-right: 0;
-    background-color: #4774e4;
-    background-image: linear-gradient(to top, #4774e4, #67baf7);
-    /*border-bottom-left-radius: 20%;
-    border-bottom-right-radius: 20%;*/
-    border-spacing: 10px 20px 50px 100px;
+    /*background-color: #4774e4;*/
+    /*background-image: linear-gradient(to top, #4774e4, #67baf7);*/
+    background-image: url("/Content/img/imgProduct_Service/page-3_0005_Layer-30.png");
+    border-bottom-left-radius: 50% 9%;
+    border-bottom-right-radius: 50% 9%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -5.5%;
+    position: relative;
 }
 
     .camket .row {
@@ -80,7 +84,7 @@
         background-color: #fff;
         border-color: silver;
         transition: all 1s;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: -4px 1px 17px -1px #85868b;
     }
 
 @media only screen and (max-width: 1050px) {
@@ -103,7 +107,7 @@
 
 @media only screen and (max-width: 767px) {
     .camket .tren h2 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .camket .duoi .chu1 p {

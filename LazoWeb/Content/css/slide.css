@@ -11,80 +11,86 @@
     width: 10px;
 }
 
-#carouselExampleIndicators .row {
-    height: 936px;
+#carouselExampleIndicators {
+    margin: 0 auto;
+    height: 100%;
 }
 
-#carouselExampleIndicators .anhnen {
-    position: absolute;
-}
-
-#carouselExampleIndicators .khunganhtren {
-    padding-top: 9%;
-    padding-left: 23%;
-}
-
-#carouselExampleIndicators .anhtren {
-    width: 96%;
-}
-
-#carouselExampleIndicators .anhduoi {
-    width: 90%;
-    padding-top: 18%;
-    position: absolute;
-}
-
-#carouselExampleIndicators .chu {
-    padding-top: 15%;
-    padding-right: 10%;
-    float: right;
-    padding-left: 4.6%;
-}
-
-#carouselExampleIndicators h1 {
-    font-size: 36px;
-    color: white;
-    font-family: 'utm avo';
-}
-
-#carouselExampleIndicators h3 {
-    padding-top: 17px;
-    font-size: 18px;
-    color: white;
-    font-family: 'utm avo';
-    text-align: center;
-    padding-right: 50px;
-}
-
-    #carouselExampleIndicators h3 .h3tren {
-        padding-top: 13px;
+    #carouselExampleIndicators .row {
+        /*height: 936px;*/
+        height: 100%;
     }
 
-    #carouselExampleIndicators h3 .h3duoi {
+    #carouselExampleIndicators .anhnen {
+        position: absolute;
+    }
+
+    #carouselExampleIndicators .khunganhtren {
+        padding-top: 9%;
+        padding-left: 23%;
+    }
+
+    #carouselExampleIndicators .anhtren {
+        width: 96%;
+    }
+
+    #carouselExampleIndicators .anhduoi {
+        width: 90%;
+        padding-top: 18%;
+        position: absolute;
+    }
+
+    #carouselExampleIndicators .chu {
+        padding-top: 15%;
+        padding-right: 10%;
+        float: right;
+        padding-left: 4.6%;
+    }
+
+    #carouselExampleIndicators h1 {
+        font-size: 36px;
+        color: white;
+        font-family: 'utm avo';
+    }
+
+    #carouselExampleIndicators h3 {
         padding-top: 17px;
+        font-size: 18px;
+        color: white;
+        font-family: 'utm avo';
+        text-align: center;
+        padding-right: 50px;
     }
 
-#carouselExampleIndicators ol {
-    bottom: 56%;
-    left: 80%;
-}
+        #carouselExampleIndicators h3 .h3tren {
+            padding-top: 13px;
+        }
 
-#carouselExampleIndicators .carousel-indicators {
-    display: block;
-}
+        #carouselExampleIndicators h3 .h3duoi {
+            padding-top: 17px;
+        }
 
-    #carouselExampleIndicators .carousel-indicators li {
+    #carouselExampleIndicators ol {
+        bottom: 56%;
+        left: 80%;
+    }
+
+    #carouselExampleIndicators .carousel-indicators {
         display: block;
-        margin-top: 5px;
     }
 
-#carouselExampleIndicators .carousel-control-prev {
-    visibility: hidden;
-}
+        #carouselExampleIndicators .carousel-indicators li {
+            display: block;
+            margin-top: 5px;
+        }
 
-#carouselExampleIndicators .carousel-control-next {
-    visibility: hidden;
-}
+    #carouselExampleIndicators .carousel-control-prev {
+        visibility: hidden;
+    }
+
+    #carouselExampleIndicators .carousel-control-next {
+        visibility: hidden;
+    }
 
 @media only screen and (max-width: 1300px) {
     #carouselExampleIndicators h3 {
@@ -171,6 +177,7 @@
         font-size: 1.5em;
     }
 }
+
 @media only screen and (max-width: 500px) {
     #carouselExampleIndicators h1 {
         font-size: 1em;
@@ -180,14 +187,15 @@
         width: 46%;
     }
 }
+
 @media only screen and (max-width: 430px) {
     #carouselExampleIndicators .row {
         height: 256px;
     }
 }
+
 @media only screen and (max-width: 320px) {
     #carouselExampleIndicators h1 {
         font-size: 0.8em;
     }
 }
-
