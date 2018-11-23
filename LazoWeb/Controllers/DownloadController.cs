@@ -22,7 +22,7 @@ namespace LazoWeb.Controllers
             {
                 url = ConfigurationManager.AppSettings["LazoIOSDownloadLink"];
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 url = "https://itunes.apple.com/us/app/lazo-anh-khu%C3%AA/id1439308876";
             }
@@ -37,7 +37,7 @@ namespace LazoWeb.Controllers
             {
                 url = ConfigurationManager.AppSettings["LazoAndroidDownloadLink"];
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 url = "https://play.google.com/store/apps/details?id=vn.com.iotlink.lazo";
             }
