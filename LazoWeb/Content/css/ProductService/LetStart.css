@@ -6,7 +6,7 @@
 }
 
 .letstart {
-    margin: 0 auto;
+    margin: auto auto -1px auto;
     background-image: linear-gradient(to top, #4774e4, #67baf7);
 }
 
