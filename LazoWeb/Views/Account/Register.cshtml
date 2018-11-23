@@ -43,6 +43,34 @@
             </form>
         </div>
     }
+
+
+    <div class="modal fade" id="myModalSuccess" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+                    <p class="text-center">Bạn đã đăng kí thành công tài khoản</p>
+                    <p class="text-center">Vui lòng truy cập Email để xác nhận tài khoản của mình</p>
+                </div>
+                <div class="modal-footer" id="myModel-href1">
+                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @{
+        if (ViewData["dangky"] != null)
+        {
+            <script>
+                $(document).ready(function () {
+                    console.log("asccs");
+                    $("#myModalSuccess").modal();
+                });
+            </script>
+        }
+    }
     <br />
 </div>
 <br />
