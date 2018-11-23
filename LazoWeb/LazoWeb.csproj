@@ -553,9 +553,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811230411399_init-db.cs" />
-    <Compile Include="Migrations\201811230411399_init-db.Designer.cs">
-      <DependentUpon>201811230411399_init-db.cs</DependentUpon>
+    <Compile Include="Migrations\201811230822461_init-db.cs" />
+    <Compile Include="Migrations\201811230822461_init-db.Designer.cs">
+      <DependentUpon>201811230822461_init-db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -10862,14 +10862,14 @@
     <Content Include="Views\Home\AskQuestion.cshtml" />
     <Content Include="Views\Home\StartTogether.cshtml" />
     <Content Include="Views\Home\LetStart.cshtml" />
-    <Content Include="Views\Home\OurPrice.cshtml" />
+    <Content Include="Views\Home\PLOurPrice.cshtml" />
     <Content Include="Views\Home\PriceList.cshtml" />
-    <Content Include="Views\Home\CamKet.cshtml" />
+    <Content Include="Views\Home\PSSlide.cshtml" />
     <Content Include="Views\Home\ProductService.cshtml" />
-    <Content Include="Views\Home\TaiApp.cshtml" />
-    <Content Include="Views\Home\TheoDoi.cshtml" />
-    <Content Include="Views\Home\TaoLap.cshtml" />
-    <Content Include="Views\Home\ToChucQuanLy.cshtml" />
+    <Content Include="Views\Home\PSDowloadApp.cshtml" />
+    <Content Include="Views\Home\PSFollow.cshtml" />
+    <Content Include="Views\Home\PSDivision.cshtml" />
+    <Content Include="Views\Home\PSMange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -10890,8 +10890,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811221048004_inti.resx">
-      <DependentUpon>201811221048004_inti.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811230822461_init-db.resx">
+      <DependentUpon>201811230822461_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
