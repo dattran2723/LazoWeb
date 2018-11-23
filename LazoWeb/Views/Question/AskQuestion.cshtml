@@ -1,17 +1,66 @@
 ﻿@{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+<div class="row" id="ask-question">
+    <div class="row text-center content">
+        <h3 class="text-center col-md-12">
+            Frequently Asked Questions
+        </h3>
+        <p class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat aliquid quam, aspernatur, iure asperiores hic animi,
+            quibusdam commodi ad accusantium sunt ipsum reiciendis incidunt optio quidem unde porro molestias molestiae illum veritatis aut ipsa.
+        </p>
     </div>
-</body>
-</html>
+    <div class="row col-md-12">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-right image-map">
+            <img class="img-responsive" src="~/Content/img/page-4_0000_2018-10-12-16-17-salerouters.xinkciti.com.png" alt="Alternate Text" />
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="questions">
+            <div id="div-question-first" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <p>
+                    <a id="btn-first" class="btn w-100 open" data-toggle="collapse" href="#question-first" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <span class="float-left ml-3" id="question1">
+                            @*question content*@
+                        </span>
+                        <span class="float-right sp-btn"></span>
+                    </a>
+                </p>
+                <div class="collapse mb-3 show" id="question-first">
+                    <div class="card card-body" id="answer1">
+                        @*answer content*@
+                    </div>
+                </div>
+            </div>
+            <div id="div-question-second" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <p>
+                    <a id="btn-second" class="btn w-100" data-toggle="collapse" href="#question-second" role="button" aria-expanded="false" aria-controls="collapse-question2">
+                        <span class="float-left ml-3" id="question2">
+                            @*question content*@
+                        </span>
+                        <span class="float-right sp-btn"></span>
+                    </a>
+                </p>
+                <div class="collapse mb-3" id="question-second">
+                    <div class="card card-body" id="answer2">
+                        @*answer content*@
+                    </div>
+                </div>
+            </div>
+            <div id="div-question-third" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <p>
+                    <a id="btn-third" class="btn w-100" data-toggle="collapse" href="#question-third" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <span class="float-left ml-3" id="question3">
+                            @*question content*@
+                        </span>
+                        <span class="float-right sp-btn"></span>
+                    </a>
+                </p>
+                <div class="collapse mb-3" id="question-third">
+                    <div class="card card-body" id="answer3">
+                        @*answer content*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

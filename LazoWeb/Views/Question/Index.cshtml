@@ -4,8 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
-    @*add css*@
+    <link href="~/Content/css/question.css" rel="stylesheet" />
 }
 @RenderPage("AskQuestion.cshtml")
 @RenderPage("StartTogether.cshtml")
-
+@section scripts{
+    <script src="~/Scripts/js/ask-question.js"></script>
+}

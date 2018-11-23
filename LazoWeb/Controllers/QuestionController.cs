@@ -9,7 +9,7 @@ namespace LazoWeb.Controllers
     public class QuestionController : Controller
     {
         // GET: Question
-        public ActionResult Question()
+        public ActionResult Index()
         {
             return View();
         }
