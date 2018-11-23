@@ -7113,8 +7113,10 @@
     <Content Include="Content\css\informationsLazo.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\ProductService\LetStart.css" />
     <Content Include="Content\css\ProductService\ourprice.css" />
     <Content Include="Content\css\ProductService\camket.css" />
+    <Content Include="Content\css\ProductService\taiApp.css" />
     <Content Include="Content\css\ProductService\tochuc.css" />
     <Content Include="Content\css\ProductService\productseriver.css" />
     <Content Include="Content\css\question.css" />
@@ -9993,6 +9995,9 @@
     <Content Include="Content\font\webfonts\fa-brands-400.svg" />
     <Content Include="Content\font\webfonts\fa-regular-400.svg" />
     <Content Include="Content\font\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\img\caybut.png" />
+    <Content Include="Content\img\caybut2.png" />
+    <Content Include="Content\img\caybut3.png" />
     <Content Include="Content\img\Customer1.png" />
     <Content Include="Content\img\Customer2.png" />
     <Content Include="Content\img\Customer3.png" />
@@ -10004,6 +10009,7 @@
     <Content Include="Content\img\imglogo\Untitled-1_0003_logo-cty-01.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0004_download.png" />
     <Content Include="Content\img\imglogo\Untitled-1_0005_logo-cocobay-danang-empire-group.png" />
+    <Content Include="Content\img\imgPriceList\page-4_0001_0.1-Cover-app.png" />
     <Content Include="Content\img\imgProduct_Service\12.png" />
     <Content Include="Content\img\imgProduct_Service\page-3_0000_3.1-Notification.png" />
     <Content Include="Content\img\imgProduct_Service\page-3_0000_Group-4.png" />
@@ -10030,6 +10036,7 @@
     <Content Include="Content\img\imgProduct_Service\page-3_0015_Ellipse-1.png" />
     <Content Include="Content\img\imgProduct_Service\page-3_0016_logo-trang.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\page 11.png" />
     <Content Include="Content\img\page-1_0000s_0000_Rounded-Rectangle-4-copy-3.png" />
     <Content Include="Content\img\page-1_0000_google-store.png" />
     <Content Include="Content\img\page-1_0001s_0000_Rounded-Rectangle-3.png" />
@@ -10067,7 +10074,9 @@
     <Content Include="Content\img\page-1_0031_logo-trang.png" />
     <Content Include="Content\img\page-1_0032_The-Third-Eye-Of-Manager.png" />
     <Content Include="Content\img\page-4_0000_2018-10-12-16-17-salerouters.xinkciti.com.png" />
+    <Content Include="Content\img\page-32_0000_black-copy-2.png" />
     <Content Include="Content\img\Untitled-1_0000_glasses.png" />
+    <Content Include="Content\img\Untitled-lycafe.png" />
     <Content Include="Content\img\Untitled-tree.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -10861,6 +10870,8 @@
     <Content Include="Views\Question\StartTogether.cshtml" />
     <Content Include="Views\PriceList\Index.cshtml" />
     <Content Include="Views\PriceList\OurPrice.cshtml" />
+    <Content Include="Views\PriceList\LetStart.cshtml" />
+    <Content Include="Views\ProductService\TaiApp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
