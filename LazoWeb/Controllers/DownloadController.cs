@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,12 +17,32 @@ namespace LazoWeb.Controllers
 
         public ActionResult IOS()
         {
-            return Redirect("https://itunes.apple.com/us/app/lazo-anh-khu%C3%AA/id1439308876?ls=1&mt=8");
+            string url = string.Empty;
+            try
+            {
+                url = ConfigurationManager.AppSettings["LazoIOSDownloadLink"];
+            }
+            catch (Exception ex)
+            {
+                url = "https://itunes.apple.com/us/app/lazo-anh-khu%C3%AA/id1439308876";
+            }
+
+            return Redirect(url);
         }
 
         public ActionResult Android()
         {
-            return Redirect("https://play.google.com/store/apps/details?id=vn.com.iotlink.lazo");
+            string url = string.Empty;
+            try
+            {
+                url = ConfigurationManager.AppSettings["LazoAndroidDownloadLink"];
+            }
+            catch (Exception ex)
+            {
+                url = "https://play.google.com/store/apps/details?id=vn.com.iotlink.lazo";
+            }
+
+            return Redirect(url);
         }
     }
 }
