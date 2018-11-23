@@ -94,7 +94,7 @@
 
 @media only screen and (max-width: 1300px) {
     #carouselExampleIndicators h3 {
-        visibility: hidden;
+        display:none;
     }
 }
 
@@ -132,7 +132,7 @@
 
     @media only screen and (max-width: 900px) {
         #carouselExampleIndicators .row {
-            height: 650px;
+            height: auto;
         }
 
         /*#carouselExampleIndicators .anhduoi {
