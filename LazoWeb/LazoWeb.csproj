@@ -550,11 +550,12 @@
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PriceListController.cs" />
-    <Compile Include="Controllers\ProductServiceController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811230822461_init-db.cs" />
+    <Compile Include="Migrations\201811230822461_init-db.Designer.cs">
+      <DependentUpon>201811230822461_init-db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -7116,6 +7117,7 @@
     <Content Include="Content\css\ProductService\taiApp.css" />
     <Content Include="Content\css\ProductService\tochuc.css" />
     <Content Include="Content\css\ProductService\productseriver.css" />
+    <Content Include="Content\css\question.css" />
     <Content Include="Content\css\Register.css" />
     <Content Include="Content\css\slide.css" />
     <Content Include="Content\css\StyleFeedback.css" />
@@ -10069,6 +10071,7 @@
     <Content Include="Content\img\page-1_0030_iphone_cutout.png" />
     <Content Include="Content\img\page-1_0031_logo-trang.png" />
     <Content Include="Content\img\page-1_0032_The-Third-Eye-Of-Manager.png" />
+    <Content Include="Content\img\page-4_0000_2018-10-12-16-17-salerouters.xinkciti.com.png" />
     <Content Include="Content\img\page-32_0000_black-copy-2.png" />
     <Content Include="Content\img\Untitled-1_0000_glasses.png" />
     <Content Include="Content\img\Untitled-lycafe.png" />
@@ -10796,6 +10799,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\ask-question.js" />
     <Content Include="Scripts\js\btnXoa.js" />
     <Content Include="Scripts\js\crolltoid.js" />
     <Content Include="Scripts\js\feedback.js" />
@@ -10854,18 +10858,18 @@
     <Content Include="Scripts\js\dataTables.bootstrap.min.js" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Scripts\js\validator.registerUser.js" />
-    <Content Include="Views\ProductService\Index.cshtml" />
-    <Content Include="Views\ProductService\ToChucQuanLy.cshtml" />
-    <Content Include="Views\ProductService\TaoLap.cshtml" />
-    <Content Include="Views\ProductService\TheoDoi.cshtml" />
-    <Content Include="Views\ProductService\CamKet.cshtml" />
-    <Content Include="Views\Question\Index.cshtml" />
-    <Content Include="Views\Question\AskQuestion.cshtml" />
-    <Content Include="Views\Question\StartTogether.cshtml" />
-    <Content Include="Views\PriceList\Index.cshtml" />
-    <Content Include="Views\PriceList\OurPrice.cshtml" />
-    <Content Include="Views\PriceList\LetStart.cshtml" />
-    <Content Include="Views\ProductService\TaiApp.cshtml" />
+    <Content Include="Views\Home\QuestionAnswer.cshtml" />
+    <Content Include="Views\Home\AskQuestion.cshtml" />
+    <Content Include="Views\Home\StartTogether.cshtml" />
+    <Content Include="Views\Home\LetStart.cshtml" />
+    <Content Include="Views\Home\PLOurPrice.cshtml" />
+    <Content Include="Views\Home\PriceList.cshtml" />
+    <Content Include="Views\Home\PSSlide.cshtml" />
+    <Content Include="Views\Home\ProductService.cshtml" />
+    <Content Include="Views\Home\PSDowloadApp.cshtml" />
+    <Content Include="Views\Home\PSFollow.cshtml" />
+    <Content Include="Views\Home\PSDivision.cshtml" />
+    <Content Include="Views\Home\PSMange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -10884,6 +10888,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811230822461_init-db.resx">
+      <DependentUpon>201811230822461_init-db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

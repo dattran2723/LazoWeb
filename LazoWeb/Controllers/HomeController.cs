@@ -31,5 +31,18 @@ namespace LazoWeb.Controllers
         {
             return View();
         }
+        public ActionResult ProductService()
+        {
+            return View();
+        }
+        public ActionResult PriceList()
+        {
+            return View();
+        }
+        public ActionResult QuestionAnswer()
+        {
+            return View();
+        }
+
     }
 }

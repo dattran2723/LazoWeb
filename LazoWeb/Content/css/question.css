@@ -1,0 +1,102 @@
+﻿#ask-question, #ask-question .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    #ask-question .content {
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+
+        #ask-question .content h3 {
+            font-family: 'UTM Avo';
+            font-size: 42px;
+            color: #4b6ff4;
+        }
+
+        #ask-question .content p {
+            font-family: Arial;
+            font-size: 18px;
+        }
+
+    #ask-question img {
+        width: 70%;
+        margin-bottom: 5%;
+    }
+
+#questions a {
+    background-color: #f2f3f5;
+    padding: 0;
+    height: 35px;
+    color: black;
+}
+
+    #questions a span {
+        line-height: 35px;
+        font-size: 16px;
+        font-family: Arial;
+    }
+
+#questions .sp-btn {
+    background-color: #3d00b4;
+    width: 35px;
+    height: 34px;
+    color: white;
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../font/webfonts/fa-brands-400.ttf') format('truetype');
+    src: url('../font/webfonts/fa-regular-400.ttf') format('truetype');
+    src: url('../font/webfonts/fa-solid-900.ttf') format('truetype');
+}
+
+#questions .sp-btn::before {
+    content: "\f054";
+    font-family: "FontAwesome";
+}
+
+#questions .open .sp-btn::before {
+    content: "\f078";
+}
+
+/*css responsive*/
+
+@media only screen and (max-width: 1230px) {
+    #ask-question .content h3 {
+        font-size: 38px;
+    }
+
+    #ask-question .content p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1134px) {
+    #ask-question.content h3 {
+        font-size: 30px;
+    }
+
+    #ask-question .content p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #ask-question .content h3 {
+        font-size: 25px;
+    }
+
+    #questions a span {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #ask-question .content {
+        margin-top: 7%;
+        margin-bottom: 5%;
+    }
+    #ask-question .image-map {
+        text-align:center!important;
+    }
+}

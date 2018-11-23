@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/Content/css/question.css" rel="stylesheet" />
+    <link href="~/Content/css/ProductService/LetStart.css" rel="stylesheet" />
+}
+@RenderPage("AskQuestion.cshtml")
+@RenderPage("LetStart.cshtml")
+@section scripts{
+    <script src="~/Scripts/js/ask-question.js"></script>
+}
