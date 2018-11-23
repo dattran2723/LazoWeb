@@ -62,11 +62,13 @@ namespace LazoWeb.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Customer customer = db.Customers.Find(id);
+            Session["NumberPhone"] = customer.Phone;
+            var result = AutoMapper.Mapper.Map<EditCustomer>(customer);
             if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(result);
         }
 
         // POST: Admin/Customers/Edit/5
@@ -74,10 +76,11 @@ namespace LazoWeb.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Customer customer)
+        public ActionResult Edit(EditCustomer customer)
         {
             if (ModelState.IsValid)
             {
+                Session["NumberPhone"] = null;
                 try
                 {
                     Customer cus = db.Customers.Find(customer.ID);
@@ -125,6 +128,22 @@ namespace LazoWeb.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost]
+        public JsonResult CheckExistingPhoneAdmin(string Phone)
+        {
+            var numberPhone = Session["NumberPhone"];
+            if (numberPhone.Equals(Phone))
+            {
+                return Json(true);
+            }
+            else
+            {
+                var result = db.Customers.Where(s => s.Phone == Phone).Count();
+                if (result > 0)
+                    return Json(false);
+                return Json(true);
+            }
         }
     }
 }
