@@ -547,14 +547,15 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811210821396_init.cs" />
-    <Compile Include="Migrations\201811210821396_init.Designer.cs">
-      <DependentUpon>201811210821396_init.cs</DependentUpon>
+    <Compile Include="Migrations\201811220757115_initupdb.cs" />
+    <Compile Include="Migrations\201811220757115_initupdb.Designer.cs">
+      <DependentUpon>201811220757115_initupdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -10819,6 +10820,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Views\Download\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -10833,8 +10835,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811210821396_init.resx">
-      <DependentUpon>201811210821396_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811220757115_initupdb.resx">
+      <DependentUpon>201811220757115_initupdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -10856,7 +10858,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62424</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62424/</IISUrl>
+          <IISUrl>http://localhost:50075/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
