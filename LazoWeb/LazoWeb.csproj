@@ -556,10 +556,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811230841526_init.cs" />
-    <Compile Include="Migrations\201811230841526_init.Designer.cs">
-      <DependentUpon>201811230841526_init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -10870,7 +10866,6 @@
     <Content Include="Views\Home\PriceList.cshtml" />
     <Content Include="Views\Home\PSSlide.cshtml" />
     <Content Include="Views\Home\ProductService.cshtml" />
-    <Content Include="Views\Home\PSDowloadApp.cshtml" />
     <Content Include="Views\Home\PSFollow.cshtml" />
     <Content Include="Views\Home\PSDivision.cshtml" />
     <Content Include="Views\Home\PSMange.cshtml" />
@@ -10892,11 +10887,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811230841526_init.resx">
-      <DependentUpon>201811230841526_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
