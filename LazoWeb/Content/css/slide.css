@@ -13,16 +13,15 @@
 
 #carouselExampleIndicators {
     margin: 0 auto;
-    height: 100%;
 }
 
     #carouselExampleIndicators .row {
-        /*height: 936px;*/
-        height: 100%;
+        margin-top: -4%;
     }
 
     #carouselExampleIndicators .anhnen {
         position: absolute;
+        width: 100%;
     }
 
     #carouselExampleIndicators .khunganhtren {
@@ -36,8 +35,9 @@
 
     #carouselExampleIndicators .anhduoi {
         width: 90%;
-        padding-top: 18%;
-        position: absolute;
+        margin-top: -30%;
+        margin-bottom: -22%;
+        position: relative;
     }
 
     #carouselExampleIndicators .chu {
@@ -99,103 +99,159 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    #carouselExampleIndicators .row {
-        height: 900px;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    #carouselExampleIndicators .row {
-        height: 800px;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    #carouselExampleIndicators .row {
-        height: 700px;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    #carouselExampleIndicators .row {
-        height: 650px;
+    #carouselExampleIndicators .anhduoi {
+        height: 100%;
     }
 
-    #carouselExampleIndicators h1 {
-        font-size: 1.5em;
-    }
-}
+    @media only screen and (max-width: 1100px) {
 
-@media only screen and (max-width: 800px) {
-    #carouselExampleIndicators .row {
-        height: 600px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    #carouselExampleIndicators .row {
-        height: 510px;
+        #carouselExampleIndicators .anhduoi {
+            margin-bottom: -22%;
+        }
     }
 
-    .carousel-indicators {
-        visibility: hidden;
+    @media only screen and (max-width: 1067px) {
+
+        /*#carouselExampleIndicators .anhduoi {
+            height: 70%;
+            margin-top: -40%;
+        }*/
     }
 
-    #carouselExampleIndicators .carousel-control-prev {
-        visibility: visible;
-        height: 87%;
+    @media only screen and (max-width: 1000px) {
+        #carouselExampleIndicators .anhduoi {
+            margin-bottom: -22%;
+        }
     }
 
-    #carouselExampleIndicators .carousel-control-next {
-        visibility: visible;
-        height: 87%;
-    }
-}
-
-@media only screen and (max-width: 760px) {
-    #carouselExampleIndicators .row {
-        height: 487px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #carouselExampleIndicators .row {
-        height: 370px;
-    }
-}
-
-@media only screen and (max-width: 575px) {
-    #carouselExampleIndicators .khunganhtren {
-        width: 50%;
+    @media only screen and (max-width: 931px) {
+        #carouselExampleIndicators .anhduoi {
+            margin-bottom: -22%;
+        }
     }
 
-    #carouselExampleIndicators .chu {
-        width: 50%;
+    @media only screen and (max-width: 900px) {
+        #carouselExampleIndicators .row {
+            height: 650px;
+        }
+
+        /*#carouselExampleIndicators .anhduoi {
+            margin-top: -38%;
+        }*/
+
+        #carouselExampleIndicators .anhnen {
+            position: absolute;
+            height: auto;
+        }
+
+        #carouselExampleIndicators h1 {
+            font-size: 1.5em;
+        }
     }
 
-    #carouselExampleIndicators h1 {
-        font-size: 1.5em;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    #carouselExampleIndicators h1 {
-        font-size: 1em;
+    @media only screen and (max-width: 861px) {
+        #carouselExampleIndicators .anhduoi {
+        }
     }
 
-    #carouselExampleIndicators .chu {
-        width: 46%;
+    @media only screen and (max-width: 831px) {
+        #carouselExampleIndicators .anhduoi {
+        }
     }
-}
 
-@media only screen and (max-width: 430px) {
-    #carouselExampleIndicators .row {
-        height: 256px;
+    @media only screen and (max-width: 800px) {
+        #carouselExampleIndicators .anhduoi {
+        }
     }
-}
 
-@media only screen and (max-width: 320px) {
-    #carouselExampleIndicators h1 {
-        font-size: 0.8em;
+    @media only screen and (max-width: 761px) {
+        #carouselExampleIndicators .anhduoi {
+        }
+
+        #carouselExampleIndicators .row {
+            /*height: 487px;*/
+        }
     }
-}
+
+    @media only screen and (max-width: 731px) {
+        /*#carouselExampleIndicators .anhduoi {
+            margin-top: -55%;
+            height: 65%;
+        }*/
+    }
+
+    @media only screen and (max-width: 700px) {
+        #carouselExampleIndicators .row {
+            /*height: 510px;*/
+        }
+
+        /*#carouselExampleIndicators .anhduoi {
+            margin-top: -59%;
+            height: 58%;
+        }*/
+
+
+        .carousel-indicators {
+            visibility: hidden;
+        }
+
+        #carouselExampleIndicators .carousel-control-prev {
+            visibility: visible;
+            height: 87%;
+        }
+
+        #carouselExampleIndicators .carousel-control-next {
+            visibility: visible;
+            height: 87%;
+        }
+    }
+
+
+    @media only screen and (max-width: 631px) {
+        /*#carouselExampleIndicators .anhduoi {
+            margin-top: -78%;
+            height: 58%;
+        }*/
+    }
+
+    @media only screen and (max-width: 600px) {
+        #carouselExampleIndicators .row {
+            /*height: 370px;*/
+        }
+    }
+
+    @media only screen and (max-width: 575px) {
+        #carouselExampleIndicators .khunganhtren {
+            width: 50%;
+        }
+
+        #carouselExampleIndicators .chu {
+            width: 50%;
+        }
+
+        #carouselExampleIndicators h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        #carouselExampleIndicators h1 {
+            font-size: 1em;
+        }
+
+        #carouselExampleIndicators .chu {
+            width: 46%;
+        }
+    }
+
+    @media only screen and (max-width: 430px) {
+        #carouselExampleIndicators .row {
+            /*height: 256px;*/
+        }
+    }
+
+    @media only screen and (max-width: 320px) {
+        #carouselExampleIndicators h1 {
+            font-size: 0.8em;
+        }
+    }
