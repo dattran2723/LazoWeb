@@ -30,7 +30,7 @@ namespace LazoWeb.Models
         [Required(ErrorMessage = "Vui lòng nhập số điện thoại liên hệ!")]
         [RegularExpression("^0[0-9]+$", ErrorMessage = "Vui lòng nhập đúng định dạng!")]
         [StringLength(11, ErrorMessage = "Số điên thoại gồm 10-11 ký tự số!", MinimumLength = 10)]
-        [Remote("CheckExistingPhone", "Customers", HttpMethod = "POST", ErrorMessage = "Số điện thoại đã tồn tại")]
+        [Remote("CheckExistingPhoneAdmin", "Customers", HttpMethod = "POST", ErrorMessage = "Số điện thoại đã tồn tại")]
         public string Phone { get; set; }
 
         [DisplayName("Địa chỉ Email")]
