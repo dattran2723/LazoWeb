@@ -9,15 +9,15 @@
 }
 /*acb*/
 .infolazo {
-    clear: both;    
+    clear: both;
     margin: auto;
-    padding-top:5%;
+    padding-top: 5%;
     padding-left: 4.6%;
     padding-right: 4.6%;
 }
 
     .infolazo .visao {
-        padding-bottom: 35px;
+        padding-bottom: 30px;
     }
 
         .infolazo .visao h2 {
@@ -30,19 +30,21 @@
         .infolazo .visao ul li {
             font-size: 18px;
             font-family: Arial;
-            padding-bottom: 5px;
+            line-height: 30px;
         }
 
     .infolazo .tinhnang h2 {
         color: deepskyblue;
         font-size: 42px;
         font-family: 'utm avo';
+        padding-bottom: 21px;
     }
 
     .infolazo .tinhnang ul li {
         font-size: 18px;
         font-family: Arial;
         padding-bottom: 5px;
+        line-height: 30px;
     }
     /*css img*/
     .infolazo .imageinfo {
@@ -76,6 +78,7 @@
         font-size: 16px;
     }
 }
+
 @media only screen and (max-width: 1130px) {
 
     .infolazo .tinhnang h2 {
