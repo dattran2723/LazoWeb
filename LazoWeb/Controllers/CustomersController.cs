@@ -55,7 +55,7 @@ namespace LazoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult CheckExistingEmail(string Email)
+        public JsonResult CheckExistingEmail(string Email)
         {
             var result = db.Customers.Where(s => s.Email == Email).Count();
             if (result > 0)
@@ -64,7 +64,7 @@ namespace LazoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult CheckExistingPhone(string Phone)
+        public JsonResult CheckExistingPhone(string Phone)
         {
             var result = db.Customers.Where(s => s.Phone == Phone).Count();
             if (result > 0)
