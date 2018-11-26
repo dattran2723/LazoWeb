@@ -32,15 +32,15 @@
     }
 
     .tochucquanly .left .tochuc ul {
-        list-style-position: inside;
         list-style-type: inherit;
+        padding-left: 5%;
     }
 
         .tochucquanly .left .tochuc ul li {
             font-family: Arial;
             font-size: 18px;
             color: #4c4c4c;
-            padding-bottom: 2%;
+            line-height: 30px;
         }
 
     .tochucquanly .left .tinhnang h2 {
@@ -53,7 +53,7 @@
     }
 
     .tochucquanly .left .tinhnang ul {
-        list-style-position: inside;
+        padding-left: 5%;
         list-style-type: inherit;
     }
 
@@ -61,6 +61,7 @@
             font-family: Arial;
             font-size: 18px;
             padding-right: 16%;
+            line-height: 30px;
             color: #4c4c4c;
         }
 
