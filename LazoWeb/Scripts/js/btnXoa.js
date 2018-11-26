@@ -9,6 +9,7 @@
     });
     $("#cus-delete a").click(function () {
         var idCus = $(this).attr("data-id");
+        console.log(idCus);
         $("#myModal").modal("hide");
         $.ajax({
             url: "/Admin/Customers/DeleteConfirmed?id=" + idCus,

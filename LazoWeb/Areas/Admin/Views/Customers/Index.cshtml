@@ -35,39 +35,39 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @{counter++;}@counter
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Details",new { id = item.ID })">
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </a>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Company)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RegisterDate)
-                    </td>
-                    <td>
-                        @(item.Status ? "Đã liên hệ" : "Chưa liên hệ")
-                    </td>
-                    <td>
-                        <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.ID })"><i class="fas fa-edit"></i></a>
-                        <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
-                        <a data-toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="@item.ID"><i class="fas fa-trash-alt text-danger"></i></a>
-                    </td>
-                </tr>
-            }
+            @*@foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @{counter++;}@counter
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details",new { id = item.ID })">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Company)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RegisterDate)
+                        </td>
+                        <td>
+                            @(item.Status ? "Đã liên hệ" : "Chưa liên hệ")
+                        </td>
+                        <td>
+                            <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.ID })"><i class="fas fa-edit"></i></a>
+                            <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
+                            <a data-toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="@item.ID"><i class="fas fa-trash-alt text-danger"></i></a>
+                        </td>
+                    </tr>
+                }*@
         </tbody>
     </table>
     <div class="modal fade" id="myModal" role="dialog">
@@ -123,6 +123,33 @@
         $(document).ready(function () {
             $("#manage-customers").addClass("active");
             $("#manage-customers #list-customers").addClass("active");
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true,
+                stateSave: true,
+                ajax: "/api/customers",
+                columns: [
+                    { "data": "ID" },
+                    { "data": "Name" },
+                    { "data": "Company" },
+                    { "data": "Email" },
+                    { "data": "Phone" },
+                    { "data": "RegisterDate" },
+                    { "data": "Status" },
+                    {
+                        "data": null,
+                    }
+                ],
+                "rowCallback": function (row, data, index) {
+                    //console.log(data.RegisterDate)
+                    $('td:eq(7)', row).html(
+                        '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data.ID + '" > <i class="fas fa-edit"></i></a > ' +
+                        '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data.ID + '"><i class="fas fa-info-circle"></i></a>' +
+                        '<a data - toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="' + data.ID + '"><i class="fas fa-trash-alt text-danger"></i></a>'
+                    );
+                },
+            });
         });
     </script>
 }

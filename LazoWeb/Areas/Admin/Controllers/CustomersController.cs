@@ -1,4 +1,5 @@
-﻿using LazoWeb.Models;
+﻿using AutoMapper;
+using LazoWeb.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
