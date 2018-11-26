@@ -10893,8 +10893,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811230841526_init.resx">
-      <DependentUpon>201811230841526_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811230950263_init-db.resx">
+      <DependentUpon>201811230950263_init-db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
