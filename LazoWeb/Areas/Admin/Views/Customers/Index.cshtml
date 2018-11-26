@@ -130,7 +130,7 @@
                 stateSave: true,
                 ajax: "/api/customers",
                 columns: [
-                    { "data": "ID" },
+                    { "data": null },
                     { "data": "Name" },
                     { "data": "Company" },
                     { "data": "Email" },
@@ -142,7 +142,17 @@
                     }
                 ],
                 "rowCallback": function (row, data, index) {
-                    //console.log(data.RegisterDate)
+                    var stt = 0
+                    var id_index = 1;
+                    $('td:eq(0)', row).each(function () {
+                        console.log(data.length);
+                        for (var i = 0; i < data.length; i++) {
+                            console.log(data);
+                        }
+                    });
+                    $('td:eq(0)', row).html(
+                        '<p>' + id_index + '</p>'
+                    );
                     $('td:eq(7)', row).html(
                         '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data.ID + '" > <i class="fas fa-edit"></i></a > ' +
                         '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data.ID + '"><i class="fas fa-info-circle"></i></a>' +
