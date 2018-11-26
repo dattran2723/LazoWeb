@@ -4,7 +4,18 @@
 <div class="letstart row">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center">
         <h2 class="">Let's Start Together</h2>
-        <button class="btnDowload btn btn-outline-dark">Download</button>
+        <div class="col-md-12 row" id="download-app-buttons">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="btn-left">
+                <a href="@Url.Action("Android", "Download")" class="btn">
+                    <img src="~/Content/img/page-1_0000_google-store.png" alt="Alternate Text" />
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="btn-right">
+                <a href="@Url.Action("IOS", "Download")" class="btn">
+                    <img src="~/Content/img/page-1_0005_apple-store.png" alt="Alternate Text" />
+                </a>
+            </div>
+        </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <img src="~/Content/img/imgPriceList/page-4_0001_0.1-Cover-app.png" class="img-responsive hinhanh" alt="" />

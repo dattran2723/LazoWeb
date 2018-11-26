@@ -11,7 +11,7 @@
 }
 
     .letstart h2 {
-        padding-top: 29%;
+        padding-top: 25%;
         padding-left: 29%;
         font-style: normal;
         font-family: 'utm avo';
@@ -19,27 +19,34 @@
         color: #fff;
     }
 
-    .letstart .btnDowload {
-        border-bottom-left-radius: 15% 43%;
-        border-bottom-right-radius: 15% 43%;
-        border-top-left-radius: 15% 43%;
-        border-top-right-radius: 15% 43%;
-        border: 1px solid #fff;
-        font-size: 24px;
-        padding: 1% 6%;
-        margin-left: 29%;
-        background-color: #fff;
+#download-app-buttons {
+    margin-top: 5%;
+    margin-left: 14%;
+}
+
+    #download-app-buttons #btn-left {
+        text-align: right;
+    }
+    
+    #download-app-buttons #btn-right {
+        text-align: left;
     }
 
-        .letstart .btnDowload:hover {
-            color: black;
-            background-color: #efeff0;
+    #download-app-buttons a {
+        width: 185px;
+        height: 45px;
+        border-radius: 20px;
+        border-color: white;
+    }
+
+        #download-app-buttons a:hover {
+            background-color: #4774e4;
         }
 
-    .letstart .hinhanh {
-        width: 100%;
-        padding-right: 11%;
-    }
+.letstart .hinhanh {
+    width: 100%;
+    padding-right: 11%;
+}
 
 @media only screen and (max-width: 1165px) {
     .letstart h2 {
@@ -49,6 +56,16 @@
 
     .letstart .btnDowload {
         margin-left: 0;
+    }
+
+    #download-app-buttons {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #download-app-buttons a {
+        width: 155px;
     }
 }
 
@@ -65,6 +82,12 @@
 @media only screen and (max-width: 767px) {
     .letstart h2 {
         padding-top: 5%;
+    }
+}
+@media only screen and (max-width: 575px) {
+    #download-app-buttons #btn-left, #download-app-buttons #btn-right {
+        text-align: center;
+        margin-bottom:2%;
     }
 }
 
