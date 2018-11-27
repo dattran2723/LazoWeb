@@ -71,7 +71,7 @@
                                     @if (login.Email != "admin@gmail.com")
                                     {
                                         <div class="pull-left">
-                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat" id="btn-changePass" data-id="@login.Id">Đổi mật khẩu</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>
@@ -150,7 +150,7 @@
     <script src="~/Content/Admin/dist/js/dataTables.fixedHeader.min.js"></script>
     <script src="~/Content/Admin/dist/js/dataTables.responsive.min.js"></script>
     <script src="~/Content/Admin/dist/js/responsive.bootstrap.min.js"></script>
-    <script src="~/Scripts/js/reponsivetable.js"></script>
+    @*<script src="~/Scripts/js/reponsivetable.js"></script>*@
     @*js tooltip*@
     <script src="~/Scripts/js/tooltip.js"></script>
     @RenderSection("script", required: false)
