@@ -1,10 +1,8 @@
-﻿@model IEnumerable<LazoWeb.Models.ApplicationUser>
-@using LazoWeb.Models;
+﻿@using LazoWeb.Models;
 
 @{
     ViewBag.Title = "danh sách tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
-    ApplicationUser login = (ApplicationUser)Session["login"];
 
 }
 <div class="getdanhsach">
@@ -23,55 +21,17 @@
                     Họ và tên
                 </th>
                 <th>
-                    CreatedDate
+                    Ngày tạo
                 </th>
                 <th>
-                    EmailConfirmed
+                    Trạng thái
                 </th>
                 <th>
                     Hành động
                 </th>
             </tr>
         </thead>
-        <tbody>
-            @*@foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @{stt++;} @stt
-                        </td>
-                        <td>
-                            <a style="text-decoration: none;" href="/Admin/User/Details?id=@item.Id">@Html.DisplayFor(modelItem => item.Email)</a>
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName) @Html.DisplayFor(modelItem => item.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CreatedDate)
-                        </td>
-                        <td>
-                            @if (item.EmailConfirmed == true)
-                            {
-                                @Html.Raw("Đã xác nhận");
-                            }
-                            @if (item.EmailConfirmed == false)
-                            {
-                                @Html.Raw("Chưa xác nhận");
-                            }
-                        </td>
-                        <td>
-                            <a data-toggle="tooltip" title="Sửa" href="@Url.Action("Edit",new { id = item.Id })"><i class="fas fa-edit"></i></a>
-                            <a data-toggle="tooltip" title="Chi tiết" href="@Url.Action("Details",new { id = item.Id })"><i class="fas fa-info-circle"></i></a>
-                            @if (login.Id == item.Id)
-                            {
-                            }
-                            else
-                            {
-                                <a data - toggle="tooltip" class="myBtnUser" title="Xóa" href="javascript:;" data-id="@item.Id"><i class="fas fa-trash-alt text-danger"></i></a>
-                            }
-                        </td>
-                    </tr>
-                }*@
+        <tbody>            
         </tbody>
     </table>
     <div class="modal fade" id="myModal" role="dialog">
