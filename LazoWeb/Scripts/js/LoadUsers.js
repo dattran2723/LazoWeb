@@ -14,7 +14,7 @@
                 data: "CreatedDate",
                 "render": function (data) {
                     var date = new Date(data);
-                    return date.toLocaleDateString();
+                    return date.toLocaleDateString('en-GB');
                 }
             },
             { data: null },
