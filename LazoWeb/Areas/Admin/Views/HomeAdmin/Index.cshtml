@@ -4,7 +4,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
     ApplicationUser login = (ApplicationUser)Session["login"];
 }
-<h2 class="text-center"><small>Xin chào</small> @login.LastName @login.FirstName </h2>
-<img src="~/Content/img/home-background.png" class="img-responsive" />
+@section css{
+    <link href="~/Content/Admin/dist/css/styleIndex.css" rel="stylesheet" />
+}
+<h2 class="text-center" id="title-index"><small>Xin chào</small> @login.LastName @login.FirstName </h2>
+<img src="~/Content/img/home-background.png" class="img-responsive" id="image-index" />
 
 
