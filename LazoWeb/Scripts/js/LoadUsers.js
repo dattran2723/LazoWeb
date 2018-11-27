@@ -2,14 +2,21 @@
     var IdUserLogin = $('#btn-changePass').attr('data-id');
     $("#manage-accounts").addClass("active");
     $("#manage-accounts #list-accounts").addClass("active");
+    var counter = 0;
+
     $('#example').DataTable({
         responsive: true,
         stateSave: true,
         ajax: "/api/users",
         columns: [
-            { data: null },
-            { data: null },
-            { data: null },
+            {
+                data: null,
+                "render": function () {
+                    return ++counter;
+                }
+            },
+            { data: "Email" },
+            { data: "LastName" },
             {
                 data: "CreatedDate",
                 "render": function (data) {
@@ -17,24 +24,20 @@
                     return date.toLocaleDateString('en-GB');
                 }
             },
-            { data: null },
+            {
+                data: "EmailConfirmed",
+                "render": function (data) {
+                    return data ? "Đã liên hệ" : "Chưa liên hệ";
+                }
+            },
             { data: null }
         ],
-        "createdRow": function (row, data, index) {
-            var stt = index + 1
-            $('td:eq(0)', row).html(
-                '<p>' + stt + '</p>'
-            );
-        },
         "rowCallback": function (row, data, index) {
             $('td:eq(1)', row).html(
                 '<a style="text-decoration: none;" href = "/Admin/User/Details?id=' + data.Id + '">' + data.Email + '</a>'
             );
             $('td:eq(2)', row).html(
                 data.LastName + ' ' + data.FirstName
-            );
-            $('td:eq(4)', row).html(
-                data.EmailConfirmed == true ? 'Đã xác nhận' : 'Chưa xác nhân'
             );
             if (data.Id != IdUserLogin) {
                 $('td:eq(5)', row).html(

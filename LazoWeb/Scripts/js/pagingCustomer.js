@@ -1,19 +1,24 @@
 ﻿$(document).ready(function () {
     $("#manage-customers").addClass("active");
     $("#manage-customers #list-customers").addClass("active");
-});
-$(document).ready(function () {
+
+    var counter = 0;
     $('#example').DataTable({
         responsive: true,
         stateSave: true,
         ajax: "/api/customers",
         columns: [
-            { data: null },
+            {
+                data: null,
+                "render": function () {
+                    return ++counter;
+                }
+            },
             { data: "Name" },
             { data: "Company" },
-            { data: "Email" },
+            { data: "Phone" },
             {
-                data: "Phone"
+                data: "Email"
             },
             {
                 data: "RegisterDate",
@@ -22,23 +27,19 @@ $(document).ready(function () {
                     return today.toLocaleDateString('en-GB');
                 }
             },
-            { data: "Status" },
+            {
+                data: "Status",
+                "render": function (data) {
+                    return data ? "Đã liên hệ" : "Chưa liên hệ";
+                }
+            },
             {
                 data: null,
             }
         ],
-        "createdRow": function (row, data, index) {
-            var stt = index + 1
-            $('td:eq(0)', row).html(
-                stt
-            );
-        },
         "rowCallback": function (row, data, index) {
             $('td:eq(1)', row).html(
                 '<a href="/admin/customers/details?id=' + data.ID + '" >' + data.Name + '</a > '
-            );
-            $('td:eq(6)', row).html(
-                data.Status ? "Đã liên hệ" : "Chưa liên hệ"
             );
             $('td:eq(7)', row).html(
                 '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data.ID + '" > <i class="fas fa-edit"></i></a > ' + ' ' +
