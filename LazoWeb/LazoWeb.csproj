@@ -10725,7 +10725,6 @@
     <Content Include="Content\Admin\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="Areas\Admin\Views\Shared\_LauoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
@@ -10822,6 +10821,7 @@
     <Content Include="Scripts\js\formRequired.js" />
     <Content Include="Scripts\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\js\LoadUsers.js" />
+    <Content Include="Scripts\js\pagingCustomer.js" />
     <Content Include="Scripts\js\reponsivetable.js" />
     <Content Include="Scripts\js\tooltip.js" />
     <Content Include="Scripts\js\vue-carousel-3d.js" />
