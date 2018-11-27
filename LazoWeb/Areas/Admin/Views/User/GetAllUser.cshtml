@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<LazoWeb.Models.ApplicationUser>
 @using LazoWeb.Models;
 
+
 @{
     ViewBag.Title = "danh sách tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
@@ -128,5 +129,8 @@
             $("#manage-accounts").addClass("active");
             $("#manage-accounts #list-accounts").addClass("active");
         });
+        var sessionexternal = '<%= Session["login"] %>';
+            var mySessionVar = '@Session["login"]';
+        console.log(sessionexternal);
     </script>
 }

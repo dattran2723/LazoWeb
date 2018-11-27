@@ -40,6 +40,7 @@ namespace LazoWeb.Models
         public string Email { get; set; }
 
         [DisplayName("Ngày đăng ký")]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime RegisterDate { get; set; }
 

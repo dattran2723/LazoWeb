@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Danh sách khách hàng";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
-    int counter = 0;
 }
 <div class="getdanhsach">
     <h2>Danh sách khách hàng</h2>
@@ -72,7 +71,6 @@
     </table>
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -91,7 +89,6 @@
     </div>
     <div class="modal fade" id="myNotifySuccess" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
@@ -105,7 +102,6 @@
     </div>
     <div class="modal fade" id="myNotifyFail" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <h1 class="text-danger"><i class="far fa-times-circle"></i></h1>
@@ -130,37 +126,48 @@
                 stateSave: true,
                 ajax: "/api/customers",
                 columns: [
-                    { "data": null },
-                    { "data": "Name" },
-                    { "data": "Company" },
-                    { "data": "Email" },
-                    { "data": "Phone" },
-                    { "data": "RegisterDate" },
-                    { "data": "Status" },
+                    { data: null },
+                    { data: "Name" },
+                    { data: "Company" },
+                    { data: "Email" },
                     {
-                        "data": null,
+                        data: "Phone"
+                    },
+                    {
+                        data: "RegisterDate",
+                        "render": function (data) {
+                            var d = new Date(data);
+                            return d.toLocaleDateString();
+                        }
+                    },
+                    { data: "Status" },
+                    {
+                        data: null,
                     }
                 ],
-                "rowCallback": function (row, data, index) {
-                    var stt = 0
-                    var id_index = 1;
-                    $('td:eq(0)', row).each(function () {
-                        console.log(data.length);
-                        for (var i = 0; i < data.length; i++) {
-                            console.log(data);
-                        }
-                    });
+                "createdRow": function (row, data, index) {
+                    var stt = index + 1
                     $('td:eq(0)', row).html(
-                        '<p>' + id_index + '</p>'
+                        stt
+                    );
+                },
+                "rowCallback": function (row, data, index) {
+                    $('td:eq(1)', row).html(
+                        '<a href="/admin/customers/details?id=' + data.ID + '" >' + data.Name + '</a > '
+                    );
+                    $('td:eq(6)', row).html(
+                        data.Status ? "Đã liên hệ" : "Chưa liên hệ"
                     );
                     $('td:eq(7)', row).html(
                         '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data.ID + '" > <i class="fas fa-edit"></i></a > ' +
-                        '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data.ID + '"><i class="fas fa-info-circle"></i></a>' +
-                        '<a data - toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="' + data.ID + '"><i class="fas fa-trash-alt text-danger"></i></a>'
+                        '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data.ID + '"><i class="fas fa-info-circle"></i></a>' + 
+                        '<a data-toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="' + data.ID + '"><i class="fas fa-trash-alt text-danger"></i></a>'
                     );
                 },
             });
         });
     </script>
+
 }
 <script src="~/Scripts/js/btnXoa.js"></script>
+

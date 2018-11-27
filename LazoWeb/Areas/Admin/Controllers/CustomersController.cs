@@ -14,7 +14,7 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/Customers
         public ActionResult Index()
         {
-            return View(db.Customers.OrderByDescending(x => x.RegisterDate).ToList());
+            return View(db.Customers.ToList());
         }
 
         // GET: Admin/Customers/Details/5
