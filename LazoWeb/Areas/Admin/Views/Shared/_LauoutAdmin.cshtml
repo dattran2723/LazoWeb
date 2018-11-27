@@ -71,7 +71,7 @@
                                     @if (login.Email != "admin@gmail.com")
                                     {
                                         <div class="pull-left">
-                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                                            <a href="/Manage/ChangePassword" class="btn btn-default btn-flat" id="btn-changePass" data-id="@login.Id">Đổi mật khẩu</a>
                                         </div>
                                         <div class="pull-right">
                                             <a href="@Url.Action("LogOff","Account", new { area = ""})" class="btn btn-default btn-flat">Đăng xuất</a>

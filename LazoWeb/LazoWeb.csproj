@@ -545,7 +545,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\CustomersController.cs" />
+    <Compile Include="API\UsersController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -565,13 +565,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811261459557_init-db.cs" />
+    <Compile Include="Migrations\201811261459557_init-db.Designer.cs">
+      <DependentUpon>201811261459557_init-db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\EditCustomer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Repository\ICustomerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -10815,6 +10818,7 @@
     <Content Include="Scripts\js\feedback.js" />
     <Content Include="Scripts\js\formRequired.js" />
     <Content Include="Scripts\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js\LoadUsers.js" />
     <Content Include="Scripts\js\reponsivetable.js" />
     <Content Include="Scripts\js\tooltip.js" />
     <Content Include="Scripts\js\vue-carousel-3d.js" />
@@ -10897,6 +10901,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811261459557_init-db.resx">
+      <DependentUpon>201811261459557_init-db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
