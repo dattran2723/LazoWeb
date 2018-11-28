@@ -1,5 +1,8 @@
 ﻿CREATE TABLE [dbo].[AspNetUsers] (
     [Id]                   NVARCHAR (128) NOT NULL,
+    [FirstName]            NVARCHAR (30)  NOT NULL,
+    [LastName]             NVARCHAR (30)  NOT NULL,
+    [CreatedDate]          DATETIME       NOT NULL,
     [Email]                NVARCHAR (256) NULL,
     [EmailConfirmed]       BIT            NOT NULL,
     [PasswordHash]         NVARCHAR (MAX) NULL,
@@ -11,11 +14,10 @@
     [LockoutEnabled]       BIT            NOT NULL,
     [AccessFailedCount]    INT            NOT NULL,
     [UserName]             NVARCHAR (256) NOT NULL,
-    [FirstName]            NVARCHAR (MAX) NULL,
-    [LastName]             NVARCHAR (MAX) NULL,
-    [CreatedDate]          DATETIME       DEFAULT ('1900-01-01T00:00:00.000') NOT NULL,
     CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
 
 
 
