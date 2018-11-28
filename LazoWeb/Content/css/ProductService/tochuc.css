@@ -231,20 +231,3 @@
     }
 }
 
-@media only screen and (max-width: 385px) {
-    .tochucquanly .left .tochuc h2 {
-        font-size: 24px;
-    }
-
-    .tochucquanly .left .tochuc ul li {
-        font-size: 16px;
-    }
-
-    .tochucquanly .left .tinhnang h2 {
-        font-size: 24px;
-    }
-
-    .tochucquanly .left .tinhnang ul li {
-        font-size: 16px;
-    }
-}
