@@ -254,7 +254,7 @@ namespace LazoWeb.Controllers
                 var user = await UserManager.FindByNameAsync(model.Email);
                 if (user == null)
                 {
-                    ViewBag.ThongBao = "Tài khoản này chưa tồn tại";
+                    ModelState.AddModelError("", "Tài khoản này không tồn tại!");
                     // || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                     // Don't reveal that the user does not exist or is not confirmed
                     return View(model);
@@ -270,8 +270,10 @@ namespace LazoWeb.Controllers
                 var callbackUrl = Url.Action("ResetPassword", "Account",
                     new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id,
-                    "LazoWeb", "Vui lòng lick vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật mật khẩu mới của bạn");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                    "LazoWeb", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật lại mật khẩu mới của bạn");
+                ViewData["QuenMatKhau"] = true;
+                return View(model);
+                //return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
