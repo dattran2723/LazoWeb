@@ -66,40 +66,12 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-8">
                     <a class="btn btn-default" href="/admin/Customers/Index">Quay lại</a>
-                    <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                    <input type="submit" id="btnEdit" value="Lưu thay đổi" class="btn btn-primary" />
                 </div>
             </div>
         </div>
     }
 </div>
-<div class="modal fade" id="myNotifySuccess" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
-                <p>Cập nhật thành công</p>
-            </div>
-            <div class="modal-footer">
-                <a href="/admin/customers/index" class="btn btn-default">Đóng</a>
-            </div>
-        </div>
-    </div>
-</div>
-@{
-    if (ViewData["Status"] != null)
-    {
-        var status = (bool)ViewData["Status"];
-        if (status)
-        {
-            <script>
-                $(document).ready(function () {
-                    $("#myNotifySuccess").modal();
-                });
-            </script>
-        }
-    }
-}
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
