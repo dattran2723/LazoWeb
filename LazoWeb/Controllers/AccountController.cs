@@ -208,6 +208,7 @@ namespace LazoWeb.Controllers
             }
             return View(model);
         }
+        [AllowAnonymous]
         public ActionResult RegisterConfirm()
         {
             return View();
