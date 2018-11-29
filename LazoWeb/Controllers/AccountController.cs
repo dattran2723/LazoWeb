@@ -89,8 +89,7 @@ namespace LazoWeb.Controllers
             {
                 if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                 {
-                    //ViewBag.errorMessage = "Chúng tôi vừa gửi lại Email xác nhận cho bạn.Vui lòng xác nhận tài khoản trước khi đăng nhập";
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Xác nhận tài khoản");
+                    //string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Xác nhận tài khoản");
                     ModelState.AddModelError("", "Tài khoản bạn chưa được xác nhận.Vui lòng truy cập Email để xác nhận");
                     return View(model);
                 }
@@ -201,7 +200,7 @@ namespace LazoWeb.Controllers
                 {
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng ký tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
+                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng ký tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận tài khoản");
                     //return RedirectToAction("GetAllUser", "User", new { area = "admin" });
                     return View("RegisterConfirm");
                 }
