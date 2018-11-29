@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Đăng ký thành công";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding-bottom:5%; margin:auto 0 auto 0">
+    <div class="col-lg-6 text-center mx-auto" style="padding-top:5%">
+        <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
+        <p>Đăng ký thành công <br />Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
+        </p>
+        <button class="buttonload btn btn-link" style="color:black; font-size:16px; text-decoration:none; cursor:default">
+            <i class="fa fa-spinner fa-spin"></i> Hệ thống chuyển sang trang chủ sau  <span id="counter" style="color: #ff0000; font-size:18px">3</span> giây
+        </button>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        var i = 3;
+        var timeout = setTimeout('window.location.replace("/Home/index");', 4000);
+        var countdownfunction = setInterval(function () {
+            if (0 == i)
+                document.getElementById("counter").innerHTML = "0";
+            else {
+                i--;
+                document.getElementById("counter").innerHTML = i;
+            }
+        }, 1000);
+
+    </script>
+
+}
