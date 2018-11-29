@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace LazoWeb.Controllers
 {
@@ -17,6 +18,7 @@ namespace LazoWeb.Controllers
 
 
         // GET: Customers/Create
+
         public ActionResult Register()
         {
             return View();
@@ -27,6 +29,7 @@ namespace LazoWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "none", Location = OutputCacheLocation.Client)]
         public async Task<ActionResult> Register(Customer customer)
         {
             if (this.IsCaptchaValid("Mã xác nhận không đúng!") && ModelState.IsValid)
@@ -35,17 +38,11 @@ namespace LazoWeb.Controllers
                 db.Customers.Add(customer);
                 var res = db.SaveChanges();
                 await SendMailForCustomer(customer);
-                return RedirectToAction("NotifyRegister");
-
+                TempData["Register"] = "Success";
+                return View();
             }
-
             return View(customer);
         }
-        public ActionResult NotifyRegister()
-        {
-            return View();
-        }
-
 
 
         protected override void Dispose(bool disposing)

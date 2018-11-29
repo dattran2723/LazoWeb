@@ -18,7 +18,6 @@
             <br />
             <h2>ĐĂNG KÝ DỊCH VỤ</h2>
             <br />
-
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="row input-zone text-left">
@@ -51,7 +50,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-112 text-center">
-                    <input type="submit" id="btn-submit" value="Gửi yêu cầu" class="btn btn-primary" />
+                    <input type="submit" id="btn-submit" value="Gửi yêu cầu" class="btn" />
                 </div>
             </div>
         }
@@ -66,7 +65,7 @@
         <div class="modal-content">
             <div class="modal-body text-center">
                 <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
-                <p>Đăng ký thành công</p>
+                <p>Đăng ký thành công <br />Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất</p>
             </div>
             <div class="modal-footer">
                 <a href="@Url.Action("Index","Home")" class="btn btn-success">Xong</a>
@@ -81,7 +80,7 @@
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     @{
-        var register = ViewData["register"];
+        var register = TempData["Register"];
         if (register != null)
         {
             <script>
