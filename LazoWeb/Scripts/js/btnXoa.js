@@ -17,9 +17,6 @@
             success: function (result) {
                 if (result > 0) {
                     $("#myNotifySuccess").modal();
-                    $("#btn-close").click(function () {
-                        location.reload();
-                    });
                 } else {
                     $("#myNotifyFail").modal();
                 }

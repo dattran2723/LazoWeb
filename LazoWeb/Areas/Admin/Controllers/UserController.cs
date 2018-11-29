@@ -77,7 +77,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                     ApplicationUser query = db.Users.Where(m => m.Email == model.Email).FirstOrDefault();
                     Session["login"] = query;
                 }
-                return View("GetAllUser");
+                return RedirectToAction("GetAllUser");
             }
             return View(model);
         }
