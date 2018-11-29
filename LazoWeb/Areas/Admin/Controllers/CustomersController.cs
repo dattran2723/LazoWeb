@@ -14,6 +14,7 @@ namespace LazoWeb.Areas.Admin.Controllers
         // GET: Admin/Customers
         public ActionResult Index()
         {
+            Session["NumberPhone"] = null;
             return View();
         }
 
@@ -81,7 +82,6 @@ namespace LazoWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                Session["NumberPhone"] = null;
                 try
                 {
                     Customer cus = db.Customers.Find(customer.ID);
@@ -92,7 +92,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                     cus.Description = customer.Description;
                     cus.Status = customer.Status;
                     db.SaveChanges();
-                    ViewData["Status"] = true;
+                    return RedirectToAction("Index");
                 }
                 catch (System.Exception ex)
                 {

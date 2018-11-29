@@ -89,8 +89,7 @@ namespace LazoWeb.Controllers
             {
                 if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                 {
-                    //ViewBag.errorMessage = "Chúng tôi vừa gửi lại Email xác nhận cho bạn.Vui lòng xác nhận tài khoản trước khi đăng nhập";
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Xác nhận tài khoản");
+                    //string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Xác nhận tài khoản");
                     ModelState.AddModelError("", "Tài khoản bạn chưa được xác nhận.Vui lòng truy cập Email để xác nhận");
                     return View(model);
                 }
@@ -194,13 +193,6 @@ namespace LazoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationDbContext db = new ApplicationDbContext();
-                var email = db.Users.Where(x => x.Email == model.Email).Count();
-                if (email > 0)
-                {
-                    ModelState.AddModelError("", "Email đã tồn tại");
-                    return View(model);
-                }
                 model.CreatedDate = DateTime.Now;
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, LastName = model.LastName, FirstName = model.FirstName, CreatedDate = model.CreatedDate };
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -208,19 +200,19 @@ namespace LazoWeb.Controllers
                 {
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng ký tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận đăng nhập");
-                    //ViewBag.msg = "Bạn thêm tài khoản thành công";
-                    //return View(model);
-                    ViewData["dangky"] = true;
-                    return View(model);
+                    await UserManager.SendEmailAsync(user.Id, "Xác nhận đăng ký tài khoản", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để xác nhận tài khoản");
                     //return RedirectToAction("GetAllUser", "User", new { area = "admin" });
+                    return RedirectToAction("RegisterConfirm");
                 }
                 AddErrors(result);
             }
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
-
+        [AllowAnonymous]
+        public ActionResult RegisterConfirm()
+        {
+            return View();
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -271,12 +263,8 @@ namespace LazoWeb.Controllers
                     new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id,
                     "LazoWeb", "Vui lòng click vào <a href=\"" + callbackUrl + "\">đây</a> để cập nhật lại mật khẩu mới của bạn");
-                ViewData["QuenMatKhau"] = true;
-                return View(model);
-                //return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -316,12 +304,14 @@ namespace LazoWeb.Controllers
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                //ViewBag.abc = "thanhcong";
                 //return RedirectToAction("ResetPasswordConfirmation", "Account");
                 return RedirectToAction("Login", "Account");
-                //return View(model);
             }
-            AddErrors(result);
+            else
+            {
+                ModelState.AddModelError("", "Email không đúng!");
+            }
+            //AddErrors(result);
             return View();
         }
 

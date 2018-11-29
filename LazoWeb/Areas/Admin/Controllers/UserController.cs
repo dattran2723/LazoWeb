@@ -77,7 +77,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                     ApplicationUser query = db.Users.Where(m => m.Email == model.Email).FirstOrDefault();
                     Session["login"] = query;
                 }
-                ViewData["Edit"] = true;
+                return RedirectToAction("GetAllUser");
             }
             return View(model);
         }
@@ -87,13 +87,6 @@ namespace LazoWeb.Areas.Admin.Controllers
             db.Users.Remove(user);
             var result = db.SaveChanges();
             return result;
-        }
-        public ActionResult delete(string id)
-        {
-            ApplicationUser user = db.Users.Find(id);
-            db.Users.Remove(user);
-            var result = db.SaveChanges();
-            return RedirectToAction("Getalluser", "User", new { area = "admin" });
         }
         protected override void Dispose(bool disposing)
         {

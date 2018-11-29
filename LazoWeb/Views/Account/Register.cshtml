@@ -1,6 +1,6 @@
 ﻿@model LazoWeb.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Tạo mới tài khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LauoutAdmin.cshtml";
 }
 
@@ -11,69 +11,37 @@
         <!-- /.login-logo -->
         <div class="login-box-body col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
             <h3 class="login-box-msg">Thêm mới tài khoản</h3>
-            <form id="form-register-user" action="/Content/Admin/index2.html" method="post">
-                <div class="form-group has-feedback">
-                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @id = "email", autofocus = "autofocus" })
-                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger", @id = "validemail" })
-                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger", @id = "validemailtontai" })*@
-                </div>
-                <div class="form-group has-feedback">
-                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Mật khẩu", @id = "matkhau" })
-                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger", @id = "validpass" })
-                </div>
-                <div class="form-group has-feedback">
-                    @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", @placeholder = "Nhập lại mật khẩu", @id = "xacnhanmatkhau" })
-                    @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger", @id = "validxacnhanmatkhau" })
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @id = "email", autofocus = "autofocus" })
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger", @id = "validemail" })
+                @*@Html.ValidationSummary(true, "", new { @class = "text-danger", @id = "validemailtontai" })*@
+            </div>
+            <div class="form-group has-feedback">
+                @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Mật khẩu", @id = "matkhau" })
+                @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger", @id = "validpass" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", @placeholder = "Nhập lại mật khẩu", @id = "xacnhanmatkhau" })
+                @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger", @id = "validxacnhanmatkhau" })
 
-                </div>
-                <div class="form-group has-feedback">
-                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @placeholder = "Họ", @id = "ho" })
-                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger", @id = "validho" })
-                </div>
-                <div class="form-group has-feedback">
-                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @placeholder = "Tên", @id = "ten" })
-                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger", @id = "validten" })
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 text-center">
-                        <a href="/Admin/User/GetAllUser" class="btn btn-default">Quay lại</a>
-                        <input type="submit" value="Thêm mới" class="btn btn-success btn-flat" />
-                    </div>
-                </div>
-            </form>
-        </div>
-    }
-
-
-    <div class="modal fade" id="myModalSuccessDangKi" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
-                    <p class="text-center">Bạn đã đăng kí thành công tài khoản</p>
-                    <p class="text-center">Vui lòng truy cập Email để xác nhận tài khoản của mình</p>
-                </div>
-                <div class="modal-footer" id="myModel-href1">
-                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @placeholder = "Họ", @id = "ho" })
+                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger", @id = "validho" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @placeholder = "Tên", @id = "ten" })
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger", @id = "validten" })
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 text-center">
+                    <a href="/Admin/User/GetAllUser" class="btn btn-default">Quay lại</a>
+                    <input type="submit" value="Thêm mới" class="btn btn-success btn-flat" />
                 </div>
             </div>
         </div>
-    </div>
-    @{
-        if (ViewData["dangky"] != null)
-        {
-            <script>
-                $(document).ready(function () {
-                    $("#myModalSuccessDangKi").modal();
-                });
-            </script>
-        }
     }
-    <br />
 </div>
-<br />
-@*<script src="~/Scripts/js/changerequidfrom.js"></script>*@
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-@*<script src="~/Scripts/js/validator.registerUser.js"></script>    *@

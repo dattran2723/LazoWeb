@@ -35,12 +35,15 @@ namespace LazoWeb.Controllers
                 db.Customers.Add(customer);
                 var res = db.SaveChanges();
                 await SendMailForCustomer(customer);
-                ViewData["register"] = true;
-                return View();
+                return RedirectToAction("NotifyRegister");
 
             }
 
             return View(customer);
+        }
+        public ActionResult NotifyRegister()
+        {
+            return View();
         }
 
 

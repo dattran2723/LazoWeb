@@ -67,34 +67,7 @@
             </div>
         </div>
     }
-    <div class="modal fade" id="myModalSuccess" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h1 class="text-success"><i class="far fa-check-circle"></i></h1>
-                    <p>Đã cập nhật tài khoản thành công</p>
-                </div>
-                <div class="modal-footer" id="myModel-href1">
-                    <a href="/admin/user/getalluser" class="btn btn-default">Đóng</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    @{
-        if (ViewData["Edit"] != null)
-        {
-            <script>
-                $(document).ready(function () {
-                    console.log("asccs");
-                    $("#myModalSuccess").modal();
-                });
-            </script>
-        }
-    }
 </div>
-<hr />
-<script src="~/Scripts/js/btnEdit.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
