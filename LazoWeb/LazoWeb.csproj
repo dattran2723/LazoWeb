@@ -10890,6 +10890,7 @@
     <Content Include="Views\Home\PSFollow.cshtml" />
     <Content Include="Views\Home\PSDivision.cshtml" />
     <Content Include="Views\Home\PSMange.cshtml" />
+    <Content Include="Views\Account\RegisterConfirm.cshtml" />
     <Content Include="Views\Customers\NotifyRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
