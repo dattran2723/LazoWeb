@@ -92,7 +92,7 @@ namespace LazoWeb.Areas.Admin.Controllers
                     cus.Description = customer.Description;
                     cus.Status = customer.Status;
                     db.SaveChanges();
-                    return View("Index");
+                    return RedirectToAction("Index");
                 }
                 catch (System.Exception ex)
                 {
