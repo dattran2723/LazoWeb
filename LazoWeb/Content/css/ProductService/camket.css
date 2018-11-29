@@ -25,6 +25,7 @@
     }
 
     .camket .duoi {
+        margin-top: 1%;
         padding-bottom: 5%;
     }
 
@@ -105,6 +106,22 @@
 
     .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-3 {
         margin-left: -24% !important;
+    }
+
+
+.duoi .wrap-img {
+    height: 72px;
+    width: 72px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+    .duoi .wrap-img:hover {
+        background-color: #cadbf7;
+    }
+
+    .duoi .wrap-img img {
+        margin-top: 25%;
     }
 
 @media only screen and (max-width: 1200px) {
@@ -248,18 +265,6 @@
 
     .camket .duoi .chu3 p {
         padding: 0px 9%;
-    }
-
-    .camket .duoi .chu3 img {
-        width: 10%;
-    }
-
-    .camket .duoi .chu2 img {
-        width: 10%;
-    }
-
-    .camket .duoi .chu1 img {
-        width: 10%;
     }
 
     .camket #carousel3d .carousel-3d-slider .carousel-3d-slide.left-1 {

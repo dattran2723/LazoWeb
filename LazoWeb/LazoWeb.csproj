@@ -566,10 +566,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811280116455_init.cs" />
-    <Compile Include="Migrations\201811280116455_init.Designer.cs">
-      <DependentUpon>201811280116455_init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -10090,7 +10086,10 @@
     <Content Include="Content\img\page-1_0032_The-Third-Eye-Of-Manager.png" />
     <Content Include="Content\img\page-4_0000_2018-10-12-16-17-salerouters.xinkciti.com.png" />
     <Content Include="Content\img\page-32_0000_black-copy-2.png" />
+    <Content Include="Content\img\Untitled-1_0000_Forma-1.png" />
     <Content Include="Content\img\Untitled-1_0000_glasses.png" />
+    <Content Include="Content\img\Untitled-1_0001_Forma-1.png" />
+    <Content Include="Content\img\Untitled-1_0002__Group_.png" />
     <Content Include="Content\img\Untitled-lycafe.png" />
     <Content Include="Content\img\Untitled-tree.png" />
     <Content Include="favicon.ico" />
@@ -10906,11 +10905,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811280116455_init.resx">
-      <DependentUpon>201811280116455_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
