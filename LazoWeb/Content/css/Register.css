@@ -23,35 +23,48 @@
         margin-top: -60px;
     }
 
-    #signup-page #glasses img {
-        width: 100%;
-        margin-top: 400px;
-    }
+#btn-submit {
+    background-color: #4c6ff3;
+    color: white;
+}
+#btn-submit:hover{
+    background-color: #0649c2;
+}
+
+#signup-page #glasses img {
+    width: 100%;
+    margin-top: 400px;
+}
+
 @media only screen and ( max-width: 1069px) {
     #signup-page #tree img {
         margin-top: 0px;
     }
-
 }
-@media only screen and ( max-width: 767px){
-    #signup-page #tree,#glasses{
+
+@media only screen and ( max-width: 767px) {
+    #signup-page #tree, #glasses {
         display: none;
     }
-    #signup-page .form{
+
+    #signup-page .form {
         margin: auto;
     }
 }
-.captcha a{
+
+.captcha a {
     color: gray;
 }
-.captcha a:hover{
-    color: #936969;
+
+    .captcha a:hover {
+        color: #936969;
+    }
+
+.captcha #CaptchaImage {
+    float: left;
+    margin-right: 1%;
 }
 
-.captcha #CaptchaImage{
-    float: left;
-    margin-right:1%;
-}
 .captcha #CaptchaInputText {
     width: auto;
     padding: .375rem .1rem;
