@@ -10,7 +10,7 @@
         columns: [
             {
                 data: null,
-                "render": function () {
+                render: function () {
                     return ++counter;
                 }
             },
@@ -22,29 +22,29 @@
             },
             {
                 data: "RegisterDate",
-                "render": function (data) {
+                render: function (data) {
                     var today = new Date(data);
                     return today.toLocaleDateString('en-GB');
                 }
             },
             {
                 data: "Status",
-                "render": function (data) {
+                render: function (data) {
                     return data ? "Đã liên hệ" : "Chưa liên hệ";
                 }
             },
             {
-                data: null,
+                data: "ID",
+                render: function (data) {
+                    return '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data + '" > <i class="fas fa-edit"></i></a > ' + ' ' +
+                        '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data + '"><i class="fas fa-info-circle"></i></a>' + ' ' +
+                        '<a data-toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="' + data + '"><i class="fas fa-trash-alt text-danger"></i></a>'
+                }
             }
         ],
         "rowCallback": function (row, data, index) {
             $('td:eq(1)', row).html(
                 '<a href="/admin/customers/details?id=' + data.ID + '" >' + data.Name + '</a > '
-            );
-            $('td:eq(7)', row).html(
-                '<a data-toggle="tooltip" title="Sửa" href="/admin/customers/edit?id=' + data.ID + '" > <i class="fas fa-edit"></i></a > ' + ' ' +
-                '<a data-toggle="tooltip" title="Chi tiết" href="/admin/customers/details?id=' + data.ID + '"><i class="fas fa-info-circle"></i></a>' + ' ' +
-                '<a data-toggle="tooltip" class="myBtn" title="Xóa" href="javascript:;" data-id="' + data.ID + '"><i class="fas fa-trash-alt text-danger"></i></a>'
             );
         },
     });
